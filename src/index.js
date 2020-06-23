@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './Pages/Main/Main';
 import './Styles/index.scss';
 import './Styles/common.scss';
+import Routes from './Routes';
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(<Routes />, document.getElementById('root'));
