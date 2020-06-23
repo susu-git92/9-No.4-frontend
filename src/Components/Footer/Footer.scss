@@ -12,7 +12,7 @@
 		text-align: center;
 
 		img {
-			width: 150px;
+			width: 180px;
 		}
 	}
 	.listContainer {
@@ -22,7 +22,7 @@
 		align-items: flex-start;
 
 		.listWrapper {
-			font-size: 11px;
+			font-size: 14px;
 			color: #fff;
 
 			p {
@@ -37,7 +37,7 @@
 			ul {
 				li {
 					opacity: 0.6;
-					margin-top: 10px;
+					margin-top: 15px;
 				}
 			}
 		}
@@ -66,25 +66,24 @@
 		}
 
 		.iconsWrapper {
-			width: 80px;
+			width: 100px;
 			display: flex;
 			justify-content: space-between;
-			font-size: 11px;
-			opacity: 0.6;
+			font-size: 14px;
 
 			.facebookIcon,
 			.instaIcon,
 			.youtubeIcon,
 			.twitterIcon {
 				cursor: pointer;
-				color: #fff;
+				color: rgba(255, 255, 255, 0.4);
 			}
 
 			.facebookIcon:hover,
 			.instaIcon:hover,
 			.youtubeIcon:hover,
 			.twitterIcon:hover {
-				opacity: 0.5;
+				opacity: 0.7;
 			}
 		}
 	}

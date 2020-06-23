@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Main from './Pages/Main/Main';
 import './Styles/index.scss';
 import './Styles/common.scss';
-import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
