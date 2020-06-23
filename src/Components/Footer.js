@@ -66,10 +66,18 @@ class Footer extends React.Component {
             <FontAwesomeIcon icon={faChevronDown} />
           </div>
           <div className="iconsWrapper">
-            <FontAwesomeIcon className="facebookIcon" icon={faFacebook} />
-            <FontAwesomeIcon className="instaIcon" icon={faInstagram} />
-            <FontAwesomeIcon className="youtubeIcon" icon={faYoutube} />
-            <FontAwesomeIcon className="twitterIcon" icon={faTwitter} />
+            <a href="https://www.facebook.com/ChanelKR/">
+              <FontAwesomeIcon className="facebookIcon" icon={faFacebook} />
+            </a>
+            <a href="https://instagram.com/chanelofficial">
+              <FontAwesomeIcon className="instaIcon" icon={faInstagram} />
+            </a>
+            <a href="https://www.youtube.com/chanel">
+              <FontAwesomeIcon className="youtubeIcon" icon={faYoutube} />
+            </a>
+            <a href="https://twitter.com/CHANEL">
+              <FontAwesomeIcon className="twitterIcon" icon={faTwitter} />
+            </a>
           </div>
         </div>
       </div>
