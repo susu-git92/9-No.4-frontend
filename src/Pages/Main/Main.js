@@ -26,6 +26,22 @@ class Main extends React.Component {
               <div>더보기</div>
             </div>
           </div>
+          <div className="centerContainer">
+            <div class="centerWrapper">
+              <div className="callCenter">
+                <p>고객 문의</p>
+              </div>
+              <div className="location">
+                <p>위치 찾기</p>
+              </div>
+            </div>
+            <div className="logoBox">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/35/Chanel_logo.svg"
+                alt="chanel logo"
+              />
+            </div>
+          </div>
         </article>
         <Footer />
       </div>
