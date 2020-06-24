@@ -27,7 +27,7 @@ class Main extends React.Component {
             </div>
           </div>
           <div className="centerContainer">
-            <div class="centerWrapper">
+            <div className="centerWrapper">
               <div className="callCenter">
                 <p>고객 문의</p>
               </div>
