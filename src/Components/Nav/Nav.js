@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -22,6 +22,7 @@ class Nav extends React.Component {
         />
         <div className="iconWrapper">
           <FontAwesomeIcon className="searchIcon" icon={faSearch} />
+          <FontAwesomeIcon className="userIcon" icon={faUser} />
           <FontAwesomeIcon className="starIcon" icon={faStar} />
         </div>
         <ul>
