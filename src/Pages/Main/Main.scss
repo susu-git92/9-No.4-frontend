@@ -1,0 +1,13 @@
+.Main {
+	height: 100%;
+	overflow-y: visible;
+
+	article {
+		position: relative;
+		height: 400vh;
+		top: -85vh;
+		z-index: 10;
+		background-color: deeppink;
+		opacity: 0.5;
+	}
+}
