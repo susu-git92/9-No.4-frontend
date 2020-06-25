@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
 import './Nav.scss';
+import { srcs } from '../../config';
 
 class Nav extends React.Component {
   state = {
@@ -16,10 +17,7 @@ class Nav extends React.Component {
     return (
       <div className="Nav">
         <div className="boldLine" />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/3/35/Chanel_logo.svg"
-          alt="chanel logo"
-        />
+        <img src={srcs.img.logo.black} alt="chanel logo" />
         <div className="iconWrapper">
           <FontAwesomeIcon className="searchIcon" icon={faSearch} />
           <FontAwesomeIcon className="userIcon" icon={faUser} />

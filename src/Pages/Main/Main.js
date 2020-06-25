@@ -2,10 +2,10 @@ import React from 'react';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
 import './Main.scss';
+import { srcs } from '../../config';
+
 class Main extends React.Component {
   render() {
-    const mainVideoUrl =
-      'http://www.chanel.com/videos/e_volume:mute/q_90,f_mp4,c_scale,w_2560,c_limit/FSH-1585840357798-hpmodedesktop.mp4';
     return (
       <div className="Main">
         <Nav />
@@ -18,7 +18,7 @@ class Main extends React.Component {
               width="100%"
               height="100%"
             >
-              <source src={mainVideoUrl} type="video/mp4" />
+              <source src={srcs.video.main} type="video/mp4" />
             </video>
             <div className="textWrapper">
               <p>CHANEL 19 백</p>
@@ -36,10 +36,7 @@ class Main extends React.Component {
               </div>
             </div>
             <div className="logoBox">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/3/35/Chanel_logo.svg"
-                alt="chanel logo"
-              />
+              <img src={srcs.img.logo.black} alt="chanel logo" />
             </div>
           </div>
         </article>
