@@ -15,7 +15,7 @@ class Nav extends React.Component {
   };
   closeModal = () => {
     this.setState({
-      isActive: 1,
+      isActive: 0,
     });
   };
   render() {
