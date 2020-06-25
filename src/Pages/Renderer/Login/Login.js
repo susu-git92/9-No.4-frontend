@@ -87,55 +87,48 @@ class Login extends React.Component {
   render () {
     console.log('this.state.inputId>>>', this.state.inputId);
     return (
-        <div className="Login">
-          <form>
-            <div className = "welcomeText1">
-              <p>Welcome back.</p>
-            </div>
-            <div className = "welcomeText2">
-              <p>Sign in with your email and password.</p>
-            </div>
+      <div className="Login">
+        <form>
+          <div className = "welcomeText1">
+            <p>Welcome back.</p>
+          </div>
+          <div className = "welcomeText2">
+            <p>Sign in with your email and password.</p>
+          </div>
                     
-                    
-              <div className = "formBox">
-                <div className="form-control">
-                  <input type="text" id="username" 
-                    placeholder="Email"
-                    name = "inputId" 
-                    onChange = {this.changeHandle}
-                  />  
-                  <small style = {{fontSize: 12, color: "red"}}>
-                    {this.state.idError}</small> 
-                  
-                </div>
+            <div className = "formBox">
+              <div className="form-control">
+                <input type="text" id="username" 
+                  placeholder="Email"
+                  name = "inputId" 
+                  onChange = {this.changeHandle}
+                />  
+                <small style = {{fontSize: 12, color: "red"}}>
+                {this.state.idError}</small> 
+              </div>
 
-                <div className="form-control">
-                  <input type="password" id="email" 
-                    placeholder="Password"
-                    name = "inputPw" //네임값 꼭 지정해줘야함(리액트)
-                    onChange={this.changeHandle}
-                  />  
-                  <small style = {{fontSize: 12, color: "red"}}>{this.state.pwError}</small>         
-                </div>
-
-              </div>          
+              <div className="form-control">
+                <input type="password" id="email" 
+                  placeholder="Password"
+                  name = "inputPw" //네임값 꼭 지정해줘야함(리액트)
+                  onChange={this.changeHandle}
+                />  
+                <small style = {{fontSize: 12, color: "red"}}>{this.state.pwError}</small>         
+              </div>
+            </div>          
 
               <div className= "link-2">
-                  
                 <div className="buttonBox">
                   <button type="submit" id="submit" className="button"
                     onClick = {this.submitLogin} noValidate >
-                  <div className="btnWrapper">
-                    <div id="signinbox">Sign in</div>
-                  </div>
-                </button>
+                    <div className="btnWrapper">
+                      <div id="signinbox">Sign in</div>
+                    </div>
+                  </button>
+                </div>
               </div>
-                
-            </div>
-
-          </form>
-
-        </div>
+        </form>
+      </div>
     )
   }
 }

@@ -34,14 +34,14 @@ export class Renderer extends React.Component{
                       <div className="box-controller">
                         <nav className = "customer-nav">
                             <div 
-                              className={!this.state.isLoginOpen ? "con selected" : "con"}
-                              onClick={this.showLoginBox}>
+                              className={!this.state.isLoginOpen ? "signin-selected" : "signin"}
+                              onClick={this.showLoginBox} >
                                 SIGN IN
                             </div>
                             <div 
-                              className={this.state.isLoginOpen ? "con selected" : "con"} 
+                              className={this.state.isLoginOpen ? "signup-selected" : "signup"} 
                               onClick={this.hideLoginBox}>
-                              REGISTER
+                                REGISTER
                             </div>
                         </nav>
                       </div>
