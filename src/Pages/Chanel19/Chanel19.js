@@ -1,19 +1,17 @@
 import React from 'react';
 import ProductList from '../../Components/Body/ProductList';
+import { Chanel19Api } from '../../Api';
 import './Chanel19.scss';
 
 class Chanel19 extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      Chanel19List: [],
-    };
-  }
+  state = {
+    Chanel19List: {},
+  };
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((res) => this.setState({ Chanel19List: res }));
+    this.setState({
+      Chanel19List: Chanel19Api,
+    });
   }
 
   render() {

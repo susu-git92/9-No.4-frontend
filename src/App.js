@@ -1,11 +1,11 @@
 import React from 'react';
 import './Styles/App.scss';
-import Chanel19 from './Pages/Main/Chanel19';
+import Chanel19Detail from './Pages/Chanel19/Chanel19Detail/Chanel19Detail';
 
 function App() {
   return (
     <div className="App">
-      <Chanel19 />
+      <Chanel19Detail />
     </div>
   );
 }
