@@ -1,12 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   display: flex;
   background-color: #fafafa;
@@ -24,34 +15,18 @@ body {
   background-color: #fafafa;
 }
 
-.Wrapper {
-  display: flex;
-  background-color: #fff;
-  border-radius: 2px;
-  width: 350px;
-  height: 1000px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-}
-
 main {
   display: flex;
   position: relative;
 }
 
 .container {
-  //line-height: 1.4285714286;
   font-family: Helvetica, Open-Sans, 'sans-serif-light', sans-serif;
   font-size: 0.775rem;
   font-weight: 300;
-  // letter-spacing: 0.00625rem;
   color: #1d1d1d;
-  // -webkit-font-smoothing: antialiased;
-  // display: flex;
-  // margin: 0 auto;
   width: 648px;
-  height: 790px;
+  height: 1000px;
   position: relative;
   justify-content: center;
   text-align: center;
@@ -67,7 +42,6 @@ main {
   flex-basis: auto;
   margin-bottom: 1.3vw;
   text-align: center;
-  //padding-bottom: 30px;
   position: relative;
   justify-content: center;
 }
@@ -84,10 +58,19 @@ main {
   text-align: center;
 }
 
-.contentBox {
+.Login {
   position: relative;
   width: 100%;
   margin: 0 auto;
+  .welcomeText1 {
+    margin-top: 55px;
+    font-size: 18px;
+  }
+  .welcomeText2 {
+    padding-top: 35px;
+    font-size: 14px;
+    text-align: left;
+  }
 }
 
 .accountText h1 {
@@ -111,32 +94,16 @@ main {
 .customer-nav {
   display: flex;
   width: 100%;
+  .con {
+    width: auto;
+    justify-content: stretch;
+    grid-row: 2;
+    width: 200px;
+    line-height: 43px;
+  }
 }
 
-.customer-nav a {
-  width: auto;
-  justify-content: stretch;
-  grid-row: 2;
-  width: 200px;
-  line-height: 43px;
-}
-/*
-#login-tab,
-#register-tab {
-  padding: 10px;
-  width: 200px;
-  //display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-}*/
-
-.signIn {
-  border-bottom: 3px solid transparent;
-  font-size: 14px;
-  border-color: #1d1d1d;
-  cursor: pointer;
-}
-
+.signIn,
 .signUp {
   border-bottom: 3px solid transparent;
   font-size: 14px;
@@ -144,12 +111,7 @@ main {
   cursor: pointer;
 }
 
-.signInselected-controller {
-  border-bottom: 0.0625rem solid #d8d8d8;
-  cursor: pointer;
-  font-size: 14px;
-}
-
+.signInselected-controller,
 .signUpselected-controller {
   border-bottom: 0.0625rem solid #d8d8d8;
   cursor: pointer;
@@ -162,34 +124,14 @@ main {
   margin: 2 auto;
 }
 
-.welcomeText1 {
-  margin-top: 55px;
-  font-size: 18px;
-}
-
-.welcomeText2 {
-  padding-top: 35px;
-  font-size: 14px;
-  text-align: left;
-}
-
 .form-control {
   margin-top: 10px;
-  //bottom: 0;
-  //content: '';
-  // height: 1px;
-  //left: 0;
-  //position: relative;
-  //transition: transform 0.3s;
-  //transform-origin: left;
-  //transform: scaleX(0);
   width: 350px;
 }
 
 .form-control small {
   color: red;
   bottom: 0;
-  visibility: hidden;
 }
 
 .form-control.error small {
@@ -197,16 +139,11 @@ main {
 }
 
 .form-control input:hover {
-  //margin-top: 10px;
   width: 385px;
   border-bottom: 1.5px solid #000;
   transition: all 0.2s ease;
 }
 
-/*.formbox {
-  margin: 30px auto;
-}
-*/
 .formBox input {
   margin-top: 10px;
   background: none;
@@ -228,7 +165,7 @@ main {
 }
 
 .buttonBox {
-  margin-top: 45px;
+  padding-top: 75px;
 }
 
 #submit {
@@ -241,20 +178,6 @@ main {
 
 .btnWrapper {
   color: #fff;
-  /*font-size: 11px;
-  line-height: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  position: relative;
-  //width: 90px;
-  //height: 40px;
-  line-height: normal;
-  margin: 4em auto;
-  bottom: -0.3rem;
-  width: 52px;
-  height: 20px;
-*/
   font-size: 11px;
   position: relative;
   font-weight: 600;
