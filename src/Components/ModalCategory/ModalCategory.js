@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './ModalCategory.scss';
+import { srcs } from '../../config';
 
 class ModalCategory extends React.Component {
   render() {
@@ -18,12 +19,10 @@ class ModalCategory extends React.Component {
 
 class CollectionDropdown extends React.Component {
   render() {
-    const imgSrc =
-      'https://www.chanel.com/images/q_auto,f_auto,fl_lossy,dpr_auto/w_450/FSH-1591614379103-hv4desktop.jpg';
     return (
       <div className="CollectionDropdown">
         <div className="imgWrapper">
-          <img src={imgSrc} alt="collection" />
+          <img src={srcs.img.menu.collection} alt="collection" />
           <p className="season">2020/21 크루즈</p>
         </div>
         <ul>
@@ -65,13 +64,11 @@ class CollectionDropdown extends React.Component {
 
 class CategoryDropdown extends React.Component {
   render() {
-    const imgSrc =
-      'https://www.chanel.com/images/q_auto,f_auto,fl_lossy,dpr_auto/w_450/FSH-1585566665375-megamenuhv4.jpg';
     return (
       <div className="CategoryDropdown">
         <div className="dropdownWrapper">
           <div className="imgWrapper">
-            <img src={imgSrc} alt="category" />
+            <img src={srcs.img.menu.category} alt="category" />
             <p className="season">CHANEL 19 백</p>
           </div>
           <ul>
