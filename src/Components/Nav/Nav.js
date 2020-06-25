@@ -3,6 +3,7 @@ import ModalCategory from '../ModalCategory/ModalCategory';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
 import './Nav.scss';
+import { srcs } from '../../config';
 
 class Nav extends React.Component {
   state = {
@@ -23,10 +24,7 @@ class Nav extends React.Component {
       <div className="Nav">
         <div className="NavWrapper">
           <div className="boldLine" />
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/3/35/Chanel_logo.svg"
-            alt="chanel logo"
-          />
+          <img src={srcs.img.logo.black} alt="chanel logo" />
           <div className="iconWrapper">
             <FontAwesomeIcon className="searchIcon" icon={faSearch} />
             <FontAwesomeIcon className="userIcon" icon={faUser} />
