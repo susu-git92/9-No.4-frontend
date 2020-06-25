@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Main from './Pages/Main/Main';
 import Category from './Pages/Category/Category';
 import Collection from './Pages/Collection/Collection';

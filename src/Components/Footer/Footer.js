@@ -8,16 +8,14 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import './Footer.scss';
+import { srcs } from '../../config';
 
 class Footer extends React.Component {
   render() {
     return (
       <div className="Footer">
         <div className="logoWrapper">
-          <img
-            src="https://i.ya-webdesign.com/images/chanel-drawing-logo-6.png"
-            alt="chanel logo"
-          />
+          <img src={srcs.img.logo.white} alt="chanel logo" />
         </div>
         <div className="listContainer">
           <div className="listWrapper">
