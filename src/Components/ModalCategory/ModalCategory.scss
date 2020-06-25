@@ -1,0 +1,80 @@
+.ModalCategory {
+	font-size: 14px;
+
+	.season {
+		font-weight: 600;
+	}
+
+	.imgWrapper {
+		text-align: left;
+
+		img {
+			width: 250px;
+			margin-bottom: 10px;
+		}
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		color: black;
+
+		li {
+			margin-bottom: 25px;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	.closeBtn {
+		font-size: 20px;
+		margin-bottom: 30px;
+		cursor: pointer;
+	}
+
+	.CollectionDropdown {
+		background-color: #fff;
+		width: 100%;
+		padding: 50px 100px;
+		display: flex;
+		justify-content: space-around;
+	}
+	.CategoryDropdown {
+		background-color: #fff;
+		width: 100%;
+
+		.dropdownWrapper {
+			display: flex;
+			justify-content: space-around;
+			padding: 50px 100px 0 100px;
+		}
+
+		.preProduct {
+			height: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+			p {
+				font-size: 13px;
+				padding-right: 5px;
+				cursor: pointer;
+
+				&:hover {
+					opacity: 0.7;
+					padding-right: 15px;
+					transition: 0.3s ease-in-out;
+				}
+			}
+
+			.chevronRightIcon {
+				color: rgba(0, 0, 0, 0.8);
+			}
+		}
+	}
+}

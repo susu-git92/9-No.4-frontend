@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductList from '../../Components/ProductList.js';
+import ProductList from '../../Components/ProductList/ProductList.js';
 import './Chanel19.scss';
 
 class Chanel19 extends React.Component {

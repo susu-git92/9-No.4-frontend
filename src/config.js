@@ -9,5 +9,11 @@ export const srcs = {
         'https://upload.wikimedia.org/wikipedia/commons/3/35/Chanel_logo.svg',
       white: 'https://i.ya-webdesign.com/images/chanel-drawing-logo-6.png',
     },
+    menu: {
+      collection:
+        'https://www.chanel.com/images/q_auto,f_auto,fl_lossy,dpr_auto/w_450/FSH-1591614379103-hv4desktop.jpg',
+      category:
+        'https://www.chanel.com/images/q_auto,f_auto,fl_lossy,dpr_auto/w_450/FSH-1585566665375-megamenuhv4.jpg',
+    },
   },
 };

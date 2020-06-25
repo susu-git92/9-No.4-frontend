@@ -7,63 +7,63 @@
 	top: 0;
 	z-index: 100;
 
-	.boldLine {
-		height: 8px;
-		background-color: black;
-	}
-
-	img {
-		margin-top: 25px;
-		width: 180px;
-	}
-
-	.iconWrapper {
-		font-size: 18px;
-		position: absolute;
-		right: 100px;
-		top: 40px;
-		opacity: 0.8;
-
-		.starIcon,
-		.userIcon {
-			margin-left: 15px;
-			cursor: pointer;
+	.NavWrapper {
+		.boldLine {
+			height: 8px;
+			background-color: black;
+		}
+		img {
+			margin-top: 25px;
+			width: 180px;
 		}
 
-		.searchIcon {
-			cursor: pointer;
-		}
-	}
+		.iconWrapper {
+			font-size: 18px;
+			position: absolute;
+			right: 100px;
+			top: 40px;
+			opacity: 0.8;
 
-	ul {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 32px;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+			.starIcon,
+			.userIcon {
+				margin-left: 15px;
+				cursor: pointer;
+			}
 
-		li {
-			font-size: 12.5px;
-			margin-right: 30px;
-			padding-bottom: 25px;
-			color: rgba(0, 0, 0, 0.7);
-			font-weight: 500;
-			border-bottom: 5px solid #fff;
-			cursor: pointer;
-			transition: border-bottom 0.2s ease-in-out;
+			.searchIcon {
+				cursor: pointer;
+			}
 		}
 
-		li:last-child {
-			margin-right: 0;
-		}
+		ul {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 32px;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-		li:hover {
-			color: rgba(0, 0, 0, 0.4);
-		}
+			li {
+				font-size: 12.5px;
+				margin-right: 30px;
+				padding-bottom: 26px;
+				color: rgba(0, 0, 0, 0.7);
+				font-weight: 500;
+				border-bottom: 5px solid #fff;
+				cursor: pointer;
+				transition: border-bottom 0.2s ease-in-out;
 
-		.active {
-			border-bottom: 5px solid black;
-			transition: border-bottom 0.2s ease-in-out;
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:hover {
+					color: rgba(0, 0, 0, 0.4);
+				}
+			}
+			.active {
+				border-bottom: 5px solid black;
+				transition: border-bottom 0.2s ease-in-out;
+			}
 		}
 	}
 }
