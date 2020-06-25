@@ -7,8 +7,13 @@
 		font-weight: 600;
 	}
 
-	img {
-		width: 250px;
+	.imgWrapper {
+		text-align: left;
+
+		img {
+			width: 250px;
+			margin-bottom: 10px;
+		}
 	}
 
 	ul {
@@ -47,7 +52,7 @@
 		.dropdownWrapper {
 			display: flex;
 			justify-content: space-around;
-			padding: 50px 100px;
+			padding: 50px 100px 0 100px;
 		}
 
 		.preProduct {
