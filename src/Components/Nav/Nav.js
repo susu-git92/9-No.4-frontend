@@ -77,7 +77,9 @@ class Nav extends React.Component {
           </div>
         ) : (
           <Search
-            style={{ display: this.state.searchModal ? 'block' : 'none' }}
+            style={{
+              display: this.state.searchModal ? 'block' : 'none',
+            }}
             onClick={this.SearchToggle}
           />
         )}
