@@ -8,6 +8,7 @@ import News from './Pages/News/News';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Signup/Signup';
 import Chanel19 from './Pages/Chanel19/Chanel19';
+import Chanel19Detail from './Pages/Chanel19/Chanel19Detail/Chanel19Detail';
 
 class Routes extends React.Component {
   render() {
@@ -21,6 +22,7 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/chanel19" component={Chanel19} />
+          <Route exact path="/chanel19detail" component={Chanel19Detail} />
         </Switch>
       </Router>
     );
