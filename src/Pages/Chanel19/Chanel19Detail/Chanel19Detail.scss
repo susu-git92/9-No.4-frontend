@@ -1,0 +1,202 @@
+.container {
+    display: flex;
+
+
+    .img_slider {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 250vh;
+        padding-left: 10%;
+        margin-top: 15%;
+
+
+        .img1 {
+            width: 80%;
+            height: 80%;
+            background-image: url("https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1160b02877mh694-8826448871454.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .img2 {
+            width: 80%;
+            height: 80%;
+            background-image: url("https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-alternative-as1160b02877mh694-8826448740382.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .img3 {
+            width: 80%;
+            height: 80%;
+            background-image: url("https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-other-as1160b02877mh694-8826449592350.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .img4 {
+            width: 60%;
+            height: 60%;
+            background-image: url("https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-extra-as1160b02877mh694-8826448936990.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .product_box {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        width: 30%;
+        top: 20%;
+        left: 60%;
+
+        .name_box {
+            height: 8%;
+            border-bottom: thick solid black;
+
+            .name {
+                font-family: abchanel-corpo, 맑은고딕, Malgun Gothic, Apple Gothic, 돋움, Dotum, 굴림, Gulim, sans-serif;
+                font-size: 25px;
+                letter-spacing: 1px;
+                font-weight: 600;
+            }
+        }
+
+        .detail_box {
+
+            margin-top: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 30%;
+
+            font-family: 맑은고딕, Malgun Gothic, Apple Gothic, 돋움, Dotum, 굴림, Gulim, sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            letter-spacing: 1px;
+
+            .item_size {
+                margin: 2% 0
+            }
+
+            .unit_change {
+                margin-left: 1%;
+            }
+
+            .price {
+                font-family: abchanel-corpo, 맑은고딕, Malgun Gothic, Apple Gothic, 돋움, Dotum, 굴림, Gulim, sans-serif;
+                font-size: 16px;
+                letter-spacing: 2px;
+                font-weight: 700;
+                margin-top: 5%;
+            }
+        }
+
+        .option_box {
+            margin-top: 5%;
+
+            font-family: 맑은고딕, Malgun Gothic, Apple Gothic, 돋움, Dotum, 굴림, Gulim, sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+
+
+            .option_number {
+                font-size: 12px;
+                font-weight: 500;
+                margin: 5% 0;
+            }
+
+            .option_slider {
+
+                height: 80%;
+
+                .option_category_list {
+                    display: flex;
+                    height: 20%;
+                    border-bottom: thin solid rgba(90, 90, 90, 0.3);
+
+
+                    .option_category1 {
+                        height: 106%;
+                        margin-right: 5%;
+                        border-bottom: 2px solid black;
+                    }
+
+                    .option_category2 {
+                        height: 106%;
+                        margin-right: 5%;
+                        border-bottom: 2px solid black;
+                    }
+
+                    .option_category3 {
+                        height: 106%;
+                        margin-right: 5%;
+                        border-bottom: 2px solid black;
+                    }
+                }
+
+                .option_img_list {
+                    display: flex;
+                    justify-content: flex-start;
+                    height: 80%;
+
+                    .option_img1 {
+                        width: 60%;
+                        height: 60%;
+                        background-image: url("https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_262/chanel-19-flap-bag-blue-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1160b02875n0902-8828578431006.jpg");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin: 5% 0;
+                    }
+
+                    .option_img2 {
+                        width: 60%;
+                        height: 60%;
+                        background-image: url("https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_262/chanel-19-flap-bag-black-goatskin-gold-tone-silver-tone-ruthenium-finish-metal-goatskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1160b0321594305-8829413228574.jpg");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin: 5% 0;
+                    }
+
+                    .option_img3 {
+                        width: 60%;
+                        height: 60%;
+                        background-image: url("https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_262/chanel-19-flap-bag-light-pink-goatskin-gold-tone-silver-tone-ruthenium-finish-metal-goatskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1160b02511n5948-8825006030878.jpg");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin: 5% 0;
+                    }
+                }
+            }
+
+            .find_store_box {
+                display: flex;
+                align-items: center;
+                height: 40%;
+                border-bottom: thin solid rgba(90, 90, 90, 0.3);
+                border-top: thin solid rgba(90, 90, 90, 0.3);
+
+                .find_store_icon {}
+
+                .find_store_text {
+                    font-size: 12px;
+                    font-weight: 500;
+                    margin-left: 15%;
+                }
+            }
+
+            .law {
+                margin-top: 3%;
+                font-size: 13px;
+                color: rgba(90, 90, 90, 0.8);
+
+                .law_link {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
