@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './ModalCategory.scss';
@@ -94,7 +95,11 @@ class CategoryDropdown extends React.Component {
             <li>시즌 신상품</li>
             <li>클래식 플랩 백</li>
             <li>2.55 플랩 백</li>
-            <li>Chanel 19 백</li>
+            <li>
+              <Link to="/chanel19" className="productLink">
+                Chanel 19 백
+              </Link>
+            </li>
             <li>샤넬 가브리엘 백</li>
             <li>보이 샤넬 플랩 백</li>
             <li>All Handbags</li>

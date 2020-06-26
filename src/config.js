@@ -2,6 +2,8 @@ export const srcs = {
   video: {
     main:
       'http://www.chanel.com/videos/e_volume:mute/q_90,f_mp4,c_scale,w_2560,c_limit/FSH-1585840357798-hpmodedesktop.mp4',
+    mobile:
+      'https://www.chanel.com/videos/e_volume:mute/q_90,f_mp4,c_scale,w_2048,c_limit/FSH-1585839895323-hpmodemobile.mp4',
   },
   img: {
     logo: {

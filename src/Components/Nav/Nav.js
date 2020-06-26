@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ModalCategory from '../ModalCategory/ModalCategory';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -24,7 +25,9 @@ class Nav extends React.Component {
       <div className="Nav">
         <div className="NavWrapper">
           <div className="boldLine" />
-          <img src={srcs.img.logo.black} alt="chanel logo" />
+          <Link to="/chanel19" className="productLink">
+            <img src={srcs.img.logo.black} alt="chanel logo" />
+          </Link>
           <div className="iconWrapper">
             <FontAwesomeIcon className="searchIcon" icon={faSearch} />
             <FontAwesomeIcon className="userIcon" icon={faUser} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -15,7 +16,9 @@ class Footer extends React.Component {
     return (
       <div className="Footer">
         <div className="logoWrapper">
-          <img src={srcs.img.logo.white} alt="chanel logo" />
+          <Link to="/chanel19" className="productLink">
+            <img src={srcs.img.logo.white} alt="chanel logo" />
+          </Link>
         </div>
         <div className="listContainer">
           <div className="listWrapper">
