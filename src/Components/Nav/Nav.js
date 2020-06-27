@@ -9,7 +9,7 @@ import { srcs } from '../../config';
 class Nav extends React.Component {
   state = {
     isActive: 0,
-    searchModal: false,
+    searchModal: true,
   };
   selectedMenu = (num) => {
     this.setState({
