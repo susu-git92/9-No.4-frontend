@@ -31,7 +31,7 @@ return (
 
         <div className = "newsLogoWrapper">
           <div className = "wrapperwrapper">
-            <img alt="newsHeader" src={srcs.img.news.newsLetterLogo}></img> 
+            <img className="newsHeader" src={srcs.img.news.newsLetterLogo}></img> 
           </div>
         </div>
 

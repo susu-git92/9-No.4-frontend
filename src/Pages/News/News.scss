@@ -13,7 +13,7 @@
     position: relative;
     height: 400vh;
     top: -85vh;
-    z-index: 10;
+
     background-color: #fff;
 
     .newsLogoWrapper {
@@ -26,6 +26,21 @@
         display: flex;
         align-items: center;
         padding-left: 460px;
+
+        // background: url(/asset/frontstage/img/chanel-news.gif) no-repeat;
+        //background-size: auto 100%;
+        //-webkit-backface-visibility: hidden;
+        //backface-visibility: hidden;
+        //margin: 0 auto;
+        //transform: scale(1);
+        //transform-origin: top center;
+        //transition: transform 0.2s ease;
+        img {
+          z-index: 200;
+        }
+        .newsHeader {
+          position: fixed;
+        }
       }
     }
   }
@@ -35,5 +50,7 @@
     align-items: center;
     border: 1px solid blue;
     width: 45%;
+    margin-top: 150px;
+    z-index: 10;
   }
 }
