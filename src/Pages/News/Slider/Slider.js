@@ -56,14 +56,10 @@ return(
 
             <div className = "each-slide">                
               <div className = "slideImg">
-                <img width= "auto" height= "100%"  src={photo.url} />
+                <img width= "100%" height= "100%"  src={photo.url} />
                 <i class="fs-icon icon-hv4-arrow-right" aria-hidden="true"></i>
               </div>
             </div>
-            
-
-           
-
           
         )
       })}
@@ -74,3 +70,4 @@ return(
 }
 }
 export default SlideView;
+  

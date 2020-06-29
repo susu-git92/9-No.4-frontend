@@ -4,7 +4,8 @@ export const srcs = {
       'http://www.chanel.com/videos/e_volume:mute/q_90,f_mp4,c_scale,w_2560,c_limit/FSH-1585840357798-hpmodedesktop.mp4',
     mobile:
       'https://www.chanel.com/videos/e_volume:mute/q_90,f_mp4,c_scale,w_828,c_limit/FSH-1585839895323-hpmodemobile.mp4',
-  },
+  
+    },
   img: {
     logo: {
       black:
@@ -19,6 +20,8 @@ export const srcs = {
     },
     news: {
       newsLetterLogo: 'https://www.chanel.com/asset/frontstage/img/chanel-news.gif',
+      firstvideo: "https://youtube.com/embed/8CjvnDzJXHM",
+      thirdvideo: 'https://youtube.com/embed/dP5YRKMQIBk',
     }
   },
-};
+}; 
