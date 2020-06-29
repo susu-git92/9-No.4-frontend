@@ -1,8 +1,12 @@
 import React from 'react';
 import Login from './Login/Login'
 import Signup from './Signup/Signup';
+import Nav from '../../Components/Nav/Nav';
+import Footer from '../../Components/Footer/Footer';
 
-export class Renderer extends React.Component{
+
+
+export class loginscreen extends React.Component{
   constructor() {
     super();
     this.state = {
@@ -21,7 +25,8 @@ export class Renderer extends React.Component{
 
   render () {
     return (
-          <div id="Renderer">
+      <div id="Loginscreen">
+        <Nav/>
             <div className = "screen">
                 <div className="container">
                   <div className="accountBox">
@@ -52,12 +57,13 @@ export class Renderer extends React.Component{
                   </div>
                 </div>
             </div>
-          </div>
+        <Footer/>  
+      </div>
     );
   }
 }
 
-export default Renderer;
+export default loginscreen;
 
 
 

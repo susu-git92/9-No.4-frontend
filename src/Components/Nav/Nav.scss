@@ -7,6 +7,10 @@
   top: 0;
   z-index: 100;
 
+  .hamburgerBtn {
+    display: none;
+  }
+
   .NavWrapper {
     .boldLine {
       height: 8px;
@@ -90,7 +94,7 @@
 
         .hamburgerBtn {
           font-size: 20px;
-          display: block;
+          display: none;
           position: absolute;
           left: 25px;
           top: 22px;

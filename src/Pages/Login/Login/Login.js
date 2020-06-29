@@ -21,14 +21,13 @@ class Login extends React.Component {
   changeHandle = (e) => {
     e.preventDefault();
     this.setState ({
-      inputId: e.target.value,
-      inputPw: e.target.value,
+      [e.target.name]: e.target.value,
    })
       this.setState({changePw: e.target.value.length > 0 ? true : false})
       this.setState({changePw: e.target.value.includes('@')? true : false})
   }
 
-  validate = () => {
+  /*validate = () => {
     let idError = "";
     let pwError = "";
 
@@ -49,15 +48,15 @@ class Login extends React.Component {
       return false;
     }
       return true;
-  };
+  };*/
 
   submitLogin = (e) => {
     e.preventDefault();
-    const isValid = this.validate();
+    /*const isValid = this.validate();
     if (isValid) {
-      console.log(this.state);
+      console.log(this.state);*/
 
-      /*
+    
     fetch(
       'http://10.58.1.76:8000/account/sign-in',
       {
@@ -73,19 +72,20 @@ class Login extends React.Component {
       },
     )
       .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다.
-      //.then((res) => console.log(res))
+      .then((res) => console.log(res))
       //.then((res) => console.log(res.status))
       .then((res) => localStorage.setItem('access_token', res)) //로그인시
-    /* if (res.token) {
-      localStorage.setItem('access_token', res.token)
-     // this.props.history.push('/main') //로그인할때 연결 
+      // if (res.token) {
+      //localStorage.setItem('access_token', res.token)
+      this.props.history.push('/main') //로그인할때 연결 
   }
- */
-    }
-  }
+ 
+    
+
 
   render () {
     console.log('this.state.inputId>>>', this.state.inputId);
+    console.log('this.state.inputPw>>>', this.state.inputPw);
     return (
         <div className="Login">
           <form>
