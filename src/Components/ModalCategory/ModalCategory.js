@@ -6,12 +6,12 @@ import { srcs } from '../../config';
 
 class ModalCategory extends React.Component {
   render() {
-    const { currentMenu, onClick } = this.props;
+    const { currentMenu, handleCloseBtn } = this.props;
 
     return (
       <div className="ModalCategory">
-        {currentMenu === 2 && <CollectionDropdown onClick={onClick} />}
-        {currentMenu === 3 && <CategoryDropdown onClick={onClick} />}
+        {currentMenu === 2 && <CollectionDropdown onClick={handleCloseBtn} />}
+        {currentMenu === 3 && <CategoryDropdown onClick={handleCloseBtn} />}
       </div>
     );
   }
