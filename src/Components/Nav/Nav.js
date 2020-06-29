@@ -1,4 +1,6 @@
 import React from 'react';
+import ModalCategory from '../ModalCategory/ModalCategory';
+import Search from '../Search/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -7,7 +9,6 @@ import {
   faBars,
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
-import ModalCategory from '../ModalCategory/ModalCategory';
 import { srcs } from '../../config';
 import './Nav.scss';
 
@@ -15,6 +16,7 @@ class Nav extends React.Component {
   state = {
     isActive: 0,
     mobileMenuActive: false,
+    searchModal: true,
   };
 
   selectedMenu = (num) => {
@@ -35,64 +37,86 @@ class Nav extends React.Component {
     });
   };
 
+  searchToggle = () => {
+    this.setState({
+      searchModal: !this.state.searchModal,
+    });
+  };
+
   render() {
-    const { isActive, mobileMenuActive } = this.state;
+    const { isActive, mobileMenuActive, searchModal } = this.state;
     return (
       <div className="Nav">
-        <div className="NavWrapper">
-          <div className="boldLine" />
-          <img src={srcs.img.logo.black} alt="chanel logo" />
-          <FontAwesomeIcon
-            className="hamburgerBtn"
-            onClick={this.handleMobileMenu}
-            icon={faBars}
-          />
-          <div className="iconWrapper">
-            <FontAwesomeIcon className="searchIcon" icon={faSearch} />
-            <FontAwesomeIcon className="userIcon" icon={faUser} />
-            <FontAwesomeIcon className="starIcon" icon={faStar} />
-          </div>
-          <div
-            className="MobileMenuWrapper"
-            style={{ display: mobileMenuActive ? 'block' : 'none' }}
-          >
-            <MobileMenu
-              isActive={isActive}
-              handleSelectedMobileMenu={() => this.selectedMenu}
-              mobileMenuActive={this.handleMobileMenu}
+        {searchModal ? (
+          <>
+            <div className="NavWrapper">
+              <div className="boldLine" />
+              <img src={srcs.img.logo.black} alt="chanel logo" />
+              <FontAwesomeIcon
+                className="hamburgerBtn"
+                onClick={this.handleMobileMenu}
+                icon={faBars}
+              />
+              <div className="iconWrapper">
+                <FontAwesomeIcon
+                  className="searchIcon"
+                  onClick={this.searchToggle}
+                  icon={faSearch}
+                />
+                <FontAwesomeIcon className="userIcon" icon={faUser} />
+                <FontAwesomeIcon className="starIcon" icon={faStar} />
+              </div>
+              <div
+                className="MobileMenuWrapper"
+                style={{ display: mobileMenuActive ? 'block' : 'none' }}
+              >
+                <MobileMenu
+                  isActive={isActive}
+                  handleSelectedMobileMenu={() => this.selectedMenu}
+                  mobileMenuActive={this.handleMobileMenu}
+                />
+              </div>
+
+              <ul className="desktopMenuList">
+                <li
+                  className={this.state.isActive === 1 ? 'active' : 'none'}
+                  onClick={() => this.selectedMenu(1)}
+                >
+                  오뜨 꾸뛰르
+                </li>
+                <li
+                  className={this.state.isActive === 2 ? 'active' : 'none'}
+                  onClick={() => this.selectedMenu(2)}
+                >
+                  컬렉션
+                </li>
+                <li
+                  className={this.state.isActive === 3 ? 'active' : 'none'}
+                  onClick={() => this.selectedMenu(3)}
+                >
+                  카테고리
+                </li>
+                <li
+                  className={this.state.isActive === 4 ? 'active' : 'none'}
+                  onClick={() => this.selectedMenu(4)}
+                >
+                  CHANEL NEWS
+                </li>
+              </ul>
+            </div>
+            <ModalCategory
+              currentMenu={isActive}
+              handleCloseBtn={this.closeModal}
             />
-          </div>
-          <ul className="desktopMenuList">
-            <li
-              className={isActive === 1 ? 'active' : 'none'}
-              onClick={() => this.selectedMenu(1)}
-            >
-              오뜨 꾸뛰르
-            </li>
-            <li
-              className={isActive === 2 ? 'active' : 'none'}
-              onClick={() => this.selectedMenu(2)}
-            >
-              컬렉션
-            </li>
-            <li
-              className={isActive === 3 ? 'active' : 'none'}
-              onClick={() => this.selectedMenu(3)}
-            >
-              카테고리
-            </li>
-            <li
-              className={isActive === 4 ? 'active' : 'none'}
-              onClick={() => this.selectedMenu(4)}
-            >
-              CHANEL NEWS
-            </li>
-          </ul>
-        </div>
-        <ModalCategory
-          currentMenu={isActive}
-          handleCloseBtn={this.closeModal}
-        />
+          </>
+        ) : (
+          <Search
+            style={{
+              display: searchModal ? 'block' : 'none',
+            }}
+            onClick={this.searchToggle}
+          />
+        )}
       </div>
     );
   }
