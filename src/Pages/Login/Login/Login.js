@@ -5,50 +5,51 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      inputId : "",
-      inputPw: "",
-      changeId: "",
-      changePw: "",
-      idError: "",
-      pwError: "",
+      inputId: '',
+      inputPw: '',
+      changeId: '',
+      changePw: '',
+      idError: '',
+      pwError: '',
     };
-  };
+  }
 
   goToSignup = () => {
-    this.props.history.push('/main')
-  }
+    this.props.history.push('/main');
+  };
 
   changeHandle = (e) => {
     e.preventDefault();
-    this.setState ({
+    this.setState({
       inputId: e.target.value,
       inputPw: e.target.value,
-   })
-      this.setState({changePw: e.target.value.length > 0 ? true : false})
-      this.setState({changePw: e.target.value.includes('@')? true : false})
-  }
+    });
+    this.setState({ changePw: e.target.value.length > 0 ? true : false });
+    this.setState({ changePw: e.target.value.includes('@') ? true : false });
+  };
 
   validate = () => {
-    let idError = "";
-    let pwError = "";
+    let idError = '';
+    let pwError = '';
 
-    if (!this.state.inputId.includes('@')) { //if it is not includes @ 이라는 뜻 
-      console.log(this.state.inputId.includes("@"), idError)
-      idError = "Please note: use a valid email such as name@mail.com"
+    if (!this.state.inputId.includes('@')) {
+      //if it is not includes @ 이라는 뜻
+      console.log(this.state.inputId.includes('@'), idError);
+      idError = 'Please note: use a valid email such as name@mail.com';
     } else {
-      console.log(idError)
-      return "";
+      console.log(idError);
+      return '';
     }
 
     if (!this.state.inputPw.length > 0) {
-      pwError = "Please note: Password is required";
-    } 
-      
+      pwError = 'Please note: Password is required';
+    }
+
     if (idError || pwError) {
-      this.setState ({idError : idError, pwError: pwError});
+      this.setState({ idError: idError, pwError: pwError });
       return false;
     }
-      return true;
+    return true;
   };
 
   submitLogin = (e) => {
@@ -82,67 +83,67 @@ class Login extends React.Component {
   }
  */
     }
-  }
+  };
 
-  render () {
+  render() {
     console.log('this.state.inputId>>>', this.state.inputId);
     return (
-        <div className="Login">
-          <form>
-            <div className = "welcomeText1">
-              <p>Welcome back.</p>
+      <div className="Login">
+        <form>
+          <div className="welcomeText1">
+            <p>Welcome back.</p>
+          </div>
+          <div className="welcomeText2">
+            <p>Sign in with your email and password.</p>
+          </div>
+
+          <div className="formBox">
+            <div className="form-control">
+              <input
+                type="text"
+                id="username"
+                placeholder="Email"
+                name="inputId"
+                onChange={this.changeHandle}
+              />
+              <small style={{ fontSize: 12, color: 'red' }}>
+                {this.state.idError}
+              </small>
             </div>
-            <div className = "welcomeText2">
-              <p>Sign in with your email and password.</p>
+
+            <div className="form-control">
+              <input
+                type="password"
+                id="email"
+                placeholder="Password"
+                name="inputPw" //네임값 꼭 지정해줘야함(리액트)
+                onChange={this.changeHandle}
+              />
+              <small style={{ fontSize: 12, color: 'red' }}>
+                {this.state.pwError}
+              </small>
             </div>
-                    
-                    
-              <div className = "formBox">
-                <div className="form-control">
-                  <input type="text" id="username" 
-                    placeholder="Email"
-                    name = "inputId" 
-                    onChange = {this.changeHandle}
-                  />  
-                  <small style = {{fontSize: 12, color: "red"}}>
-                    {this.state.idError}</small> 
-                  
+          </div>
+
+          <div className="link-2">
+            <div className="buttonBox">
+              <button
+                type="submit"
+                id="submit"
+                className="button"
+                onClick={this.submitLogin}
+                noValidate
+              >
+                <div className="btnWrapper">
+                  <div id="signinbox">Sign in</div>
                 </div>
-
-                <div className="form-control">
-                  <input type="password" id="email" 
-                    placeholder="Password"
-                    name = "inputPw" //네임값 꼭 지정해줘야함(리액트)
-                    onChange={this.changeHandle}
-                  />  
-                  <small style = {{fontSize: 12, color: "red"}}>{this.state.pwError}</small>         
-                </div>
-
-              </div>          
-
-              <div className= "link-2">
-                  
-                <div className="buttonBox">
-                  <button type="submit" id="submit" className="button"
-                    onClick = {this.submitLogin} noValidate >
-                  <div className="btnWrapper">
-                    <div id="signinbox">Sign in</div>
-                  </div>
-                </button>
-              </div>
-                
+              </button>
             </div>
-
-          </form>
-
-        </div>
-    )
+          </div>
+        </form>
+      </div>
+    );
   }
 }
 
 export default Login;
-
-
-
-
-

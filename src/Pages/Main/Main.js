@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
-import './Main.scss';
 import { srcs } from '../../config';
+import './Main.scss';
 
 class Main extends React.Component {
   render() {
@@ -23,7 +24,9 @@ class Main extends React.Component {
             <div className="textWrapper">
               <p>CHANEL 19 백</p>
               <h4>부티크</h4>
-              <div>더보기</div>
+              <Link className="productLink" to="/chanel19">
+                <div>더보기</div>
+              </Link>
             </div>
           </div>
           <div className="centerContainer">

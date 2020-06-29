@@ -37,11 +37,15 @@
 					font-size: 1.8rem;
 				}
 
-				div {
-					padding: 10px 20px;
-					background-color: #fff;
-					font-size: 0.8rem;
-					cursor: pointer;
+				.productLink {
+					text-decoration: none;
+					color: black;
+					div {
+						padding: 10px 20px;
+						background-color: #fff;
+						font-size: 0.8rem;
+						cursor: pointer;
+					}
 				}
 			}
 		}

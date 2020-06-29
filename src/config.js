@@ -18,7 +18,8 @@ export const srcs = {
         'https://www.chanel.com/images/q_auto,f_auto,fl_lossy,dpr_auto/w_450/FSH-1585566665375-megamenuhv4.jpg',
     },
     news: {
-      newsLetterLogo: 'https://www.chanel.com/asset/frontstage/img/chanel-news.gif',
-    }
+      newsLetterLogo:
+        'https://www.chanel.com/asset/frontstage/img/chanel-news.gif',
+    },
   },
 };
