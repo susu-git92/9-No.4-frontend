@@ -10,8 +10,8 @@ import { srcs } from '../../config';
 import SlideView from '../News/Slider/Slider';
 //import '../../../node_modules/slick-carousel/slick/slick.css';
 //import '../../../node_modules/slick-carousel/slick/slick-theme.css';
-import { faCheckSquare, faSpinner } from "@fortawesome/free-solid-svg-icons"
-import { faSquare } from "@fortawesome/free-regular-svg-icons"
+//import { faCheckSquare, faSpinner } from "@fortawesome/free-solid-svg-icons"
+//import { faSquare } from "@fortawesome/free-regular-svg-icons"
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -31,7 +31,7 @@ return (
 
         <div className = "newsLogoWrapper">
           <div className = "wrapperwrapper">
-            <img alt="newsHeader" src={srcs.img.news.newsLetterLogo}></img>
+            <img alt="newsHeader" src={srcs.img.news.newsLetterLogo}></img> 
           </div>
         </div>
 

@@ -1,5 +1,4 @@
 .Nav {
-<<<<<<< HEAD
   background-color: white;
   width: 100%;
   height: 140px;
@@ -68,73 +67,72 @@
       transition: border-bottom 0.2s ease-in-out;
     }
   }
-=======
-	background-color: white;
-	width: 100%;
-	height: 140px;
-	text-align: center;
-	position: fixed;
-	top: 0;
-	z-index: 100;
 
-	.NavWrapper {
-		.boldLine {
-			height: 8px;
-			background-color: black;
-		}
-		img {
-			margin-top: 25px;
-			width: 180px;
-		}
+  background-color: white;
+  width: 100%;
+  height: 140px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 
-		.iconWrapper {
-			font-size: 18px;
-			position: absolute;
-			right: 100px;
-			top: 40px;
-			opacity: 0.8;
+  .NavWrapper {
+    .boldLine {
+      height: 8px;
+      background-color: black;
+    }
+    img {
+      margin-top: 25px;
+      width: 180px;
+    }
 
-			.starIcon,
-			.userIcon {
-				margin-left: 15px;
-				cursor: pointer;
-			}
+    .iconWrapper {
+      font-size: 18px;
+      position: absolute;
+      right: 100px;
+      top: 40px;
+      opacity: 0.8;
 
-			.searchIcon {
-				cursor: pointer;
-			}
-		}
+      .starIcon,
+      .userIcon {
+        margin-left: 15px;
+        cursor: pointer;
+      }
 
-		ul {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-top: 32px;
-			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      .searchIcon {
+        cursor: pointer;
+      }
+    }
 
-			li {
-				font-size: 12.5px;
-				margin-right: 30px;
-				padding-bottom: 26px;
-				color: rgba(0, 0, 0, 0.7);
-				font-weight: 500;
-				border-bottom: 5px solid #fff;
-				cursor: pointer;
-				transition: border-bottom 0.2s ease-in-out;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 32px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-				&:last-child {
-					margin-right: 0;
-				}
+      li {
+        font-size: 12.5px;
+        margin-right: 30px;
+        padding-bottom: 26px;
+        color: rgba(0, 0, 0, 0.7);
+        font-weight: 500;
+        border-bottom: 5px solid #fff;
+        cursor: pointer;
+        transition: border-bottom 0.2s ease-in-out;
 
-				&:hover {
-					color: rgba(0, 0, 0, 0.4);
-				}
-			}
-			.active {
-				border-bottom: 5px solid black;
-				transition: border-bottom 0.2s ease-in-out;
-			}
-		}
-	}
->>>>>>> eabf886aa060ade4b224d33a212398fd414f9f0a
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
+      .active {
+        border-bottom: 5px solid black;
+        transition: border-bottom 0.2s ease-in-out;
+      }
+    }
+  }
 }
