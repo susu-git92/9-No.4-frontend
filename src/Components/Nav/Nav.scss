@@ -7,15 +7,23 @@
 	top: 0;
 	z-index: 100;
 
+	@media screen and (min-width: 820px) {
+		.MobileMenu {
+			display: none;
+		}
+	}
+
 	.NavWrapper {
 		.boldLine {
 			height: 8px;
 			background-color: black;
 		}
+
 		img {
 			margin-top: 25px;
 			width: 180px;
 		}
+
 		.hamburgerBtn {
 			display: none;
 		}
@@ -175,7 +183,7 @@
 						cursor: pointer;
 					}
 
-					ul {
+					.mobileMenuList {
 						text-align: left;
 						padding: 50px 20px;
 
