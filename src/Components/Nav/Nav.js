@@ -11,33 +11,37 @@ class Nav extends React.Component {
     isActive: 0,
     searchModal: true,
   };
+
   selectedMenu = (num) => {
     this.setState({
       isActive: num,
     });
   };
+
   closeModal = () => {
     this.setState({
       isActive: 0,
     });
   };
+
   SearchToggle = () => {
     this.setState({
       searchModal: !this.state.searchModal,
     });
   };
+
   render() {
     return (
       <div className="Nav">
         {this.state.searchModal ? (
-          <div>
+          <>
             <div className="NavWrapper">
               <div className="boldLine" />
               <img src={srcs.img.logo.black} alt="chanel logo" />
               <div className="iconWrapper">
                 <FontAwesomeIcon
-                  onClick={this.SearchToggle}
                   className="searchIcon"
+                  onClick={this.SearchToggle}
                   icon={faSearch}
                 />
                 <FontAwesomeIcon className="userIcon" icon={faUser} />
@@ -74,7 +78,7 @@ class Nav extends React.Component {
               currentMenu={this.state.isActive}
               onClick={this.closeModal}
             />
-          </div>
+          </>
         ) : (
           <Search
             style={{
