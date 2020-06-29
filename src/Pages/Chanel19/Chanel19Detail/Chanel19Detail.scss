@@ -82,8 +82,12 @@
                 margin: 2% 0
             }
 
-            .unit_change {
+            .unit_box {
                 margin-left: 1%;
+
+                .unit_change {
+                    text-decoration: underline;
+                }
             }
 
             .price {
