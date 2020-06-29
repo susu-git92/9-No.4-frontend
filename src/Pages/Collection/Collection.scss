@@ -1,0 +1,19 @@
+.Collection {
+	width: 100vh;
+
+	.collectionWrapper {
+		position: relative;
+		height: 400vh;
+		top: calc(-100vh + 90px);
+		z-index: 10;
+		background-color: #fff;
+	}
+}
+
+@media screen and (min-width: 820px) {
+	.Collection {
+		.collectionWrapper {
+			top: calc(-100vh + 150px);
+		}
+	}
+}
