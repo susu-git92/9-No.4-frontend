@@ -26,7 +26,11 @@ class ProductSpec extends Component {
           {this.state.size}
           <span className="unit_box">
             (
-            <span className="unit_change" onClick={this.unitClick}>
+            <span
+              className="unit_change"
+              onClick={this.unitClick}
+              style={{ cursor: 'pointer' }}
+            >
               {this.state.unit}
             </span>
             )
