@@ -13,43 +13,36 @@ import SlideView from '../News/Slider/Slider';
 //import { faCheckSquare, faSpinner } from "@fortawesome/free-solid-svg-icons"
 //import { faSquare } from "@fortawesome/free-regular-svg-icons"
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export class News extends React.Component {
+  render() {
+    return (
+      <div className="news">
+        <Nav />
 
-render() {
+        <div className="newsWrapper">
+          <div className="newsHeader">
+            <div className="newsLogoWrapper">
+              <div className="wrapperwrapper">
+                <img
+                  className="newsHeader"
+                  src={srcs.img.news.newsLetterLogo}
+                  alt="new logo"
+                ></img>
+              </div>
+            </div>
 
-return (
- 
-
-  <div className="news">
-    <Nav/>
- 
-    <div className = "newsWrapper">         
-      <div className="newsHeader" >
-
-        <div className = "newsLogoWrapper">
-          <div className = "wrapperwrapper">
-            <img className="newsHeader" src={srcs.img.news.newsLetterLogo}></img> 
+            <div className="newsArticle">
+              <SlideView />
+            </div>
           </div>
         </div>
-
-      <div className = "newsArticle">
-        <SlideView/>
-      </div>   
-
+        <Footer />
       </div>
-    </div>
-    <Footer/> 
-
-  </div>
-
-
-
-
-);
-};
+    );
+  }
 }
 
 export default News;
