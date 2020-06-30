@@ -3,28 +3,42 @@
 
 	.collectionWrapper {
 		position: relative;
-		top: calc(-100vh);
+		top: calc(-100vh + 140px);
 		height: 300vh;
 		width: 100%;
 		z-index: 10;
 		background-color: #fff;
 
 		div {
-			position: relative;
-			bottom: -60vh;
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: center;
 			align-items: flex-end;
-			margin: 3vh 1vw;
 
-			.imgWrapper {
-				width: 200px;
-				height: 300px;
+			.itemsContainer {
+				max-width: 200px;
+				max-height: 320px;
+				margin: 3vh 1vw;
+				padding-bottom: 5px;
 
-				img {
-					max-width: 100%;
-					height: auto;
+				&:hover {
+					border-bottom: 5px solid black;
+				}
+
+				.nameWrapper {
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+				}
+
+				.imgWrapper {
+					width: 200px;
+					height: 300px;
+
+					img {
+						max-width: 100%;
+						height: auto;
+					}
 				}
 			}
 		}
