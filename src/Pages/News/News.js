@@ -9,13 +9,15 @@ import { srcs } from '../../config';
 //import "slick-carousel/slick/slick-theme.css";
 import SlideView from '../News/Slider/Slider';
 import SlideView2 from '../News/Slider2/Slider2';
+import SlideView3 from '../News/Slider3/Slider3';
+
 //import '../../../node_modules/slick-carousel/slick/slick.css';
 //import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 //import { faCheckSquare, faSpinner } from "@fortawesome/free-solid-svg-icons"
 //import { faSquare } from "@fortawesome/free-regular-svg-icons"
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 
 export class News extends React.Component {
 
@@ -32,7 +34,9 @@ return (
 
         <div className = "newsLogoWrapper">
           <div className = "wrapperwrapper">
-            <img className="newsHeader" src={srcs.img.news.newsLetterLogo}></img> 
+            <img className="newsHeader" src={srcs.img.news.newsLetterLogo}
+           
+            ></img> 
           </div>
         </div>
 
@@ -129,28 +133,59 @@ return (
 
 
           <SlideView2/>
+          <div className="news-desc">
+            <p className="news-credits font-family-basic">© Julien Martinez Leclerc</p>
+
+            <p className= "news-date">
+              <time datetime="2020-06-03" class="__web-inspector-hide-shortcut__">2020년 6월 3일 수요일</time>
+            </p>
+
+            <h2 className="news-title">
+              <p>여유로운 매혹</p>
+              <p>2020/21 크루즈</p> 
+            </h2>
+
+            <div className="news-text">
+                <p>샤넬 2020/21 크루즈 컬렉션, 자유와 여유로움이 어우러진 매혹. 포토그래퍼 줄리앙 마르티네즈 르클레크. 
+                <br></br>11월부터 부티크에서 만나보실 수 있습니다.</p>
+                <p>
+                  <a href="https://www.instagram.com/explore/tags/chanelcruise/?hl=en/" target="_blank" rel="noopener">#CHANELCruise</a>
+                </p>
+            </div>
+          </div>
+
+
+          <SlideView3/>
+          <div className="news-desc">
+            <p className="news-credits font-family-basic">© Julien Martinez Leclerc</p>
+
+            <p className= "news-date">
+              <time datetime="2020-06-01" class="__web-inspector-hide-shortcut__">2020년 6월 1일 월요일</time>
+            </p>
+
+            <h2 className="news-title">
+              <p>커스텀 주얼리</p>
+              <p>프린트</p>
+              <p>2020/21 크루즈</p> 
+            </h2>
+
+            <div className="news-text">
+                <p>샤넬 2020/21 크루즈 컬렉션, 자유와 여유로움이 어우러진 매혹. 포토그래퍼 줄리앙 마르티네즈 르클레크. 
+                <br></br>11월부터 부티크에서 만나보실 수 있습니다.</p>
+                <p>
+                  <a href="https://www.instagram.com/explore/tags/chanelcruise/?hl=en/" target="_blank" rel="noopener">#CHANELCruise</a>
+                </p>
+            </div>
+          </div>
      
 
         </div>
-
-        
-        
-
-
-
-       
-      
-  
-
-       
          
 
       </div>
     </div>
     <Footer/> 
-
   </div>
-
 );
 };
 }

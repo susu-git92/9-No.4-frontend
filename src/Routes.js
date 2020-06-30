@@ -20,6 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/chanel19" component={Chanel19} />
           <Route exact path="/chanel19detail" component={Chanel19Detail} />
           <Route exact path="/loginscreen" component={Loginscreen} />
+
         </Switch>
       </Router>
     );

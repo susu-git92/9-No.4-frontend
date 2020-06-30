@@ -1,4 +1,4 @@
-.slider {
+.slider3 {
   border: 1px solid red;
   width: 100%;
   height: 100vh;
@@ -35,7 +35,7 @@
   height: 80vh;
 }
 
-.slider {
+.slider3 {
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
@@ -43,7 +43,7 @@
   align-items: center;
 }
 
-.each-slide {
+.each-slide3 {
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -54,20 +54,34 @@
   //height: 80vh;
 }
 
-.slideImg {
+.slideImg3 {
   //padding-left: 202px;
   position: relative;
   justify-content: center;
+  width: 440px;
+  margin: 0 auto;
   //display: inline;
 }
 
-.slideImg img {
+.slideImg3 img {
   width: 100%;
   margin: 0 auto;
 }
 
 .slick-prev {
-  left: 50px;
+  left: -25px;
+}
+
+.slick-next {
+}
+
+.slick-prev::before {
+  visibility: visible;
+  position: absolute;
+  content: '';
+  background-image: url('../../../Images/left1.png');
+}
+.slick-next::before {
 }
 
 .articleGroup {
@@ -83,20 +97,13 @@ button.slick-arrow.slick-next {
   border-radius: 50%;
 }
 
-::before {
+.slick-prev::before {
   visibility: visible;
+  position: absolute;
+  content: '';
+  background-image: url('../../../Images/left1.png');
 }
 
 .logoImg {
   position: fixed;
-}
-
-.slick-next {
-}
-
-::before {
-  background-image: ('file:///C:/Users/chloejeong/Desktop/right1.png');
-
-  position: absolute;
-  content: '';
 }

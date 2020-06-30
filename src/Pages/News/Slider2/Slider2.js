@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Slider2.scss';
-import { srcs } from '../../../config';
 //import { Slide } from 'react-slideshow-image';
 import Slider2 from 'react-slick';
 //import '../../../node_modules/slick-carousel/slick/slick.css';
 //import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 
 const photos2 = [
   {
@@ -17,6 +17,7 @@ const photos2 = [
     url: "http://www.chanel.com/images/q_auto,f_auto,fl_lossy,dpr_auto/w_1344/FSH-CHN-1591781861682-200603chanelcruisejmllook035.jpg"
     }
 ]
+
 
 class SlideView2 extends React.Component{
 render () {
@@ -50,4 +51,8 @@ return(
 }
 }
 export default SlideView2;
+  
+
+
+
   

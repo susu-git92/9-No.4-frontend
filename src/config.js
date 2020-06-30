@@ -22,6 +22,7 @@ export const srcs = {
       newsLetterLogo: 'https://www.chanel.com/asset/frontstage/img/chanel-news.gif',
       firstvideo: "https://youtube.com/embed/8CjvnDzJXHM",
       thirdvideo: 'https://youtube.com/embed/dP5YRKMQIBk',
+      arrowleft: "https://www.google.com/url?sa=i&url=https%3A%2F%2Ficons-for-free.com%2Farrow%2Bleft%2Bchevron%2Bchevronleft%2Bleft%2Bleft%2Bicon%2Bicon-1320185731545502691%2F&psig=AOvVaw0NAU2Pl82H91DNqlGyAiYQ&ust=1593572508295000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOiOlbPGqOoCFQAAAAAdAAAAABAK",
     }
   },
 }; 
