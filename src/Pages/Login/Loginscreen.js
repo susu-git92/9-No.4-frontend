@@ -3,6 +3,7 @@ import Login from './Login/Login'
 import Signup from './Signup/Signup';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
+import { withRouter } from 'react-router-dom'
 
 
 
@@ -63,7 +64,7 @@ export class loginscreen extends React.Component{
   }
 }
 
-export default loginscreen;
+export default withRouter(loginscreen);
 
 
 

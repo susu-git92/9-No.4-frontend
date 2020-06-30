@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.scss';
+import { withRouter } from 'react-router-dom'
 
 class Login extends React.Component {
   constructor() {
@@ -9,12 +10,10 @@ class Login extends React.Component {
       inputPw: "",
       changeId: "",
       changePw: "",
-      idError: "",
-      pwError: "",
     };
   };
 
-  goToSignup = () => {
+  goToSignup ()  {
     this.props.history.push('/main')
   }
 
@@ -23,8 +22,8 @@ class Login extends React.Component {
     this.setState ({
       [e.target.name]: e.target.value,
    })
-      this.setState({changePw: e.target.value.length > 0 ? true : false})
-      this.setState({changePw: e.target.value.includes('@')? true : false})
+    this.setState({changeId: e.target.value.includes('@')? true : false})
+    this.setState({changePw: e.target.value.length > 0 ? true : false})
   }
 
   /*validate = () => {
@@ -52,13 +51,15 @@ class Login extends React.Component {
 
   submitLogin = (e) => {
     e.preventDefault();
+    console.log(this.state)
+
     /*const isValid = this.validate();
     if (isValid) {
       console.log(this.state);*/
 
     
     fetch(
-      'http://10.58.1.76:8000/account/sign-in',
+      'http://192.168.35.172:8000/account/sign-in',
       {
         //백엔드에서 받은 주소
         method: 'POST', //값이포스트 ,
@@ -74,7 +75,7 @@ class Login extends React.Component {
       .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다.
       .then((res) => console.log(res))
       //.then((res) => console.log(res.status))
-      .then((res) => localStorage.setItem('access_token', res)) //로그인시
+      .then((res) => localStorage.setItem('access_token')) //로그인시
       // if (res.token) {
       //localStorage.setItem('access_token', res.token)
       this.props.history.push('/main') //로그인할때 연결 
@@ -140,7 +141,7 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
 
 
 

@@ -23,12 +23,16 @@
     border-color: #1d1d1d;
     cursor: pointer;
     width: 50%;
+    padding-bottom: 10px;
+    font-weight: 550;
   }
   .signup-selected {
     border-bottom: 0.0625rem solid #d8d8d8;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 550;
     width: 50%;
+    padding-bottom: 10px;
   }
   .container {
     display: block;

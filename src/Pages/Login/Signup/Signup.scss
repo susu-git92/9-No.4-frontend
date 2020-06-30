@@ -26,6 +26,7 @@
     grid-auto-columns: 2fr;
     align-items: center;
     text-align: center;
+
     .signup {
       justify-content: stretch;
       border-bottom: 3px solid transparent;
@@ -33,6 +34,8 @@
       border-color: #1d1d1d;
       cursor: pointer;
       width: 50%;
+      padding-bottom: 10px;
+      font-weight: 550;
     }
     .signin-selected {
       justify-content: stretch;
@@ -40,6 +43,8 @@
       cursor: pointer;
       font-size: 14px;
       width: 50%;
+      padding-bottom: 10px;
+      font-weight: 550;
     }
   }
   .contentBox {
