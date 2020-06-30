@@ -30,6 +30,20 @@
         }
         .newsHeader {
           position: fixed;
+          display: block;
+          width: 780px;
+          height: auto;
+
+          background: url(/asset/frontstage/img/chanel-news.gif) no-repeat;
+          background-size: auto 100%;
+          margin: 0 auto;
+          transform: scale(1);
+          transform-origin: top center;
+          transition: transform 0.2s ease;
+          &.small {
+            //s width: 670px;
+            transform: scale(0.7);
+          }
         }
       }
     }

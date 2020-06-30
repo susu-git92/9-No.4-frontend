@@ -20,22 +20,48 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 export class News extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      //scrolltrigger: false,
+      prevScrollpos: window.pageYOffset,
+      visible: true
+    }
+  }
+
+  handleScroll = () => {
+    const { prevScrollpos } = this.state;
+  
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
+  
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  // Remove the event listener when the component is unmount.
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
 
 render() {
 
-return (
- 
+  return (
 
   <div className="news">
-    <Nav/>
- 
+    <Nav/> 
     <div className = "newsWrapper">         
       <div className="newsHeader" >
-
         <div className = "newsLogoWrapper">
           <div className = "wrapperwrapper">
-            <img className="newsHeader" src={srcs.img.news.newsLetterLogo}
-           
+            <img className={`newsHeader ${this.state.prevScrollpos > 0 && this.state.visible === false ? "small" : ""}`}  src={srcs.img.news.newsLetterLogo}
+            // style = {{ width: this.state.prevScrollpos > 0 && this.state.visible === false ? "670px" : "780px"}}
             ></img> 
           </div>
         </div>
