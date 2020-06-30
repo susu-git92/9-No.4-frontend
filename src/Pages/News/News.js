@@ -29,6 +29,7 @@ export class News extends React.Component {
                 <img
                   className="newsHeader"
                   src={srcs.img.news.newsLetterLogo}
+                  alt="new logo"
                 ></img>
               </div>
             </div>
