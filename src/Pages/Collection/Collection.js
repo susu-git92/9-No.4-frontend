@@ -28,7 +28,7 @@ class Collection extends React.Component {
               <div className="itemsContainer" key={item[idx + 1].name}>
                 <div className="nameWrapper">
                   {item[idx + 1].name}
-                  <FontAwesomeIcon icon={faStar} />
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
                 </div>
                 <div className="imgWrapper">
                   <img src={item[idx + 1].img} alt="img" />
