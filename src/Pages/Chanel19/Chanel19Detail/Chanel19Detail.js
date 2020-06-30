@@ -16,6 +16,8 @@ class Chanel19Detail extends Component {
     activeTab: 0,
     activeDot: 0,
     optionScroll: false,
+    currentScroll: 0,
+    handleLock: true,
   };
 
   scrollClick = () => {
@@ -30,7 +32,83 @@ class Chanel19Detail extends Component {
     this.setState({ activeTab: id });
   };
   dotClick = (id) => {
-    this.setState({ activeDot: id });
+    this.setState({
+      activeDot: id,
+      // handleLock: false,
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    if (
+      window.scrollY >= 0 &&
+      window.scrollY < 600 &&
+      this.state.activeDot !== 0 &&
+      this.state.handleLock
+    ) {
+      this.setState({
+        activeDot: 0,
+        // handleLock: false,
+      });
+    }
+    if (
+      window.scrollY >= 600 &&
+      window.scrollY < 1150 &&
+      this.state.activeDot !== 1 &&
+      this.state.handleLock
+    ) {
+      this.setState({
+        activeDot: 1,
+        // handleLock: false,
+      });
+    }
+    if (
+      window.scrollY >= 1150 &&
+      window.scrollY < 1800 &&
+      this.state.activeDot !== 2 &&
+      this.state.handleLock
+    ) {
+      this.setState({
+        activeDot: 2,
+        // handleLock: false,
+      });
+    }
+    if (
+      window.scrollY >= 1800 &&
+      this.state.activeDot !== 3 &&
+      this.state.handleLock
+    ) {
+      this.setState({
+        activeDot: 3,
+        // handleLock: false,
+      });
+    }
+  };
+
+  componentDidUpdate() {
+    this.moveScroll();
+    console.log(this.state.handleLock);
+  }
+  moveScroll = () => {
+    if (this.state.activeDot === 0) {
+      window.scrollTo({ top: 0 });
+    }
+    if (this.state.activeDot === 1) {
+      window.scrollTo({ top: 600 });
+    }
+    if (this.state.activeDot === 2) {
+      window.scrollTo({ top: 1150 });
+    }
+    if (this.state.activeDot === 3) {
+      window.scrollTo({ top: 1800 });
+    }
   };
 
   render() {
