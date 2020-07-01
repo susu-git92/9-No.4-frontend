@@ -5,24 +5,26 @@ import './CollectionDetail.scss';
 
 class CollectionDetail extends React.Component {
   state = {
-    products: {},
+    products: [],
   };
-  componentDidMount() {
-    fetch('http://10.58.0.55:8000/product/cruise-2019-20')
-      .then((res) => res.json())
-      .then((res) =>
-        this.setState({
-          products: res,
-        }),
-      );
-  }
+
+  // componentDidMount() {
+  //   fetch('http://10.58.0.55:8000/product/cruise-2019-20')
+  //     .then((res) => res.json())
+  //     .then((res) =>
+  //       this.setState({
+  //         products: res,
+  //       }),
+  //     );
+  // }
+
   render() {
     console.log(this.state.products);
     return (
       <article className="CollectionDetail">
         <Nav />
         <div className="productContainer">detail page</div>
-        {/* <Footer /> */}
+        <Footer />
       </article>
     );
   }
