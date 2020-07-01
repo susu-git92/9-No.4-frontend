@@ -1,41 +1,4 @@
 .WishList {
   height: 100%;
   overflow-y: visible;
-  .wishlist-header {
-    position: relative;
-    height: 200vh;
-    top: -76vh;
-    z-index: 10;
-    background-color: #fff;
-    width: 100%;
-    margin: 0 auto;
-    .wishlist-header-title {
-      width: 500px;
-      display: flex;
-      padding-top: 837px;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: bold;
-      margin: 0 auto;
-    }
-    .wishlist-empty {
-      width: 500px;
-      font-size: 14px;
-      display: flex;
-      margin: 0 auto;
-      justify-content: center;
-      margin-block-start: 1em;
-    }
-  }
-  .products-slideshow {
-    width: 500px;
-    height: 300px;
-    margin: 0 auto;
-    justify-content: center;
-  }
-  .slideshow-title-box {
-    width: 500px;
-    margin: 0 auto;
-    justify-content: center;
-  }
 }

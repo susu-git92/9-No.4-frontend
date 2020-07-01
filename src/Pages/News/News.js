@@ -4,7 +4,6 @@ import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
 import { srcs } from '../../config';
 import SlideView from '../News/Slider/Slider';
-
 import SlideView2 from '../News/Slider2/Slider2';
 import SlideView3 from '../News/Slider3/Slider3';
 import "slick-carousel/slick/slick.css";

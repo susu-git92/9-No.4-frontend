@@ -1,0 +1,76 @@
+.fs-wishlist-header__share {
+  margin-top: 10px;
+  color: #767676;
+  margin-top: 10px;
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 200px;
+  justify-content: center;
+  display: flex;
+  button {
+    background: none;
+    border: 0;
+    line-height: normal;
+    font-family: inherit;
+    font-size: 100%;
+    text-align: center;
+    text-rendering: auto;
+    font: 400 13.3333px Arial;
+    cursor: pointer;
+  }
+}
+
+.fs-wishlist-tab {
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 100px;
+}
+
+button {
+  //color: #000;
+  background: transparent;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.fs-wishlist-tab__subtitle,
+.fs-wishlist-tab__title {
+  display: block;
+  font-size: 16px;
+  text-align: left;
+  pointer-events: none;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.fs-wishlist-tab__subtitle {
+  font-weight: 300;
+  line-height: 1.29;
+  color: #767676;
+}
+.fs-wishlist-tab__subtitle {
+  display: block;
+  font-size: 16px;
+  text-align: left;
+  pointer-events: none;
+}
+
+.fs-wishlist-tab__head {
+  position: relative;
+  width: 100%;
+  padding-bottom: 8px;
+  padding: 0 150px;
+}
+
+.fs-wishlist-tab__head:after {
+  content: '';
+  display: flex;
+  position: relative;
+  width: 98%;
+  //padding: 0 130px;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #ececec;
+}

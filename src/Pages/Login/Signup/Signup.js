@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom'
 class Signup extends React.Component {
   constructor() {
     super()
-    //this.state = {isRegisterOpen: true, isLoginOpen:false};
     this.state = { 
       inputEmail:"",
       inputFirstName:"",
@@ -27,9 +26,9 @@ class Signup extends React.Component {
     this.setState({changePassword: e.target.value.length > 0 ? true : false})
   }
 
-  goToSignup () {
-    this.props.history.push('/main')
-  }
+ // goToSignup () {
+ // //  this.props.history.push('/main')
+  //}
 
   submitRegister = (e) => {
     e.preventDefault();
@@ -37,7 +36,7 @@ class Signup extends React.Component {
     alert('회원가입 성공!')
  
   fetch(
-    'http://192.168.35.172:8000/account/sign-up',
+    'http://10.58.0.55:8000/account/sign-up/',
     {
       //백엔드에서 받은 주소
       method: 'POST', //값이포스트 ,
@@ -58,7 +57,7 @@ class Signup extends React.Component {
    // .then((res) => localStorage.setItem('access_token',res)) //로그인시
     // if (res.token) {
     //localStorage.setItem('access_token', res.token)
-    this.props.history.push('/main') //로그인할때 연결 
+    //this.props.history.push('/main') //로그인할때 연결 
       
 }
 

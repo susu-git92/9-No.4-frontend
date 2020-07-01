@@ -6,7 +6,7 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      inputId : "",
+      inputId: "",
       inputPw: "",
       changeId: "",
       changePw: "",
@@ -14,7 +14,7 @@ class Login extends React.Component {
   };
 
   goToSignup ()  {
-    this.props.history.push('/main')
+    this.props.history.push('/')
   }
 
   changeHandle = (e) => {
@@ -51,7 +51,7 @@ class Login extends React.Component {
 
   submitLogin = (e) => {
     e.preventDefault();
-    console.log(this.state)
+   // console.log(this.state)
 
     /*const isValid = this.validate();
     if (isValid) {
@@ -59,26 +59,28 @@ class Login extends React.Component {
 
     
     fetch(
-      'http://192.168.35.172:8000/account/sign-in',
+      'http://10.58.0.55:8000/account/sign-in/',
       {
         //백엔드에서 받은 주소
         method: 'POST', //값이포스트 ,
-        headers: { Authorization: localStorage.getItem('access_token') }, //로그인시
+        headers: { Authorization: localStorage.getItem('AccessToken')}, //로그인시
         body: JSON.stringify({
           //json 스트링화시키겠다 라는 뜻  요 안에 인자로(json화된 자바스크립트 데이터)
           //user_id: this.state.InputId, //성공하면 토큰이 제이슨바디에들어온다
-          password: this.state.InputPw,
-          email: this.state.InputId,
+          email: this.state.inputId,
+          password: this.state.inputPw
         }),
       },
     )
-      .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다.
-      .then((res) => console.log(res))
-      //.then((res) => console.log(res.status))
-      .then((res) => localStorage.setItem('access_token')) //로그인시
+      .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다
+      .then((res) => {
+        console.log(res)
+        localStorage.setItem('AccessToken', res.Access_Token)
+      }) //로그인시
       // if (res.token) {
-      //localStorage.setItem('access_token', res.token)
-      this.props.history.push('/main') //로그인할때 연결 
+      //localStorage.setItem('access_token')
+    
+      this.props.history.push('/') //로그인할때 연결 
   }
  
     
@@ -87,6 +89,7 @@ class Login extends React.Component {
   render () {
     console.log('this.state.inputId>>>', this.state.inputId);
     console.log('this.state.inputPw>>>', this.state.inputPw);
+    console.log(localStorage.getItem("AccessToken"))
     return (
         <div className="Login">
           <form>
@@ -125,7 +128,7 @@ class Login extends React.Component {
                   
                 <div className="buttonBox">
                   <button type="submit" id="submit" className="button"
-                    onClick = {this.submitLogin} noValidate >
+                    onClick = {this.submitLogin} >
                   <div className="btnWrapper">
                     <div id="signinbox">Sign in</div>
                   </div>
