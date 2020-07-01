@@ -8,30 +8,31 @@ import './Collection.scss';
 
 class Collection extends React.Component {
   state = {
-    collectionItems: {},
+    collectionItems: [],
   };
 
-  // componentDidMount() {
-  //   fetch('http://10.58.0.55:8000/product/cruise-2019-20')
-  //     .then((res) => res.json())
-  //     .then((res) => this.setState({ products: res }));
-  // }
+  componentDidMount() {
+    fetch('http://10.58.0.55:8000/product/cruise-2019-20')
+      .then((res) => res.json())
+      .then((res) => this.setState({ collectionItems: res.look }));
+  }
 
   render() {
-    const collectionItems = srcs.img.collection;
+    const { collectionItems } = this.state;
+
     return (
       <article className="Collection">
         <Nav />
         <div className="collectionWrapper">
           <div>
-            {collectionItems.map((item, idx) => (
-              <div className="itemsContainer" key={item[idx + 1].name}>
+            {collectionItems.map((item) => (
+              <div className="itemsContainer" key={item.id}>
                 <div className="nameWrapper">
-                  {item[idx + 1].name}
+                  {item.name}
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
                 </div>
                 <div className="imgWrapper">
-                  <img src={item[idx + 1].img} alt="img" />
+                  <img src={item.image} alt="img" />
                 </div>
               </div>
             ))}
