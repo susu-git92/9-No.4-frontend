@@ -21,6 +21,10 @@ class Collection extends React.Component {
     });
   }
 
+  addWishList = (itemId) => {
+    console.log(itemId);
+  };
+
   render() {
     const { collectionItems } = this.state;
 
@@ -32,8 +36,12 @@ class Collection extends React.Component {
             {collectionItems.map((item) => (
               <div className="itemsContainer" key={item.id}>
                 <div className="nameWrapper">
-                  {item.name}
-                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                  {item.id}
+                  <FontAwesomeIcon
+                    className="starIcon"
+                    onClick={() => this.addWishList(item.id)}
+                    icon={faStar}
+                  />
                 </div>
                 <div className="imgWrapper">
                   <img src={item.image} alt="img" />
