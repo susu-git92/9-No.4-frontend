@@ -4,10 +4,9 @@ import Footer from '../../../Components/Footer/Footer';
 import './CollectionDetail.scss';
 
 class CollectionDetail extends React.Component {
-  state = {
-    products: [],
-  };
-
+  constructor(props) {
+    super(props);
+  }
   // componentDidMount() {
   //   fetch('http://10.58.0.55:8000/product/cruise-2019-20')
   //     .then((res) => res.json())
@@ -19,7 +18,6 @@ class CollectionDetail extends React.Component {
   // }
 
   render() {
-    console.log(this.state.products);
     return (
       <article className="CollectionDetail">
         <Nav />
