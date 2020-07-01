@@ -12,9 +12,13 @@ class Collection extends React.Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.0.55:8000/product/cruise-2019-20')
-      .then((res) => res.json())
-      .then((res) => this.setState({ collectionItems: res.look }));
+    // fetch('http://10.58.0.55:8000/product/cruise-2019-20')
+    //   .then((res) => res.json())
+    //   .then((res) => this.setState({ collectionItems: res.look }));
+
+    this.setState({
+      collectionItems: srcs.img.look,
+    });
   }
 
   render() {
