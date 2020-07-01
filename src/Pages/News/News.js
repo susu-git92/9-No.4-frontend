@@ -15,7 +15,7 @@ export class News extends React.Component {
     super();
     this.state = {
       prevScrollpos: window.pageYOffset,
-      visible: true
+      sizechanger: true
     }
   }
 
@@ -23,11 +23,11 @@ export class News extends React.Component {
     const { prevScrollpos } = this.state;
   
     const currentScrollPos = window.pageYOffset;
-    const visible = prevScrollpos > currentScrollPos;
+    const sizechanger = prevScrollpos > currentScrollPos;
   
     this.setState({
       prevScrollpos: currentScrollPos,
-      visible
+      sizechanger
     });
   };
 
@@ -50,7 +50,7 @@ render() {
       <div className="newsHeader" >
         <div className = "newsLogoWrapper">
           <div className = "wrapperwrapper">
-            <img className={`newsHeader ${this.state.prevScrollpos > 0 && this.state.visible === false ? "small" : ""}`}  src={srcs.img.news.newsLetterLogo}
+            <img className={`newsHeader ${this.state.prevScrollpos > 0 && this.state. sizechanger === false ? "small" : ""}`}  src={srcs.img.news.newsLetterLogo}
             // style = {{ width: this.state.prevScrollpos > 0 && this.state.visible === false ? "670px" : "780px"}}
             ></img> 
           </div>
