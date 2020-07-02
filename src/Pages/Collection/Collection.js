@@ -23,16 +23,26 @@ class Collection extends React.Component {
     const userToken =
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
 
-    fetch(`10.58.0.55:8000/account/wishlist/`, {
+    fetch('10.58.0.55:8000/account/wishlist/', {
+      method: 'GET',
       headers: {
         Authorization: userToken,
       },
     })
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => this.setState({ wishItem: res }));
   };
 
-  addWishList = (item) => {
+  toggleWishIcon = (e, item) => {
+    if (e.target.parentNode.classList.contains('active')) {
+      e.target.parentNode.classList.remove('active');
+    } else {
+      e.target.parentNode.classList.add('active');
+    }
+    this.checkingWishList(item);
+  };
+
+  checkingWishList = (item) => {
     const userToken =
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
     fetch(`http://10.58.0.55:8000/product/wishlist/look/${item.id}/`, {
@@ -61,13 +71,12 @@ class Collection extends React.Component {
     //   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I',
     // );
 
-    this.getWishList();
     this.getAllLookItems();
+    this.getWishList();
   }
 
   render() {
-    const { collectionItems, wishItem } = this.state;
-
+    const { collectionItems } = this.state;
     return (
       <article className="Collection">
         <Nav />
@@ -78,7 +87,7 @@ class Collection extends React.Component {
                 <div className="nameWrapper">
                   {item.id}
                   <FontAwesomeIcon
-                    onClick={() => this.addWishList(item)}
+                    onClick={(e) => this.toggleWishIcon(e, item)}
                     className="starIcon"
                     icon={faStar}
                   />
