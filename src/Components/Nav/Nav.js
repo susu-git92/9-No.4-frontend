@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ModalCategory from '../ModalCategory/ModalCategory';
 import Search from '../Search/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -51,7 +52,9 @@ class Nav extends React.Component {
           <>
             <div className="NavWrapper">
               <div className="boldLine" />
-              <img src={srcs.img.logo.black} alt="chanel logo" />
+              <Link to="/">
+                <img src={srcs.img.logo.black} alt="chanel logo" />
+              </Link>
               <FontAwesomeIcon
                 className="hamburgerBtn"
                 onClick={this.handleMobileMenu}
@@ -63,7 +66,9 @@ class Nav extends React.Component {
                   onClick={this.searchToggle}
                   icon={faSearch}
                 />
-                <FontAwesomeIcon className="userIcon" icon={faUser} />
+                <Link className="link" to="loginscreen">
+                  <FontAwesomeIcon className="userIcon" icon={faUser} />
+                </Link>
                 <FontAwesomeIcon className="starIcon" icon={faStar} />
               </div>
               <div
@@ -100,7 +105,9 @@ class Nav extends React.Component {
                   className={this.state.isActive === 4 ? 'active' : 'none'}
                   onClick={() => this.selectedMenu(4)}
                 >
-                  CHANEL NEWS
+                  <Link className="link" to="/news">
+                    CHANEL NEWS
+                  </Link>
                 </li>
               </ul>
             </div>

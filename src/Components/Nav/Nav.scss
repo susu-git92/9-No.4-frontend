@@ -43,6 +43,10 @@
 				cursor: pointer;
 			}
 
+			.link {
+				color: black;
+			}
+
 			.searchIcon {
 				cursor: pointer;
 			}
@@ -75,6 +79,15 @@
 
 				&:hover {
 					color: rgba(0, 0, 0, 0.4);
+				}
+
+				.link {
+					text-decoration: none;
+					color: rgba(0, 0, 0, 0.7);
+
+					&:hover {
+						color: rgba(0, 0, 0, 0.4);
+					}
 				}
 			}
 			.active {
@@ -124,7 +137,6 @@
 
 				.starIcon {
 					position: absolute;
-					opacity: 0.8;
 					right: 0;
 					top: -65px;
 				}
