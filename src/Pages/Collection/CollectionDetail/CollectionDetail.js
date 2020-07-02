@@ -35,8 +35,20 @@ class CollectionDetail extends React.Component {
     });
   }
 
+  prevProduct = () => {
+    this.props.history.push(
+      `/product/${Number(this.props.match.params.id) - 1}`,
+    );
+  };
+  nextProduct = () => {
+    this.props.history.push(
+      `/product/${Number(this.props.match.params.id) + 1}`,
+    );
+  };
+
   render() {
-    const { productImages, productInfo, productsId } = this.state;
+    const { productImages, productsId } = this.state;
+    console.log(productsId);
     return (
       <article className="CollectionDetail">
         <Nav />
@@ -52,8 +64,16 @@ class CollectionDetail extends React.Component {
             <div className="boldLine">
               <h4>룩 {productsId}</h4>
               <div className="iconWrapper">
-                <FontAwesomeIcon className="prevIcon" icon={faChevronLeft} />
-                <FontAwesomeIcon className="nextIcon" icon={faChevronRight} />
+                <FontAwesomeIcon
+                  className="prevIcon"
+                  icon={faChevronLeft}
+                  onClick={this.prevProduct}
+                />
+                <FontAwesomeIcon
+                  className="nextIcon"
+                  icon={faChevronRight}
+                  onClick={this.nextProduct}
+                />
               </div>
             </div>
             <div>
