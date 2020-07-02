@@ -29,22 +29,22 @@ class CollectionDetail extends React.Component {
     //   .then((res) =>
     //     this.setState({ productImages: res.img, productInfo: res.products }),
     //   );
+    this.getState();
+  }
+
+  componentDidUpdate(prevState) {
+    if (prevState.match.params.id !== this.props.match.params.id) {
+      this.getState();
+    }
+  }
+
+  getState = () => {
     this.setState({
       productImages: srcs.img.currentProduct.img,
       productInfo: srcs.img.currentProduct.products,
       productsId: Number(this.props.match.params.id),
     });
-  }
-
-  componentDidUpdate(prevState) {
-    if (prevState.match.params.id !== this.props.match.params.id) {
-      this.setState({
-        productImages: srcs.img.currentProduct.img,
-        productInfo: srcs.img.currentProduct.products,
-        productsId: Number(this.props.match.params.id),
-      });
-    }
-  }
+  };
 
   prevProduct = () => {
     this.props.history.push(
