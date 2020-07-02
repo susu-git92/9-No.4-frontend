@@ -13,20 +13,15 @@ import WishViewer from './WishViewer/WishViewer';
 
 
 
-  
-
-
-
 export class WishList extends React.Component {
   constructor() {
     super();
     this.state = {
-     /* bag : {},
-      input: "",*/
+      productListArr: [],
     };
   }
 
-  /*componentDidMount () {
+  componentDidMount () {
   fetch('http://10.58.0.55:8000/account/wishlist/', {
     method: 'GET',
     headers: {
@@ -34,14 +29,15 @@ export class WishList extends React.Component {
     }
   })
     .then((res) => res.json())
-    .then((res) => this.setState({ bag : res}))
-  }*/
+    .then((res) => console.log(res))
+  }
 
   render() {
    //const {isEmptyOpen , input} = this.state
   /* console.log(this.state.bag)*/
-   const isEmptyOpen = [1];
+   
    //(bag) => (bag.name)
+   console.log(this.state.productListArr)
   
       
 
@@ -51,13 +47,9 @@ export class WishList extends React.Component {
       <Nav/> 
        
         <div className="wishlist-header">
-          {isEmptyOpen.length !== 0 ? <WishViewer/> : <WishEmpty/>};
+          {this.state.productListArr.length > 0 ? <WishViewer products={this.state.productListArr} /> : <WishEmpty/>};
         </div>
-      
-    
-
-
-        
+     
       <Footer/> 
     </div>
     );

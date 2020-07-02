@@ -75,7 +75,7 @@ button {
   background-color: #ececec;
 }
 
-.list_item {
+.list_item_B {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,14 +91,14 @@ button {
     }
   }
 
-  .img_box {
+  .img_box_B {
     width: 100%;
     height: 65%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
-    .list_img {
+    .list_img_B {
       width: 100%;
       height: 100%;
       content: '';
@@ -108,7 +108,7 @@ button {
     }
   }
 
-  .text_box {
+  .text_box_B {
     //display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -121,7 +121,7 @@ button {
     border-top: thick solid white;
     transition: 0.3s;
 
-    .list_name {
+    .list_name_B {
       font-family: abchanel-corpo, 맑은고딕, Malgun Gothic, Apple Gothic, 돋움,
         Dotum, 굴림, Gulim, sans-serif;
       font-weight: 900;
@@ -138,7 +138,7 @@ button {
       letter-spacing: 1px;
     }
 
-    .list_price {
+    .list_price_B {
       font-family: abchanel-corpo, 맑은고딕, Malgun Gothic, Apple Gothic, 돋움,
         Dotum, 굴림, Gulim, sans-serif;
       font-weight: 900;
@@ -151,7 +151,7 @@ button {
       }
     }
 
-    .list_other {
+    .list_other_B {
       font-family: 맑은고딕, Malgun Gothic, Apple Gothic, 돋움, Dotum, 굴림,
         Gulim, sans-serif;
       font-weight: 300;

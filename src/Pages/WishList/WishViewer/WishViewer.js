@@ -1,32 +1,12 @@
 import React from 'react';
 import './WishViewer.scss';
-import { withRouter } from 'react-router-dom'
-
-
+import WishProductList from './WishViewer';
 
 class WishViewer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      bag : {},
-      input: "",
-    }
-  };
-  
-  componentDidMount () {
-    fetch('http://10.58.0.55:8000/account/wishlist/', {
-      method: 'GET',
-      headers: {
-        Authorization: localStorage.getItem('AccessToken')
-      }
-    })
-      .then((res) => res.json())
-      .then((res) => this.setState({ bag : res}))
-    }
-  
-
   render () {
-    console.log(this.state.bag)
+    //console.log(this.state.bag)
+    console.log(this.props.products)
+
     return (
       <>
         <div className = "wishlist-title">
@@ -56,21 +36,19 @@ class WishViewer extends React.Component {
         
         </div>
 
-        <div className="list_item">
-          <div className="wrapper">
-            <div className="bag-img"></div>
-
-
-            <div className="text_box">
-              <div className="list_name">CHANEL 19 플랩백</div>
-              <div className="list_material">고트스킨, 골드 메탈, 실버 메탈, 루테늄 메탈</div>
-              <div className="list_price">
-                <span className="gray_star">*</span>
-              </div>
-
-              <div className="list_other">다른 옵션</div>
-            </div>
-          </div>
+        <div className="list_item_B">
+          {this.props.products.length > 0 && this.props.products.map((productListArr, index) => {
+            return(
+ 
+              <WishProductList
+              key= {index}
+              product_name={productListArr.product_name}
+              product_texture={productListArr.product_texture}
+              product_price={productListArr.product_price}
+              />
+             
+            )
+          })}
         </div>
 
       </>
@@ -78,4 +56,4 @@ class WishViewer extends React.Component {
   }
 }
 
-export default withRouter(WishViewer);
+export default WishViewer;
