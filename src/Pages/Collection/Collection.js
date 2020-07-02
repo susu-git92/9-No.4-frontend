@@ -23,14 +23,18 @@ class Collection extends React.Component {
     const userToken =
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
 
-    fetch('10.58.0.55:8000/account/wishlist/', {
+    fetch('http://10.58.0.55:8000/account/wishlist/', {
       method: 'GET',
       headers: {
         Authorization: userToken,
       },
     })
-      .then((res) => res.json())
-      .then((res) => this.setState({ wishItem: res }));
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        this.setState({ wishItem: res.look_wishlist });
+      });
   };
 
   toggleWishIcon = (e, item) => {
@@ -76,7 +80,8 @@ class Collection extends React.Component {
   }
 
   render() {
-    const { collectionItems } = this.state;
+    const { collectionItems, wishItem } = this.state;
+    console.log(wishItem.map((id) => id.look_id));
     return (
       <article className="Collection">
         <Nav />
