@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './ModalCategory.scss';
@@ -46,7 +47,9 @@ class CollectionDropdown extends React.Component {
             <p className="season">2020 봄-여름 프리-컬렉션</p>
           </li>
           <li>
-            <p className="season">2019/20 크루즈</p>
+            <Link className="productListLink" to="/collection">
+              <p className="season">2019/20 크루즈</p>
+            </Link>
           </li>
         </ul>
         <ul>
@@ -94,7 +97,11 @@ class CategoryDropdown extends React.Component {
             <li>시즌 신상품</li>
             <li>클래식 플랩 백</li>
             <li>2.55 플랩 백</li>
-            <li>Chanel 19 백</li>
+            <li>
+              <Link className="productListLink" to="/chanel19">
+                Chanel 19 백
+              </Link>
+            </li>
             <li>샤넬 가브리엘 백</li>
             <li>보이 샤넬 플랩 백</li>
             <li>All Handbags</li>
