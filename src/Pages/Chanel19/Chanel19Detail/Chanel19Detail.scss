@@ -14,7 +14,7 @@ html {
         flex-direction: column;
         justify-content: space-between;
         height: 80px;
-        margin-left: 40px;
+        left: 40px;
         margin-top: 30%;
 
         .dot1 {
@@ -86,7 +86,6 @@ html {
         padding-left: 10%;
         margin-top: 25%;
         margin-bottom: 20%;
-
 
         .img1 {
             width: 80%;
@@ -191,6 +190,7 @@ html {
                 font-size: 12px;
                 font-weight: 500;
                 margin: 5% 0;
+
             }
 
             .scroll_btn_on {
