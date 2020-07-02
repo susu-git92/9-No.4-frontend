@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './Slider2.scss';
-//import { Slide } from 'react-slideshow-image';
 import Slider2 from 'react-slick';
-//import '../../../node_modules/slick-carousel/slick/slick.css';
-//import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -36,12 +33,12 @@ return(
     <Slider2 className="slider2" {...settings} class="fs-icon icon-hv4-arrow-right" aria-hidden="true">
       {photos2.map((secondPhoto) => {
         return (
-            <div className = "each-slide2">                
-              <div className = "slideImg2">
-                <img width= "100%" height= "100%"  src={secondPhoto.url} />
-                <i class="fs-icon icon-hv4-arrow-right" aria-hidden="true"></i>
-              </div>
+          <div className = "each-slide2">                
+            <div className = "slideImg2">
+              <img width= "100%" height= "100%"  src={secondPhoto.url} />
+              <i class="fs-icon icon-hv4-arrow-right" aria-hidden="true"></i>
             </div>
+          </div>
         )
       })}
     </Slider2>

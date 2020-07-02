@@ -743,5 +743,4 @@ export const srcs = {
       ],
     },
 
-  },
-}; 
+  }
