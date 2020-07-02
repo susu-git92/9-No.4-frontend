@@ -15,7 +15,7 @@ class CollectionDetail extends React.Component {
     super(props);
 
     this.state = {
-      productsId: Number(this.props.match.params.id),
+      productsId: 1,
       productImages: [],
       productInfo: [],
     };
@@ -32,7 +32,18 @@ class CollectionDetail extends React.Component {
     this.setState({
       productImages: srcs.img.currentProduct.img,
       productInfo: srcs.img.currentProduct.products,
+      productsId: Number(this.props.match.params.id),
     });
+  }
+
+  componentDidUpdate(prevState) {
+    if (prevState.match.params.id !== this.props.match.params.id) {
+      this.setState({
+        productImages: srcs.img.currentProduct.img,
+        productInfo: srcs.img.currentProduct.products,
+        productsId: Number(this.props.match.params.id),
+      });
+    }
   }
 
   prevProduct = () => {
@@ -48,7 +59,6 @@ class CollectionDetail extends React.Component {
 
   render() {
     const { productImages, productsId } = this.state;
-    console.log(productsId);
     return (
       <article className="CollectionDetail">
         <Nav />
