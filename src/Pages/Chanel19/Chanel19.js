@@ -11,22 +11,24 @@ class Chanel19 extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('http://10.58.0.214:8000/products/chanel-19')
       .then((res) => res.json())
-      .then((res) => this.setState({ Chanel19List: res }));
+      .then((res) => this.setState({ Chanel19List: res.bag_info }));
   }
 
   render() {
-    console.log(this.state.Chanel19List);
     return (
       <div className="list_box">
         <div className="list_grid">
           {this.state.Chanel19List.map((info, index) => (
             <ProductList
               key={index}
-              listName={info.name}
-              listMaterial={info.username}
-              listPrice={info.email}
+              listName={info.bag_name}
+              listMaterial={info.texture}
+              listPrice={info.bag_price}
+              listImg={info.bag_img}
+              listCode={info.bag_code}
             />
           ))}
         </div>

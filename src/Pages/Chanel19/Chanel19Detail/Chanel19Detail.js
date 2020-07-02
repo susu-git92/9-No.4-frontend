@@ -4,6 +4,7 @@ import ProductImg from '../../../Components/ProductDetail/ProductImg';
 import ProductSpec from '../../../Components/ProductDetail/ProductSpec';
 import OptionImg from '../../../Components/ProductDetail/OptionImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   faTimes,
   faChevronRight,
@@ -18,6 +19,7 @@ class Chanel19Detail extends Component {
     optionScroll: false,
     currentScroll: 0,
     handleLock: true,
+    product_info: [],
   };
 
   scrollClick = () => {
@@ -30,6 +32,7 @@ class Chanel19Detail extends Component {
   };
   optionClick = (id) => {
     this.setState({ activeTab: id });
+    this.setState({ optionScroll: false });
   };
   dotClick = (id) => {
     this.setState({
@@ -39,6 +42,10 @@ class Chanel19Detail extends Component {
   };
 
   componentDidMount() {
+    fetch('http://10.58.0.214:8000/products/chanel-19/detail/AS1160B02876N6832')
+      .then((res) => res.json())
+      .then((res) => this.setState({ product_info: res.detail_bag_info }));
+
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -94,7 +101,6 @@ class Chanel19Detail extends Component {
 
   componentDidUpdate() {
     this.moveScroll();
-    console.log(this.state.handleLock);
   }
   moveScroll = () => {
     if (this.state.activeDot === 0) {
@@ -112,6 +118,7 @@ class Chanel19Detail extends Component {
   };
 
   render() {
+    //console.log(this.state.product_info.leather_dict);
     return (
       <>
         <div className="container">
@@ -193,14 +200,30 @@ class Chanel19Detail extends Component {
               }
             />
           </div>
+          {/* {this.state.product_info.length > 0 && (
+            <ProductImg
+              activeDot={this.state.activeDot}
+              img={this.state.product_info.bag_image_all}
+            />
+          )} */}
           <ProductImg activeDot={this.state.activeDot} />
+
           <div className="product_box">
             <div className="name_box">
-              <div className="name">CHANEL 19 플랩 백</div>
+              <div className="name">{this.state.product_info.bag_name}</div>
             </div>
-            <ProductSpec />
+            <ProductSpec
+              sizeMain={this.state.product_info.bag_size_main}
+              sizeSub={this.state.product_info.bag_size_sub}
+              material={this.state.product_info.bag_texture}
+              color={this.state.product_info.bag_color}
+              rKey={this.state.product_info.bag_code}
+              price={this.state.product_info.bag_price}
+            />
             <div className="option_box">
-              <div className="option_number">다른 옵션(7)</div>
+              <div className="option_number">
+                다른 옵션({this.state.product_info.opton_num})
+              </div>
               <FontAwesomeIcon
                 className={
                   this.state.optionScroll === true
@@ -250,7 +273,13 @@ class Chanel19Detail extends Component {
                   </div>
                 </div>
 
-                <OptionImg optionScroll={this.state.optionScroll} />
+                <OptionImg
+                  optionScroll={this.state.optionScroll}
+                  activeTab={this.state.activeTab}
+                  opInfo={this.state.product_info.leather_dict}
+                  opInfoT={this.state.product_info.tweed_dict}
+                  opInfoO={this.state.product_info.other_dict}
+                />
               </div>
               <div className="find_store_box">
                 <div className="find_store_icon" />

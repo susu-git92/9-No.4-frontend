@@ -2,28 +2,33 @@ import React, { Component } from 'react';
 
 class ProductSpec extends Component {
   state = {
-    size: '16 × 26 × 9 cm',
     unit: 'in',
+    priceFix: '0',
   };
 
   unitClick = () => {
     if (this.state.unit === 'in') {
-      this.setState({ size: '6.3 × 10.2 × 3.5 in', unit: 'cm' });
+      this.setState({ size: this.props.sizeSub, unit: 'cm' });
     }
     if (this.state.unit === 'cm') {
-      this.setState({ size: '16 × 26 × 9 cm', unit: 'in' });
+      this.setState({ size: this.props.sizeMain, unit: 'in' });
     }
   };
 
+  componentDidMount() {
+    this.setState({
+      priceFix: this.props.price,
+    });
+  }
+
   render() {
+    //console.log(this.props.material);
     return (
       <div className="detail_box">
-        <div className="material">
-          트위드, 골드 메탈, 실버 메탈, 루테늄 메탈
-        </div>
-        <div className="item_color">네이비 블루, 화이트, 레드</div>
+        <div className="material">{this.props.material}</div>
+        <div className="item_color">{this.props.color}</div>
         <div className="item_size">
-          {this.state.size}
+          {this.state.unit === 'in' ? this.props.sizeMain : this.props.sizeSub}
           <span className="unit_box">
             (
             <span
@@ -37,8 +42,9 @@ class ProductSpec extends Component {
           </span>
         </div>
 
-        <div className="reference">레퍼런스: AS1160 B02877 MH694</div>
-        <div className="price">₩5,850,000</div>
+        <div className="reference">레퍼런스: {this.props.rKey}</div>
+
+        <div className="price">₩{this.props.price}</div>
       </div>
     );
   }
