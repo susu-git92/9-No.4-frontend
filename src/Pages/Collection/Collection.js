@@ -10,45 +10,63 @@ import './Collection.scss';
 class Collection extends React.Component {
   state = {
     collectionItems: [],
+    wishItem: [],
   };
 
-  componentDidMount() {
+  getAllLookItems = () => {
     fetch('http://10.58.0.55:8000/product/cruise-2019-20')
       .then((res) => res.json())
       .then((res) => this.setState({ collectionItems: res.look }));
+  };
 
-    // this.setState({
-    //   collectionItems: srcs.img.look,
-    // });
+  getWishList = () => {
+    const userToken =
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
 
-    localStorage.setItem(
-      'user',
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I',
-    );
-  }
+    fetch(`10.58.0.55:8000/account/wishlist/`, {
+      headers: {
+        Authorization: userToken,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
 
   addWishList = (item) => {
-    console.log(item.id);
-    const userToken = localStorage.getItem('user');
+    const userToken =
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
     fetch(`http://10.58.0.55:8000/product/wishlist/look/${item.id}/`, {
-      method: 'post',
+      method: 'POST',
       headers: {
         Authorization: userToken,
       },
     })
       .then((res) => {
-        if (res.statue === 200 || res.status === 201) {
-          res.json().then((json) => console.log(json));
+        if (res.status === 200 || res.status === 201) {
+          console.log('성공');
         } else {
-          console.log(res.status);
+          console.error('실패: ' + res.status);
         }
       })
       .catch((err) => console.error(err));
   };
 
+  componentDidMount() {
+    // this.setState({
+    //   collectionItems: srcs.img.look,
+    // });
+
+    // localStorage.setItem(
+    //   'user',
+    //   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I',
+    // );
+
+    this.getWishList();
+    this.getAllLookItems();
+  }
+
   render() {
-    const { collectionItems } = this.state;
-    // console.log(this.props);
+    const { collectionItems, wishItem } = this.state;
 
     return (
       <article className="Collection">
