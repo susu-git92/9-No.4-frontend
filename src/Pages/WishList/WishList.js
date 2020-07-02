@@ -21,6 +21,11 @@ export class WishList extends React.Component {
     };
   }
 
+
+  getToken = (item) => {
+    const Token = 
+  }
+
   componentDidMount () {
   fetch('http://10.58.0.55:8000/account/wishlist/', {
     method: 'GET',

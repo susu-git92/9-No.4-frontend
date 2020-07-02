@@ -11,7 +11,7 @@ class Login extends React.Component {
       changeId: "",
       changePw: "",
     };
-  };
+  }
 
   goToSignup ()  {
     this.props.history.push('/')
@@ -26,36 +26,9 @@ class Login extends React.Component {
     this.setState({changePw: e.target.value.length > 0 ? true : false})
   }
 
-  /*validate = () => {
-    let idError = "";
-    let pwError = "";
-
-    if (!this.state.inputId.includes('@')) { //if it is not includes @ 이라는 뜻 
-      console.log(this.state.inputId.includes("@"), idError)
-      idError = "Please note: use a valid email such as name@mail.com"
-    } else {
-      console.log(idError)
-      return "";
-    }
-
-    if (!this.state.inputPw.length > 0) {
-      pwError = "Please note: Password is required";
-    } 
-      
-    if (idError || pwError) {
-      this.setState ({idError : idError, pwError: pwError});
-      return false;
-    }
-      return true;
-  };*/
 
   submitLogin = (e) => {
     e.preventDefault();
-   // console.log(this.state)
-
-    /*const isValid = this.validate();
-    if (isValid) {
-      console.log(this.state);*/
 
     
     fetch(
@@ -72,6 +45,7 @@ class Login extends React.Component {
         }),
       },
     )
+
       .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다
       .then((res) => {console.log(res)
         localStorage.setItem('AccessToken', res.Access_Token)})
@@ -82,46 +56,50 @@ class Login extends React.Component {
     
 
 
-  render () {
+  render() {
     console.log('this.state.inputId>>>', this.state.inputId);
     console.log('this.state.inputPw>>>', this.state.inputPw);
     console.log(localStorage.getItem("AccessToken"))
     return (
-        <div className="Login">
-          <form>
-            <div className = "welcomeText1">
-              <p>Welcome back.</p>
+      <div className="Login">
+        <form>
+          <div className="welcomeText1">
+            <p>Welcome back.</p>
+          </div>
+          <div className="welcomeText2">
+            <p>Sign in with your email and password.</p>
+          </div>
+
+          <div className="formBox">
+            <div className="form-control">
+              <input
+                type="text"
+                id="username"
+                placeholder="Email"
+                name="inputId"
+                onChange={this.changeHandle}
+              />
+              <small style={{ fontSize: 12, color: 'red' }}>
+                {this.state.idError}
+              </small>
             </div>
-            <div className = "welcomeText2">
-              <p>Sign in with your email and password.</p>
+
+            <div className="form-control">
+              <input
+                type="password"
+                id="email"
+                placeholder="Password"
+                name="inputPw" //네임값 꼭 지정해줘야함(리액트)
+                onChange={this.changeHandle}
+              />
+              <small style={{ fontSize: 12, color: 'red' }}>
+                {this.state.pwError}
+              </small>
             </div>
-                    
-                    
-              <div className = "formBox">
-                <div className="form-control">
-                  <input type="text" id="username" 
-                    placeholder="Email"
-                    name = "inputId" 
-                    onChange = {this.changeHandle}
-                  />  
-                  <small style = {{fontSize: 12, color: "red"}}>
-                    {this.state.idError}</small> 
-                  
-                </div>
+          </div>
 
-                <div className="form-control">
-                  <input type="password" id="email" 
-                    placeholder="Password"
-                    name = "inputPw" //네임값 꼭 지정해줘야함(리액트)
-                    onChange={this.changeHandle}
-                  />  
-                  <small style = {{fontSize: 12, color: "red"}}>{this.state.pwError}</small>         
-                </div>
-
-              </div>          
-
+     
               <div className= "link-2">
-                  
                 <div className="buttonBox">
                   <button type="submit" id="submit" className="button"
                     onClick = {this.submitLogin} >
@@ -129,14 +107,14 @@ class Login extends React.Component {
                     <div id="signinbox">Sign in</div>
                   </div>
                 </button>
-              </div>
-                
+              </div>      
             </div>
 
-          </form>
 
-        </div>
-    )
+       
+        </form>
+      </div>
+    );
   }
 }
 
