@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
@@ -90,6 +91,32 @@ class CollectionDetail extends React.Component {
               <span>크루즈 2019/20</span>
               <FontAwesomeIcon className="starIcon" icon={faStar} />
             </div>
+            <p>추천 카테고리</p>
+            <ul>
+              <li>핸드백</li>
+              <li>시즌 신상품</li>
+              <li>클래식 플랩 백</li>
+              <li>2.55 플랩 백</li>
+              <li>
+                <Link className="productListLink" to="/chanel19">
+                  Chanel 19 백
+                </Link>
+              </li>
+              <li>샤넬 가브리엘 백</li>
+              <li>보이 샤넬 플랩 백</li>
+              <li>All Handbags</li>
+              <li>자켓</li>
+              <li>드레스</li>
+              <li>블라우스와 탑</li>
+              <li>가디건 & 점퍼</li>
+              <li>스커트</li>
+              <li>팬츠 & 점프 수트</li>
+              <li>아우터</li>
+              <li>수영복</li>
+              <li>니트웨어</li>
+              <li>레더</li>
+              <li>모든 레디-투-웨어</li>
+            </ul>
           </div>
         </div>
         <Footer />
