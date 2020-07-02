@@ -32,8 +32,8 @@ class CollectionDetail extends React.Component {
     this.getState();
   }
 
-  componentDidUpdate(prevState) {
-    if (prevState.match.params.id !== this.props.match.params.id) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
       this.getState();
     }
   }
