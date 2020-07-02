@@ -42,7 +42,9 @@ class Chanel19Detail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.0.214:8000/products/chanel-19/detail/AS1160B02876N6832')
+    fetch(
+      `http://10.58.0.214:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
+    )
       .then((res) => res.json())
       .then((res) => this.setState({ product_info: res.detail_bag_info }));
 
@@ -118,7 +120,7 @@ class Chanel19Detail extends Component {
   };
 
   render() {
-    //console.log(this.state.product_info.leather_dict);
+    //console.log(this.props.match.params.rkey);
     return (
       <>
         <div className="container">
@@ -206,7 +208,10 @@ class Chanel19Detail extends Component {
               img={this.state.product_info.bag_image_all}
             />
           )} */}
-          <ProductImg activeDot={this.state.activeDot} />
+          <ProductImg
+            activeDot={this.state.activeDot}
+            imgAll={this.state.product_info.bag_image_all}
+          />
 
           <div className="product_box">
             <div className="name_box">

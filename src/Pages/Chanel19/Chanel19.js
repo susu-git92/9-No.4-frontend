@@ -18,6 +18,7 @@ class Chanel19 extends React.Component {
   }
 
   render() {
+    //console.log(this.props);
     return (
       <div className="list_box">
         <div className="list_grid">
@@ -29,6 +30,7 @@ class Chanel19 extends React.Component {
               listPrice={info.bag_price}
               listImg={info.bag_img}
               listCode={info.bag_code}
+              history={this.props}
             />
           ))}
         </div>

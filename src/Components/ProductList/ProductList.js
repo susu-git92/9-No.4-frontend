@@ -2,22 +2,17 @@ import React from 'react';
 import './ProductList.scss';
 
 class ProductList extends React.Component {
-  state = {
-    rKey: '',
-  };
-
-  postRkey = (id) => {
-    this.setState({
-      rKey: id,
-      // handleLock: false,
-    });
-  };
-
   render() {
+    //console.log(this.props);
     return (
+      // <a href={`http://localhost:3000/chanel19detail`} className="list_item">
       <div
         className="list_item"
-        onClick={() => this.postRkey(this.props.listCode)}
+        onClick={() =>
+          this.props.history.history.push(
+            `/chanel19/detail/${this.props.listCode}`,
+          )
+        }
       >
         <div className="img_box">
           <div
