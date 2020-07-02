@@ -498,5 +498,243 @@ export const srcs = {
           'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-62-8821844607006.jpg,',
       },
     ],
+    currentProduct: {
+      img: [
+        'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-41-8821844049950.jpg,',
+        'https://www.chanel.com/images/c_scale/q_auto,f_auto,fl_lossy,dpr_auto/w_1238/cruise-2019-20-41-8823881236510.jpg,',
+        'https://www.chanel.com/images/c_scale/q_auto,f_auto,fl_lossy,dpr_auto/w_1238/cruise-2019-20-41-8823881269278.jpg,',
+        'https://www.chanel.com/images/c_scale/q_auto,f_auto,fl_lossy,dpr_auto/w_1238/cruise-2019-20-41-8823881367582.jpg',
+      ],
+      products: [
+        [
+          {
+            product_id: 252,
+            Product_code: 'AA6611 B02226 10601',
+            Name: '까멜리아',
+            price: '569000.0000',
+            color: [
+              {
+                id: 9,
+                name: '화이트',
+              },
+            ],
+            texture: [
+              {
+                id: 21,
+                name: '코튼',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 253,
+            Product_code: 'P62733 V12141 BA735',
+            Name: '블라우스',
+            price: '2750000.0000',
+            color: [
+              {
+                id: 40,
+                name: '스카이 블루',
+              },
+            ],
+            texture: [
+              {
+                id: 71,
+                name: '코튼 포플린',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 254,
+            Product_code: 'P62644 V12141 BA735',
+            Name: '탑과 까멜리아',
+            price: '2190000.0000',
+            color: [
+              {
+                id: 40,
+                name: '스카이 블루',
+              },
+            ],
+            texture: [
+              {
+                id: 71,
+                name: '코튼 포플린',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 255,
+            Product_code: 'P62774 V12141 BA735',
+            Name: '탑',
+            price: '1710000.0000',
+            color: [
+              {
+                id: 40,
+                name: '스카이 블루',
+              },
+            ],
+            texture: [
+              {
+                id: 71,
+                name: '코튼 포플린',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 256,
+            Product_code: 'AB3010 B01831 N5353',
+            Name: '벨트',
+            price: '1917000.0000',
+            color: [
+              {
+                id: 14,
+                name: '골드',
+              },
+              {
+                id: 25,
+                name: '펄리 화이트',
+              },
+              {
+                id: 7,
+                name: '블랙',
+              },
+              {
+                id: 15,
+                name: '크리스탈',
+              },
+            ],
+            texture: [
+              {
+                id: 69,
+                name: '메탈',
+              },
+              {
+                id: 47,
+                name: '글래스 펄',
+              },
+              {
+                id: 61,
+                name: '램스킨',
+              },
+              {
+                id: 37,
+                name: '스트라스',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 257,
+            Product_code: 'AB3187 B02096 N5742',
+            Name: '커프',
+            price: '3639000.0000',
+            color: [
+              {
+                id: 14,
+                name: '골드',
+              },
+              {
+                id: 7,
+                name: '블랙',
+              },
+            ],
+            texture: [
+              {
+                id: 69,
+                name: '메탈',
+              },
+              {
+                id: 61,
+                name: '램스킨',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 258,
+            Product_code: 'AS1394 B01881 10601',
+            Name: '케이스',
+            price: '12500000.0000',
+            color: [
+              {
+                id: 9,
+                name: '화이트',
+              },
+            ],
+            texture: [
+              {
+                id: 39,
+                name: '린넨',
+              },
+              {
+                id: 37,
+                name: '스트라스',
+              },
+              {
+                id: 19,
+                name: '실버 메탈',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 259,
+            Product_code: 'P62684 C00385 00100',
+            Name: '팬츠',
+            price: '13540000.0000',
+            color: [
+              {
+                id: 9,
+                name: '화이트',
+              },
+            ],
+            texture: [
+              {
+                id: 51,
+                name: '샤이니 램스킨',
+              },
+            ],
+          },
+        ],
+        [
+          {
+            product_id: 260,
+            Product_code: 'G35467 Y53595 C2666',
+            Name: '쇼트 부츠',
+            price: '2153000.0000',
+            color: [
+              {
+                id: 5,
+                name: '아이보리',
+              },
+              {
+                id: 7,
+                name: '블랙',
+              },
+            ],
+            texture: [
+              {
+                id: 58,
+                name: '크럼플드 램스킨',
+              },
+              {
+                id: 49,
+                name: '페이턴트 카프스킨',
+              },
+            ],
+          },
+        ],
+      ],
+    },
   },
 };

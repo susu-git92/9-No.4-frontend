@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Nav from '../../Components/Nav/Nav';
@@ -21,8 +22,19 @@ class Collection extends React.Component {
     });
   }
 
+  // addWishList = (itemId) => {
+  //   fetch(`http://10.58.0.55:8000/product/cruise-2019-20/${itemId}`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(itemId),
+  //   }).then((res) => res.json());
+  // };
+
   render() {
     const { collectionItems } = this.state;
+    // console.log(this.props);
 
     return (
       <article className="Collection">
@@ -30,14 +42,20 @@ class Collection extends React.Component {
         <div className="collectionWrapper">
           <div>
             {collectionItems.map((item) => (
-              <div className="itemsContainer" key={item.id}>
+              <div
+                className="itemsContainer"
+                key={item.id}
+                onClick={() => this.props.history.push(`/product/${item.id}`)}
+              >
                 <div className="nameWrapper">
-                  {item.name}
+                  {item.id}
                   <FontAwesomeIcon className="starIcon" icon={faStar} />
                 </div>
-                <div className="imgWrapper">
-                  <img src={item.image} alt="img" />
-                </div>
+                <Link to={`/product/${item.id}`}>
+                  <div className="imgWrapper">
+                    <img src={item.image} alt="img" />
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
