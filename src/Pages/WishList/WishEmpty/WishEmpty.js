@@ -33,8 +33,8 @@ class WishEmpty extends React.Component {
             class="products-slideshow__all_button" data-datalayer-click="true" >
             모두 보기<i className="fs-icon icon-hv4-arrow-small-right"></i></a>
             </div>
-              <div class="products-slideshow__wrapper">
-              <div class="products-slideshow__list" >
+              <div className="products-slideshow__wrapper">
+              <div className="products-slideshow__list" >
               
       
               </div>

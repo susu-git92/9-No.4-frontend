@@ -21,12 +21,12 @@ export class WishList extends React.Component {
   constructor() {
     super();
     this.state = {
-      bag : {},
-      input: "",
+     /* bag : {},
+      input: "",*/
     };
   }
 
-  componentDidMount () {
+  /*componentDidMount () {
   fetch('http://10.58.0.55:8000/account/wishlist/', {
     method: 'GET',
     headers: {
@@ -35,12 +35,12 @@ export class WishList extends React.Component {
   })
     .then((res) => res.json())
     .then((res) => this.setState({ bag : res}))
-  }
+  }*/
 
   render() {
    //const {isEmptyOpen , input} = this.state
-   console.log(this.state.bag)
-   //const isEmptyOpen = [];
+  /* console.log(this.state.bag)*/
+   const isEmptyOpen = [1];
    //(bag) => (bag.name)
   
       
@@ -49,11 +49,12 @@ export class WishList extends React.Component {
 
     <div className="WishList">
       <Nav/> 
-       {/* 
+       
         <div className="wishlist-header">
           {isEmptyOpen.length !== 0 ? <WishViewer/> : <WishEmpty/>};
         </div>
-       */}
+      
+    
 
 
         

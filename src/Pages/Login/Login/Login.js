@@ -73,13 +73,9 @@ class Login extends React.Component {
       },
     )
       .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다
-      .then((res) => {
-        console.log(res)
-        localStorage.setItem('AccessToken', res.Access_Token)
-      }) //로그인시
-      // if (res.token) {
-      //localStorage.setItem('access_token')
-    
+      .then((res) => {console.log(res)
+        localStorage.setItem('AccessToken', res.Access_Token)})
+         
       this.props.history.push('/') //로그인할때 연결 
   }
  
