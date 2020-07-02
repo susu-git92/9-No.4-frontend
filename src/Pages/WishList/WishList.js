@@ -18,9 +18,8 @@ export class WishList extends React.Component {
     fetch('http://10.58.0.55:8000/account/wishlist/',
       {
         method: 'GET',
-        headers: {
-          Authorization: localStorage.getItem('AccessToken')
-        }
+        headers: {Authorization: localStorage.getItem('AccessToken')
+      }
       }
     )
       .then((res) => res.json())
@@ -33,7 +32,7 @@ export class WishList extends React.Component {
       <div className="WishList">
         <Nav/> 
         <div className="wishlist-container">
-          {this.state.productListArr.length > 0 ? <WishViewer products={this.state.productListArr} /> : <WishEmpty/>};
+          {this.state.productListArr.length !== 0 ? <WishViewer products={this.state.productListArr} /> : <WishEmpty/>};
         </div>
         <Footer/> 
       </div>

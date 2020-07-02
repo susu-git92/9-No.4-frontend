@@ -32,18 +32,17 @@ class Signup extends React.Component {
 
   submitRegister = (e) => {
     e.preventDefault();
-    //console.log(this.state)
+ 
     alert('회원가입 성공!')
  
   fetch(
     'http://10.58.0.55:8000/account/sign-up/',
     {
-      //백엔드에서 받은 주소
-      method: 'POST', //값이포스트 ,
-      //headers: { Authorization: localStorage.getItem('access_token') }, //로그인시
+   
+      method: 'POST', 
+
       body: JSON.stringify({
-        //json 스트링화시키겠다 라는 뜻  요 안에 인자로(json화된 자바스크립트 데이터)
-        //user_id: this.state.InputId, //성공하면 토큰이 제이슨바디에들어온다
+       
         email: this.state.inputEmail,
         first_name: this.state.inputFirstName,
         last_name: this.state.inputLastName,
@@ -52,12 +51,6 @@ class Signup extends React.Component {
     },
   )
     .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다.
-    //.then((res) => console.log(res))
-    //.then((res) => console.log(res.status))
-   // .then((res) => localStorage.setItem('access_token',res)) //로그인시
-    // if (res.token) {
-    //localStorage.setItem('access_token', res.token)
-    //this.props.history.push('/main') //로그인할때 연결 
       
 }
 

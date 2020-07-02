@@ -1,6 +1,6 @@
 import React from 'react';
-import WishProductList from './WishViewer';
 import './WishViewer.scss';
+import WishProductList from '../WishProductList/WishProductList'
 
 class WishViewer extends React.Component {
   render () {
@@ -21,7 +21,8 @@ class WishViewer extends React.Component {
             <span className="wishlist-tab-subtitle">1 제품</span>
           </div>
         </div>
-        <div className="list_item_A">
+        <div className="list_box_viewer">
+        <div className="list_grid_viewer">
           {this.props.products && this.props.products.map((product, index) => {
             return(
               <WishProductList
@@ -33,6 +34,7 @@ class WishViewer extends React.Component {
             )
           })}
         </div>
+      </div>
       </>
     )
   }

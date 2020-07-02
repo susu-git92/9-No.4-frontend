@@ -1,3 +1,20 @@
+.list_box_viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .list_grid_viewer {
+    display: grid;
+    width: 80%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 72vh);
+    grid-auto-flow: row;
+    grid-auto-rows: 72vh;
+    grid-column-gap: 10%;
+  }
+}
+
 .wishlist-header-share {
   margin-top: 10px;
   color: #767676;
@@ -69,25 +86,20 @@
   border: thin solid black;
   width: 300px;
   height: 400px;
-  margin: 0 150px;
   padding-top: 150px;
-
-  &:hover {
-    .text_box {
-      border-top: thick solid black;
-    }
-  }
 
   .img_box_B {
     width: 100%;
     height: 65%;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: flex-start;
+  }
 
-    .list_img_B {
-      width: 100%;
-      height: 100%;
+  &:hover {
+    .text_box {
+      border-top: thick solid black;
     }
   }
 
@@ -103,11 +115,12 @@
     transition: 0.3s;
 
     .list_name_B {
-      font-family: abchanel-corpo, 맑은고딕, Malgun Gothic, Apple Gothic, 돋움,
-        Dotum, 굴림, Gulim, sans-serif;
+      //font-family: abchanel-corpo, 맑은고딕, Malgun Gothic, Apple Gothic, 돋움,
+      //  Dotum, 굴림, Gulim, sans-serif;
       font-weight: 900;
       font-size: 14px;
       letter-spacing: 1px;
+      text-align: center;
     }
 
     .list_material_B {
@@ -126,6 +139,7 @@
       font-size: 14px;
       padding-top: 3%;
       letter-spacing: 1px;
+      text-align: center;
 
       .gray_star {
         color: gray;
@@ -197,4 +211,48 @@
       padding: 100px;
     }
   }
+}
+
+.wishlist-header-title {
+  width: 500px;
+  display: flex;
+  padding-top: 837px;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+}
+.wishlist-header-label {
+  width: 500px;
+  font-size: 14px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  margin-block-start: 1em;
+}
+.products-slideshow {
+  padding-top: 200px;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+}
+.slideshow-title-box {
+  width: 500px;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-block-start: 1em;
+}
+
+.products-slideshow-title {
+  font-weight: 600;
+
+  font-size: 25px;
+}
+.pagination {
+  font-size: 15px;
+  font-weight: bold;
 }
