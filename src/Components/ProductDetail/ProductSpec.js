@@ -2,17 +2,8 @@ import React, { Component } from 'react';
 
 class ProductSpec extends Component {
   state = {
-    unit: 'in',
+    unit: true,
     priceFix: '0',
-  };
-
-  unitClick = () => {
-    if (this.state.unit === 'in') {
-      this.setState({ size: this.props.sizeSub, unit: 'cm' });
-    }
-    if (this.state.unit === 'cm') {
-      this.setState({ size: this.props.sizeMain, unit: 'in' });
-    }
   };
 
   componentDidMount() {
@@ -21,22 +12,32 @@ class ProductSpec extends Component {
     });
   }
 
+  unitClick = () => {
+    if (this.state.unit) {
+      this.setState({ size: this.props.sizeSub, unit: false });
+    }
+    if (!this.state.unit) {
+      this.setState({ size: this.props.sizeMain, unit: true });
+    }
+  };
+
   render() {
-    //console.log(this.props.material);
+    let priceCut = '';
+    this.props.price > 0 &&
+      (priceCut = this.props.price
+        .substring(0, 7)
+        .replace(/\B(?=(?:\d{3})+(?!\d))/g, ','));
+
     return (
       <div className="detail_box">
         <div className="material">{this.props.material}</div>
         <div className="item_color">{this.props.color}</div>
         <div className="item_size">
-          {this.state.unit === 'in' ? this.props.sizeMain : this.props.sizeSub}
+          {this.state.unit ? this.props.sizeMain : this.props.sizeSub}
           <span className="unit_box">
             (
-            <span
-              className="unit_change"
-              onClick={this.unitClick}
-              style={{ cursor: 'pointer' }}
-            >
-              {this.state.unit}
+            <span className="unit_change" onClick={this.unitClick}>
+              {this.state.unit ? 'in' : 'cm'}
             </span>
             )
           </span>
@@ -44,7 +45,7 @@ class ProductSpec extends Component {
 
         <div className="reference">레퍼런스: {this.props.rKey}</div>
 
-        <div className="price">₩{this.props.price}</div>
+        <div className="price">₩{priceCut}</div>
       </div>
     );
   }

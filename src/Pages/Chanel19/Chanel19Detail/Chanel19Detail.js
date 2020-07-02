@@ -20,20 +20,17 @@ class Chanel19Detail extends Component {
     currentScroll: 0,
     handleLock: true,
     product_info: [],
+    opNum: 0,
   };
 
   scrollClick = () => {
-    if (this.state.optionScroll === true) {
-      this.setState({ optionScroll: false });
-    }
-    if (this.state.optionScroll === false) {
-      this.setState({ optionScroll: true });
-    }
+    this.setState({ optionScroll: !this.state.optionScroll });
   };
+
   optionClick = (id) => {
-    this.setState({ activeTab: id });
-    this.setState({ optionScroll: false });
+    this.setState({ activeTab: id, optionScroll: false });
   };
+
   dotClick = (id) => {
     this.setState({
       activeDot: id,
@@ -46,7 +43,12 @@ class Chanel19Detail extends Component {
       `http://10.58.0.214:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
     )
       .then((res) => res.json())
-      .then((res) => this.setState({ product_info: res.detail_bag_info }));
+      .then((res) =>
+        this.setState({
+          product_info: res.detail_bag_info,
+          opNum: res.detail_bag_info.option_num,
+        }),
+      );
 
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -102,8 +104,9 @@ class Chanel19Detail extends Component {
   };
 
   componentDidUpdate() {
-    this.moveScroll();
+    // this.moveScroll();
   }
+
   moveScroll = () => {
     if (this.state.activeDot === 0) {
       window.scrollTo({ top: 0 });
@@ -120,7 +123,6 @@ class Chanel19Detail extends Component {
   };
 
   render() {
-    //console.log(this.props.match.params.rkey);
     return (
       <>
         <div className="container">
@@ -227,7 +229,7 @@ class Chanel19Detail extends Component {
             />
             <div className="option_box">
               <div className="option_number">
-                다른 옵션({this.state.product_info.opton_num})
+                다른 옵션({this.state.opNum !== 0 && this.state.opNum})
               </div>
               <FontAwesomeIcon
                 className={
@@ -284,6 +286,7 @@ class Chanel19Detail extends Component {
                   opInfo={this.state.product_info.leather_dict}
                   opInfoT={this.state.product_info.tweed_dict}
                   opInfoO={this.state.product_info.other_dict}
+                  history={this.props}
                 />
               </div>
               <div className="find_store_box">

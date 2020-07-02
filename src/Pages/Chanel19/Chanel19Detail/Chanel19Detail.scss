@@ -7,6 +7,7 @@ html {
 
     z-index: 50;
     display: flex;
+    text-align: left;
 
     .dotNav {
         position: fixed;
@@ -81,42 +82,50 @@ html {
     .img_slider {
         display: flex;
         flex-direction: column;
-        width: 60%;
-        height: 250vh;
+        width: 100%;
+        height: 300vh;
         padding-left: 10%;
         margin-top: 25%;
         margin-bottom: 20%;
 
         .img1 {
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 100%;
             //background-image: url('https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1160b02877mh694-8826448871454.jpg');
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 20%;
         }
 
         .img2 {
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 100%;
             //background-image: url('https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-alternative-as1160b02877mh694-8826448740382.jpg');
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 10%;
         }
 
         .img3 {
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 100%;
             //background-image: url('https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-other-as1160b02877mh694-8826449592350.jpg');
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 10%;
         }
 
         .img4 {
-            width: 60%;
-            height: 60%;
+            width: 100%;
+            height: 100%;
             //background-image: url('https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_1094/chanel-19-flap-bag-navy-blue-white-red-tweed-gold-tone-silver-tone-ruthenium-finish-metal-tweed-gold-tone-silver-tone-ruthenium-finish-metal-packshot-extra-as1160b02877mh694-8826448936990.jpg');
             background-size: contain;
             background-repeat: no-repeat;
+
+            margin-top: 10%;
         }
     }
 
@@ -164,6 +173,7 @@ html {
 
                 .unit_change {
                     text-decoration: underline;
+                    cursor: pointer
                 }
             }
 
@@ -288,6 +298,10 @@ html {
                             background-repeat: no-repeat;
                             margin-top: 3%;
                             margin-right: 2%;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
                         }
 
                         .option_img1 {
@@ -298,6 +312,10 @@ html {
                             background-repeat: no-repeat;
                             margin-top: 3%;
                             margin-right: 2%;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
                         }
 
                         .option_img2 {
@@ -308,6 +326,10 @@ html {
                             background-repeat: no-repeat;
                             margin-top: 3%;
                             margin-right: 2%;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
                         }
 
                         .option_img3 {
@@ -318,6 +340,10 @@ html {
                             background-repeat: no-repeat;
                             margin-top: 3%;
                             margin-right: 2%;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
                         }
 
                         .option_img4 {
@@ -328,6 +354,10 @@ html {
                             background-repeat: no-repeat;
                             margin-top: 3%;
                             margin-right: 2%;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
                         }
                     }
                 }

@@ -6,11 +6,6 @@ class ProductImg extends Component {
   };
 
   componentDidMount() {
-    // fetch('http://10.58.0.214:8000/products/chanel-19/detail/AS1160B02876N6832')
-    //   .then((res) => res.json())
-    //   .then((res) =>
-    //     this.setState({ imgUrl: res.detail_bag_info.bag_image_all }),
-    //   );
     this.setState({
       imgUrl: this.props.imgAll,
     });

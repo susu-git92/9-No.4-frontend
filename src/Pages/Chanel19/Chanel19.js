@@ -11,7 +11,6 @@ class Chanel19 extends React.Component {
   }
 
   componentDidMount() {
-    // fetch('https://jsonplaceholder.typicode.com/users')
     fetch('http://10.58.0.214:8000/products/chanel-19')
       .then((res) => res.json())
       .then((res) => this.setState({ Chanel19List: res.bag_info }));
