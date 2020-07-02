@@ -736,5 +736,71 @@ export const srcs = {
         ],
       ],
     },
+    look_wishlist: [
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 5,
+        look_name: '룩 77',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-77-8821843722270.jpg,',
+      },
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 8,
+        look_name: '룩 38',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-38-8821844181022.jpg,',
+      },
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 9,
+        look_name: '룩 26',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-26-8821845065758.jpg,',
+      },
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 6,
+        look_name: '룩 19',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-19-8821844639774.jpg,',
+      },
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 4,
+        look_name: '룩 27',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-27-8821844770846.jpg,',
+      },
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 17,
+        look_name: '룩 8',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-8-8821845360670.jpg,',
+      },
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 10,
+        look_name: '룩 36',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-36-8821844541470.jpg,',
+      },
+      {
+        collection_id: 1,
+        collection_name: '크루즈 2019/20',
+        look_id: 23,
+        look_name: '룩 37',
+        look_image:
+          'https://www.chanel.com/images/c_scale/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_1844/cruise-2019-20-37-8821845458974.jpg,',
+      },
+    ],
   },
 };

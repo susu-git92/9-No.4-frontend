@@ -4,14 +4,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
-// import { srcs } from '../../config.js';
+import { srcs } from '../../config.js';
 import './Collection.scss';
 
 class Collection extends React.Component {
   state = {
     collectionItems: [],
-    wishItem: [],
+    wishItemsList: [],
   };
+
+  componentDidMount() {
+    this.setState({
+      collectionItems: srcs.img.look,
+      wishItemsList: srcs.img.look_wishlist,
+    });
+
+    // localStorage.setItem(
+    //   'user',
+    //   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I',
+    // );
+
+    // this.getAllLookItems();
+    // this.getWishList();
+  }
 
   getAllLookItems = () => {
     fetch('http://10.58.0.55:8000/product/cruise-2019-20')
@@ -38,15 +53,17 @@ class Collection extends React.Component {
   };
 
   toggleWishIcon = (e, item) => {
-    if (e.target.parentNode.classList.contains('active')) {
-      e.target.parentNode.classList.remove('active');
+    if (e.target.parentNode.classList.contains('activeIcon')) {
+      e.target.parentNode.classList.remove('activeIcon');
+      e.target.parentNode.classList.add('inactiveIcon');
     } else {
-      e.target.parentNode.classList.add('active');
+      e.target.parentNode.classList.add('activeIcon');
+      e.target.parentNode.classList.remove('inactiveIcon');
     }
-    this.checkingWishList(item);
+    // this.addAndDeleteWishList(item);
   };
 
-  checkingWishList = (item) => {
+  addAndDeleteWishList = (item) => {
     const userToken =
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
     fetch(`http://10.58.0.55:8000/product/wishlist/look/${item.id}/`, {
@@ -65,23 +82,9 @@ class Collection extends React.Component {
       .catch((err) => console.error(err));
   };
 
-  componentDidMount() {
-    // this.setState({
-    //   collectionItems: srcs.img.look,
-    // });
-
-    // localStorage.setItem(
-    //   'user',
-    //   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I',
-    // );
-
-    this.getAllLookItems();
-    this.getWishList();
-  }
-
   render() {
-    const { collectionItems, wishItem } = this.state;
-    console.log(wishItem.map((id) => id.look_id));
+    const { collectionItems } = this.state;
+
     return (
       <article className="Collection">
         <Nav />
@@ -90,12 +93,20 @@ class Collection extends React.Component {
             {collectionItems.map((item) => (
               <div className="itemsContainer" key={item.id}>
                 <div className="nameWrapper">
-                  {item.id}
-                  <FontAwesomeIcon
-                    onClick={(e) => this.toggleWishIcon(e, item)}
-                    className="starIcon"
-                    icon={faStar}
-                  />
+                  <span>{item.id}</span>
+                  {/* <WishItem
+                    toggleWishIcon={this.toggleWishIcon}
+                    collectionItems={collectionItems}
+                    wishItemsList={wishItemsList}
+                    item={item}
+                  /> */}
+                  <span>
+                    <FontAwesomeIcon
+                      className="inactiveIcon"
+                      icon={faStar}
+                      onClick={(e) => this.toggleWishIcon(e, item)}
+                    />
+                  </span>
                 </div>
                 <Link to={`/product/${item.id}`}>
                   <div className="imgWrapper">
@@ -117,5 +128,32 @@ class Collection extends React.Component {
     );
   }
 }
+
+// class WishItem extends React.Component {
+//   checkWish = () => {
+//     this.props.collectionItems.forEach((item) => {
+//       this.props.wishItemsList.forEach((wish) => {
+//         if (item.id === wish.look_id) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       });
+//     });
+//   };
+
+//   render() {
+//     const { toggleWishIcon, item } = this.props;
+//     return (
+//       <span>
+//         <FontAwesomeIcon
+//           className={this.checkWish ? 'activeIcon' : 'inactiveIcon'}
+//           icon={faStar}
+//           onClick={(e) => toggleWishIcon(e, item)}
+//         />
+//       </span>
+//     );
+//   }
+// }
 
 export default Collection;
