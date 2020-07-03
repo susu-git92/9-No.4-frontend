@@ -22,9 +22,14 @@ class ProductList extends React.Component {
         </div>
         <div className="text_box">
           <div className="list_name">{this.props.listName}</div>
-          <div className="list_material">{this.props.listMaterial}</div>
+          <div className="list_material">
+            {this.props.listMaterial.toString().substring(0, 23)}
+          </div>
           <div className="list_price">
-            ₩{this.props.listPrice.substring(0, 7)}
+            ₩
+            {this.props.listPrice
+              .substring(0, 7)
+              .replace(/\B(?=(?:\d{3})+(?!\d))/g, ',')}
             <span className="gray_star">*</span>
           </div>
 
