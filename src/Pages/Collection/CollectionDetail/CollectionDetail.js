@@ -9,7 +9,7 @@ import {
 import Nav from '../../../Components/Nav/Nav';
 import Footer from '../../../Components/Footer/Footer';
 import './CollectionDetail.scss';
-import { srcs } from '../../../config';
+// import { srcs } from '../../../config';
 
 class CollectionDetail extends React.Component {
   constructor(props) {
@@ -23,26 +23,33 @@ class CollectionDetail extends React.Component {
   }
 
   componentDidMount() {
-    // fetch(
-    //   `http://10.58.0.55:8000/product/cruise-2019-20/${this.state.productsId}`,
-    // )
-    //   .then((res) => res.json())
-    //   .then((res) =>
-    //     this.setState({ productImages: res.img, productInfo: res.products }),
-    //   );
+    fetch(
+      `http://10.58.0.55:8000/product/cruise-2019-20/${this.state.productsId}`,
+    )
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({ productImages: res.img, productInfo: res.products }),
+      );
     this.getState();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.getState();
+      fetch(
+        `http://10.58.0.55:8000/product/cruise-2019-20/${this.state.productsId}`,
+      )
+        .then((res) => res.json())
+        .then((res) =>
+          this.setState({ productImages: res.img, productInfo: res.products }),
+        );
     }
   }
 
   getState = () => {
     this.setState({
-      productImages: srcs.img.currentProduct.img,
-      productInfo: srcs.img.currentProduct.products,
+      // productImages: srcs.currentProduct.img,
+      // productInfo: srcs.currentProduct.products,
       productsId: Number(this.props.match.params.id),
     });
   };
