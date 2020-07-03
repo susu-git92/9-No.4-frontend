@@ -34,7 +34,7 @@
 					display: flex;
 					justify-content: space-between;
 
-					.starIcon {
+					.inactiveIcon {
 						opacity: 0;
 						cursor: pointer;
 						transition: 0.4s ease-in-out;
@@ -42,6 +42,12 @@
 						&:hover {
 							opacity: 1;
 						}
+					}
+
+					.activeIcon {
+						opacity: 1;
+						color: gold;
+						cursor: pointer;
 					}
 				}
 
