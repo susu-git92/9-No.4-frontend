@@ -1,54 +1,84 @@
 import React, { Component } from 'react';
 
 class OptionImg extends Component {
+  state = {
+    rKey: '',
+    leatherInfo: [],
+
+    tweedInfo: [],
+
+    otherInfo: [],
+
+    activeKey: [],
+    activeValue: [],
+  };
+
+  componentDidMount() {
+    const {
+      leather_bag_info,
+      tweed_bag_info,
+      other_bag_info,
+    } = this.props.productInfo;
+
+    this.setState(
+      {
+        leatherInfo: leather_bag_info,
+        tweedInfo: tweed_bag_info,
+        otherInfo: other_bag_info,
+        activeKey: this.props.defaultKey,
+        activeValue: this.props.defaultValue,
+      },
+      //() => console.log(this.state),
+    );
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const isDiff = prevProps.activeTab !== this.props.activeTab;
+
+    if (isDiff) {
+      if (this.props.activeTab === 0) {
+        // this.state.leatherInfo.length > 0 &&
+        this.setState({
+          activeKey: this.state.leatherInfo.map((info) => info.code),
+          activeValue: this.state.leatherInfo.map((info) => info.image),
+        });
+      }
+      if (this.props.activeTab === 1) {
+        // this.state.tweedInfo.length > 0 &&
+        this.setState({
+          activeKey: this.state.tweedInfo.map((info) => info.code),
+          activeValue: this.state.tweedInfo.map((info) => info.image),
+        });
+      }
+      if (this.props.activeTab === 2) {
+        // this.state.otherInfo.length > 0 &&
+        this.setState({
+          activeKey: this.state.otherInfo.map((info) => info.code),
+          activeValue: this.state.otherInfo.map((info) => info.image),
+        });
+      }
+    }
+  }
+
   render() {
-    //Object.keys(this.state.leather) > 0 && console.log(this.state.leather);
-    // console.log(this.props.opInfo);
-    const lD = this.props.opInfo;
-    const tD = this.props.opInfoT;
-    const oD = this.props.opInfoO;
-    let lK = [];
-    let lV = [];
-    let tK = [];
-    let tV = [];
-    let oK = [];
-    let oV = [];
-    let aK = [];
-    let aV = [];
-
-    lD && (lK = Object.keys(lD));
-    lD && (lV = Object.values(lD));
-    tD && (tK = Object.keys(tD));
-    tD && (tV = Object.values(tD));
-    oD && (oK = Object.keys(oD));
-    oD && (oV = Object.values(oD));
-
-    if (this.props.activeTab === 0) {
-      aK = lK;
-      aV = lV;
-    }
-    if (this.props.activeTab === 1) {
-      aK = tK;
-      aV = tV;
-    }
-    if (this.props.activeTab === 2) {
-      aK = oK;
-      aV = oV;
-    }
-    //console.log(lV);
-
     return (
       <div className="option_img_box">
         <div
           className="option_img_list"
           style={this.props.optionScroll ? { left: -280 } : { left: 0 }}
         >
-          {aV.length > 0 &&
-            aV.map((url, index) => {
+          {this.state.activeValue.length > 0 &&
+            this.state.activeValue.map((url, index) => {
               return (
                 <div
                   key={index}
-                  rKey={aK[index]}
+                  onClick={() => {
+                    return this.props.history.history.push(
+                      `/chanel19/detail/${this.state.activeKey[index]}`,
+                    );
+                    // window.location.reload()
+                  }}
+                  rKey={this.state.activeKey[index]}
                   className={`option_img${index}`}
                   style={{
                     backgroundImage: `url(${url})`,
@@ -56,11 +86,6 @@ class OptionImg extends Component {
                 />
               );
             })}
-          {/* <div className="option_img1" />
-           <div className="option_img2" />
-           <div className="option_img3" />
-           <div className="option_img4" />
-           <div className="option_img5" /> */}
         </div>
       </div>
     );

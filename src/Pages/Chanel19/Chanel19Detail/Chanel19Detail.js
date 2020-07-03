@@ -11,6 +11,8 @@ import {
   faChevronLeft,
   faCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import Nav from '../../../Components/Nav/Nav';
+import Footer from '../../../Components/Footer/Footer';
 
 class Chanel19Detail extends Component {
   state = {
@@ -19,21 +21,19 @@ class Chanel19Detail extends Component {
     optionScroll: false,
     currentScroll: 0,
     handleLock: true,
-    product_info: [],
+    product_info: {},
+    opNum: 0,
+    rKey: '',
   };
 
   scrollClick = () => {
-    if (this.state.optionScroll === true) {
-      this.setState({ optionScroll: false });
-    }
-    if (this.state.optionScroll === false) {
-      this.setState({ optionScroll: true });
-    }
+    this.setState({ optionScroll: !this.state.optionScroll });
   };
+
   optionClick = (id) => {
-    this.setState({ activeTab: id });
-    this.setState({ optionScroll: false });
+    this.setState({ activeTab: id, optionScroll: false });
   };
+
   dotClick = (id) => {
     this.setState({
       activeDot: id,
@@ -43,10 +43,15 @@ class Chanel19Detail extends Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.0.214:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
+      `http://10.58.4.250:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
     )
       .then((res) => res.json())
-      .then((res) => this.setState({ product_info: res.detail_bag_info }));
+      .then((res) =>
+        this.setState({
+          product_info: res.detail_bag_info,
+          opNum: res.detail_bag_info.option_num,
+        }),
+      );
 
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -90,7 +95,7 @@ class Chanel19Detail extends Component {
       });
     }
     if (
-      window.scrollY >= 1800 &&
+      window.scrollY >= 2000 &&
       this.state.activeDot !== 3 &&
       this.state.handleLock
     ) {
@@ -101,9 +106,27 @@ class Chanel19Detail extends Component {
     }
   };
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    const isOption =
+      prevProps.match.params.rkey !== this.props.match.params.rkey;
+
+    if (isOption) {
+      this.setState({ rKey: this.props.match.params.rkey });
+      fetch(
+        `http://10.58.4.250:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
+      )
+        .then((res) => res.json())
+        .then((res) =>
+          this.setState({
+            product_info: res.detail_bag_info,
+            opNum: res.detail_bag_info.option_num,
+          }),
+        );
+    }
+
     this.moveScroll();
   }
+
   moveScroll = () => {
     if (this.state.activeDot === 0) {
       window.scrollTo({ top: 0 });
@@ -115,192 +138,231 @@ class Chanel19Detail extends Component {
       window.scrollTo({ top: 1150 });
     }
     if (this.state.activeDot === 3) {
-      window.scrollTo({ top: 1800 });
+      window.scrollTo({ top: 2000 });
     }
   };
 
   render() {
-    //console.log(this.props.match.params.rkey);
     return (
       <>
-        <div className="container">
-          <div className="dotNav">
+        <Nav />
+        <div className="total">
+          <div className="container">
             <div
-              className="dot1"
-              onClick={() => this.dotClick(0)}
-              style={
-                this.state.activeDot === 0
-                  ? {
-                      width: '10px',
-                      height: '10px',
-                      border: '1px solid black',
-                      'background-color': 'white',
-                    }
-                  : {
-                      width: '7px',
-                      height: '7px',
-                      border: '1px solid white',
-                      'background-color': 'gray',
-                    }
-              }
-            />
-            <div
-              className="dot2"
-              onClick={() => this.dotClick(1)}
-              style={
-                this.state.activeDot === 1
-                  ? {
-                      width: '10px',
-                      height: '10px',
-                      border: '1px solid black',
-                      'background-color': 'white',
-                    }
-                  : {
-                      width: '7px',
-                      height: '7px',
-                      border: '1px solid white',
-                      'background-color': 'gray',
-                    }
-              }
-            />
-            <div
-              className="dot3"
-              onClick={() => this.dotClick(2)}
-              style={
-                this.state.activeDot === 2
-                  ? {
-                      width: '10px',
-                      height: '10px',
-                      border: '1px solid black',
-                      'background-color': 'white',
-                    }
-                  : {
-                      width: '7px',
-                      height: '7px',
-                      border: '1px solid white',
-                      'background-color': 'gray',
-                    }
-              }
-            />
-            <div
-              className="dot4"
-              onClick={() => this.dotClick(3)}
+              className="dotNav"
               style={
                 this.state.activeDot === 3
                   ? {
-                      width: '10px',
-                      height: '10px',
-                      border: '1px solid black',
-                      'background-color': 'white',
+                      position: 'absolute',
+                      top: '2200px',
                     }
                   : {
-                      width: '7px',
-                      height: '7px',
-                      border: '1px solid white',
-                      'background-color': 'gray',
+                      position: 'fixed',
                     }
               }
-            />
-          </div>
-          {/* {this.state.product_info.length > 0 && (
+            >
+              <div
+                className="dot1"
+                onClick={() => this.dotClick(0)}
+                style={
+                  this.state.activeDot === 0
+                    ? {
+                        width: '10px',
+                        height: '10px',
+                        border: '1px solid black',
+                        'background-color': 'white',
+                      }
+                    : {
+                        width: '7px',
+                        height: '7px',
+                        border: '1px solid white',
+                        'background-color': 'gray',
+                      }
+                }
+              />
+              <div
+                className="dot2"
+                onClick={() => this.dotClick(1)}
+                style={
+                  this.state.activeDot === 1
+                    ? {
+                        width: '10px',
+                        height: '10px',
+                        border: '1px solid black',
+                        'background-color': 'white',
+                      }
+                    : {
+                        width: '7px',
+                        height: '7px',
+                        border: '1px solid white',
+                        'background-color': 'gray',
+                      }
+                }
+              />
+              <div
+                className="dot3"
+                onClick={() => this.dotClick(2)}
+                style={
+                  this.state.activeDot === 2
+                    ? {
+                        width: '10px',
+                        height: '10px',
+                        border: '1px solid black',
+                        'background-color': 'white',
+                      }
+                    : {
+                        width: '7px',
+                        height: '7px',
+                        border: '1px solid white',
+                        'background-color': 'gray',
+                      }
+                }
+              />
+              <div
+                className="dot4"
+                onClick={() => this.dotClick(3)}
+                style={
+                  this.state.activeDot === 3
+                    ? {
+                        width: '10px',
+                        height: '10px',
+                        border: '1px solid black',
+                        'background-color': 'white',
+                      }
+                    : {
+                        width: '7px',
+                        height: '7px',
+                        border: '1px solid white',
+                        'background-color': 'gray',
+                      }
+                }
+              />
+            </div>
+            {/* {this.state.product_info.length > 0 && (
             <ProductImg
               activeDot={this.state.activeDot}
               img={this.state.product_info.bag_image_all}
             />
           )} */}
-          <ProductImg
-            activeDot={this.state.activeDot}
-            imgAll={this.state.product_info.bag_image_all}
-          />
-
-          <div className="product_box">
-            <div className="name_box">
-              <div className="name">{this.state.product_info.bag_name}</div>
-            </div>
-            <ProductSpec
-              sizeMain={this.state.product_info.bag_size_main}
-              sizeSub={this.state.product_info.bag_size_sub}
-              material={this.state.product_info.bag_texture}
-              color={this.state.product_info.bag_color}
-              rKey={this.state.product_info.bag_code}
-              price={this.state.product_info.bag_price}
+            <ProductImg
+              activeDot={this.state.activeDot}
+              imgAll={this.state.product_info.bag_image_all}
             />
-            <div className="option_box">
-              <div className="option_number">
-                다른 옵션({this.state.product_info.opton_num})
+
+            <div
+              className="product_box"
+              style={
+                this.state.activeDot === 3
+                  ? {
+                      position: 'absolute',
+                      top: '2100px',
+
+                      left: '120.5%',
+                    }
+                  : {
+                      position: 'fixed',
+                    }
+              }
+            >
+              <div className="name_box">
+                <div className="name">{this.state.product_info.bag_name}</div>
               </div>
-              <FontAwesomeIcon
-                className={
-                  this.state.optionScroll === true
-                    ? 'scroll_btn_on'
-                    : 'scroll_btn_off'
-                }
-                icon={
-                  this.state.optionScroll === true
-                    ? faChevronLeft
-                    : faChevronRight
-                }
-                size="2x"
-                onClick={this.scrollClick}
+              <ProductSpec
+                sizeMain={this.state.product_info.bag_size_main}
+                sizeSub={this.state.product_info.bag_size_sub}
+                material={this.state.product_info.bag_texture}
+                color={this.state.product_info.bag_color}
+                rKey={this.state.product_info.bag_code}
+                price={this.state.product_info.bag_price}
               />
-
-              <div className="option_slider">
-                <div className="option_category_list">
-                  <div
-                    className="option_category1"
-                    onClick={() => this.optionClick(0)}
-                  >
-                    Leather
-                    <div
-                      className="optionUnderline"
-                      style={
-                        this.state.activeTab === 0
-                          ? { left: '0%', width: '100%' }
-                          : this.state.activeTab === 1
-                          ? { left: '148%', width: '202%' }
-                          : this.state.activeTab === 2
-                          ? { left: '400%', width: '120%' }
-                          : {}
-                      }
-                    />
-                  </div>
-                  <div
-                    className="option_category2"
-                    onClick={() => this.optionClick(1)}
-                  >
-                    트위드 & 패브릭
-                  </div>
-                  <div
-                    className="option_category3"
-                    onClick={() => this.optionClick(2)}
-                  >
-                    기타 재질
-                  </div>
+              <div className="option_box">
+                <div className="option_number">
+                  다른 옵션({this.state.opNum !== 0 && this.state.opNum})
                 </div>
-
-                <OptionImg
-                  optionScroll={this.state.optionScroll}
-                  activeTab={this.state.activeTab}
-                  opInfo={this.state.product_info.leather_dict}
-                  opInfoT={this.state.product_info.tweed_dict}
-                  opInfoO={this.state.product_info.other_dict}
+                <FontAwesomeIcon
+                  className={
+                    this.state.optionScroll === true
+                      ? 'scroll_btn_on'
+                      : 'scroll_btn_off'
+                  }
+                  icon={
+                    this.state.optionScroll === true
+                      ? faChevronLeft
+                      : faChevronRight
+                  }
+                  size="2x"
+                  onClick={this.scrollClick}
                 />
-              </div>
-              <div className="find_store_box">
-                <div className="find_store_icon" />
-                <div className="find_store_text">
-                  부티크에서 더 많은 셀렉션을 만나보실 수 있습니다.
+
+                <div className="option_slider">
+                  <div className="option_category_list">
+                    <div
+                      className="option_category1"
+                      onClick={() => this.optionClick(0)}
+                    >
+                      Leather
+                      <div
+                        className="optionUnderline"
+                        style={
+                          this.state.activeTab === 0
+                            ? { left: '0%', width: '100%' }
+                            : this.state.activeTab === 1
+                            ? { left: '148%', width: '202%' }
+                            : this.state.activeTab === 2
+                            ? { left: '400%', width: '120%' }
+                            : {}
+                        }
+                      />
+                    </div>
+                    <div
+                      className="option_category2"
+                      onClick={() => this.optionClick(1)}
+                    >
+                      트위드 & 패브릭
+                    </div>
+                    <div
+                      className="option_category3"
+                      onClick={() => this.optionClick(2)}
+                    >
+                      기타 재질
+                    </div>
+                  </div>
+
+                  {this.state.product_info.bag_color && (
+                    <OptionImg
+                      optionScroll={this.state.optionScroll}
+                      activeTab={this.state.activeTab}
+                      productInfo={this.state.product_info}
+                      defaultKey={this.state.product_info.leather_bag_info.map(
+                        (info) => info.code,
+                      )}
+                      defaultValue={this.state.product_info.leather_bag_info.map(
+                        (info) => info.image,
+                      )}
+                      // leatherInfo={this.state.product_info.leather_bag_info}
+                      // tweedInfo={this.state.product_info.tweed_bag_info}
+                      // otherInfo={this.state.product_info.other_bag_info}
+                      history={this.props}
+                    />
+                  )}
                 </div>
-              </div>
-              <div className="law">
-                소비자 권장가. 자세한 법률 정보는 여기를 클릭하세요.
-                <span className="law_link">
-                  자세한 법률 정보는 여기를 클릭하세요.
-                </span>
+                <div className="find_store_box">
+                  <div className="find_store_icon" />
+                  <div className="find_store_text">
+                    부티크에서 더 많은 셀렉션을 만나보실 수 있습니다.
+                  </div>
+                </div>
+                <div className="law">
+                  소비자 권장가. 자세한 법률 정보는 여기를 클릭하세요.
+                  <span className="law_link">
+                    자세한 법률 정보는 여기를 클릭하세요.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <Footer />
       </>
     );
   }

@@ -1,16 +1,26 @@
-.list_box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.total {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 430vh;
+    background-color: red;
+    top: calc(-100vh + 100px);
+    margin-top: 850px;
 
-    .list_grid {
-        display: grid;
-        width: 80%;
-        height: 100%;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: repeat(2, 72vh);
-        grid-auto-flow: row;
-        grid-auto-rows: 72vh;
-        grid-column-gap: 10%;
+    .list_box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .list_grid {
+            display: grid;
+            width: 80%;
+            height: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(2, 72vh);
+            grid-auto-flow: row;
+            grid-auto-rows: 72vh;
+            grid-column-gap: 10%;
+        }
     }
 }
