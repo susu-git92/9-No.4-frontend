@@ -24,7 +24,7 @@ class CollectionDetail extends React.Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.0.55:8000/product/cruise-2019-20/${this.state.productsId}`,
+      `http://10.58.0.55:8000/products/cruise-2019-20/${this.state.productsId}`,
     )
       .then((res) => res.json())
       .then((res) =>
@@ -37,7 +37,7 @@ class CollectionDetail extends React.Component {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.getState();
       fetch(
-        `http://10.58.0.55:8000/product/cruise-2019-20/${this.state.productsId}`,
+        `http://10.58.0.55:8000/products/cruise-2019-20/${this.state.productsId}`,
       )
         .then((res) => res.json())
         .then((res) =>
