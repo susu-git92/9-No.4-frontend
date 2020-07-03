@@ -7,8 +7,10 @@ class WishProductList extends React.Component {
   render () {
     console.log("hi")
     return (
-      
       <div className= "list_item_B">
+        <div className = "star1">
+          <img className= "star" src='../../../Images/star1.png' ></img></div>
+        
         <div className = "img_box">
         <div className="list_img"><img src={this.props.product_img} /></div>
         </div>

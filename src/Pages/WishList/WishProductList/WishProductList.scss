@@ -1,8 +1,12 @@
+.star::before {
+  width: 100px;
+  height: 100px;
+  content: '';
+  background-image: url('../../../Images/star1.png');
+}
 .list_item_B {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   .img_box {
     width: 60px;
@@ -80,6 +84,9 @@
       font-size: 14px;
       padding-top: 3%;
       letter-spacing: 1px;
+    }
+    .WishList div {
+      text-align: left;
     }
   }
 }

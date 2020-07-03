@@ -1,6 +1,9 @@
 .WishList {
   height: 100%;
   overflow-y: visible;
+  .emptyempty {
+    text-align: center;
+  }
 
   .wishlist-header {
     position: relative;
@@ -27,6 +30,11 @@
       margin: 0 auto;
       justify-content: center;
       margin-block-start: 1em;
+      text-align: center;
+      .wishlist-empty p {
+        text-align: center;
+        justify-content: center;
+      }
     }
     .products-slideshow {
       padding-top: 200px;
@@ -46,6 +54,8 @@
 
     .products-slideshow-title {
       font-weight: 600;
+      text-align: center;
+      justify-content: center;
 
       font-size: 25px;
     }

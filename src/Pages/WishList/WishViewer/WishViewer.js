@@ -16,7 +16,7 @@ class WishViewer extends React.Component {
           </div>
         </div>        
         <div className="wishlist-tab">
-          <div className="wishlist-tab-head open">
+          <div className="wishlist-tab-head">
             <span className="wishlist-tab-title">핸드백</span>
             <span className="wishlist-tab-subtitle">1 제품</span>
           </div>
