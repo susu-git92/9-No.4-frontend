@@ -11,7 +11,7 @@ class Chanel19 extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.214:8000/products/chanel-19')
+    fetch('http://10.58.4.250:8000/products/chanel-19')
       .then((res) => res.json())
       .then((res) => this.setState({ Chanel19List: res.bag_info }));
   }

@@ -19,8 +19,9 @@ class Chanel19Detail extends Component {
     optionScroll: false,
     currentScroll: 0,
     handleLock: true,
-    product_info: [],
+    product_info: {},
     opNum: 0,
+    rKey: '',
   };
 
   scrollClick = () => {
@@ -40,7 +41,7 @@ class Chanel19Detail extends Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.0.214:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
+      `http://10.58.4.250:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
     )
       .then((res) => res.json())
       .then((res) =>
@@ -103,8 +104,25 @@ class Chanel19Detail extends Component {
     }
   };
 
-  componentDidUpdate() {
-    // this.moveScroll();
+  componentDidUpdate(prevProps) {
+    const isOption =
+      prevProps.match.params.rkey !== this.props.match.params.rkey;
+
+    if (isOption) {
+      this.setState({ rKey: this.props.match.params.rkey });
+      fetch(
+        `http://10.58.4.250:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
+      )
+        .then((res) => res.json())
+        .then((res) =>
+          this.setState({
+            product_info: res.detail_bag_info,
+            opNum: res.detail_bag_info.option_num,
+          }),
+        );
+    }
+
+    this.moveScroll();
   }
 
   moveScroll = () => {
@@ -280,14 +298,23 @@ class Chanel19Detail extends Component {
                   </div>
                 </div>
 
-                <OptionImg
-                  optionScroll={this.state.optionScroll}
-                  activeTab={this.state.activeTab}
-                  opInfo={this.state.product_info.leather_dict}
-                  opInfoT={this.state.product_info.tweed_dict}
-                  opInfoO={this.state.product_info.other_dict}
-                  history={this.props}
-                />
+                {this.state.product_info.bag_color && (
+                  <OptionImg
+                    optionScroll={this.state.optionScroll}
+                    activeTab={this.state.activeTab}
+                    productInfo={this.state.product_info}
+                    defaultKey={this.state.product_info.leather_bag_info.map(
+                      (info) => info.code,
+                    )}
+                    defaultValue={this.state.product_info.leather_bag_info.map(
+                      (info) => info.image,
+                    )}
+                    // leatherInfo={this.state.product_info.leather_bag_info}
+                    // tweedInfo={this.state.product_info.tweed_bag_info}
+                    // otherInfo={this.state.product_info.other_bag_info}
+                    history={this.props}
+                  />
+                )}
               </div>
               <div className="find_store_box">
                 <div className="find_store_icon" />
