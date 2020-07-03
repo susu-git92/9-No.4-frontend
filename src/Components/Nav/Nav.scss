@@ -74,7 +74,7 @@
 				}
 
 				&:hover {
-					color: rgba(0, 0, 0, 0.4);
+					color: rgba(0, 0, 0, 0.6);
 				}
 			}
 			.active {
@@ -85,6 +85,10 @@
 		.link {
 			text-decoration: none;
 			color: black;
+
+			&:hover {
+				color: rgba(0, 0, 0, 0.6);
+			}
 		}
 	}
 }

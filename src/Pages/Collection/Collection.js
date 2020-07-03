@@ -35,8 +35,7 @@ class Collection extends React.Component {
   };
 
   getWishList = () => {
-    const userToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
+    const userToken = localStorage.getItem('AccessToken');
 
     fetch('http://10.58.0.55:8000/account/wishlist/', {
       method: 'GET',
@@ -64,8 +63,8 @@ class Collection extends React.Component {
   };
 
   addAndDeleteWishList = (item) => {
-    const userToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
+    const userToken = localStorage.getItem('AccessToken');
+
     fetch(`http://10.58.0.55:8000/product/wishlist/look/${item.id}/`, {
       method: 'POST',
       headers: {
@@ -84,7 +83,6 @@ class Collection extends React.Component {
 
   render() {
     const { collectionItems } = this.state;
-
     return (
       <article className="Collection">
         <Nav />
