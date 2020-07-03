@@ -66,10 +66,12 @@ class Nav extends React.Component {
                   onClick={this.searchToggle}
                   icon={faSearch}
                 />
-                <Link className="link" to="loginscreen">
+                <Link className="link" to="/loginscreen">
                   <FontAwesomeIcon className="userIcon" icon={faUser} />
                 </Link>
-                <FontAwesomeIcon className="starIcon" icon={faStar} />
+                <Link className="link" to="/wishlist">
+                  <FontAwesomeIcon className="starIcon" icon={faStar} />
+                </Link>
               </div>
               <div
                 className="MobileMenuWrapper"
