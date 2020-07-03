@@ -58,22 +58,24 @@
     line-height: 1.29;
     color: #767676;
     display: block;
-    font-size: 16px;
+    font-size: 17px;
+    padding-top: 8px;
 
     text-align: left;
     pointer-events: none;
     border-bottom: 1px solid gainsboro;
-    width: 90%;
+    width: 100%;
   }
   .wishlist-tab-title {
     font-weight: 600;
+    font-size: 18px;
   }
 }
 
 .wishlist-tab-head {
   position: relative;
   width: 100%;
-  padding-bottom: 8px;
+  margin-bottom: 200px;
   padding: 0 150px;
 }
 
@@ -239,6 +241,11 @@
   margin: 0 auto;
   justify-content: center;
   margin-block-start: 1em;
+  img {
+    width: 30px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+  }
 }
 .products-slideshow {
   padding-top: 200px;

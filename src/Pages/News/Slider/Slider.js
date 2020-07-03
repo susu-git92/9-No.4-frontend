@@ -1,9 +1,6 @@
 import React from 'react';
 import './Slider.scss';
-//import { Slide } from 'react-slideshow-image';
 import Slider from 'react-slick';
-//import '../../../node_modules/slick-carousel/slick/slick.css';
-//import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -56,21 +53,14 @@ return(
     <Slider className="slider" {...settings} class="fs-icon icon-hv4-arrow-right" aria-hidden="true">
       {photos.map((photo) => {
         return (
-            
-
             <div className = "each-slide">                
               <div className = "slideImg">
                 <img width= "100%" height= "100%"  src={photo.url} />
-                
-               
-
               </div>
             </div>
-          
         )
       })}
     </Slider>
-
   </>
 );
 }
