@@ -10,7 +10,7 @@ class WishViewer extends React.Component {
         <div className="wishlist-title">
           <h2 className="wishlist-header-title">위시리스트</h2>
           <div className="wishlist-header-share">
-            <button className="wishlist-header-label">
+            <button className="wishlist-header-label"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQRS73qHKRnu8aEj-j6dWABcHumWPOGDctcIw&usqp=CAU"></img>
             위시리스트 공유하기
             </button>
           </div>
