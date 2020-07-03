@@ -14,18 +14,18 @@ class Collection extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({
-      collectionItems: srcs.img.look,
-      wishItemsList: srcs.img.look_wishlist,
-    });
+    // this.setState({
+    //   collectionItems: srcs.img.look,
+    //   wishItemsList: srcs.img.look_wishlist,
+    // });
 
     // localStorage.setItem(
     //   'user',
     //   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I',
     // );
 
-    // this.getAllLookItems();
-    // this.getWishList();
+    this.getAllLookItems();
+    this.getWishList();
   }
 
   getAllLookItems = () => {
@@ -60,7 +60,7 @@ class Collection extends React.Component {
       e.target.parentNode.classList.add('activeIcon');
       e.target.parentNode.classList.remove('inactiveIcon');
     }
-    // this.addAndDeleteWishList(item);
+    this.addAndDeleteWishList(item);
   };
 
   addAndDeleteWishList = (item) => {
@@ -90,37 +90,38 @@ class Collection extends React.Component {
         <Nav />
         <div className="collectionWrapper">
           <div>
-            {collectionItems.map((item) => (
-              <div className="itemsContainer" key={item.id}>
-                <div className="nameWrapper">
-                  <span>{item.id}</span>
-                  {/* <WishItem
+            {collectionItems &&
+              collectionItems.map((item) => (
+                <div className="itemsContainer" key={item.id}>
+                  <div className="nameWrapper">
+                    <span>{item.id}</span>
+                    {/* <WishItem
                     toggleWishIcon={this.toggleWishIcon}
                     collectionItems={collectionItems}
                     wishItemsList={wishItemsList}
                     item={item}
                   /> */}
-                  <span>
-                    <FontAwesomeIcon
-                      className="inactiveIcon"
-                      icon={faStar}
-                      onClick={(e) => this.toggleWishIcon(e, item)}
-                    />
-                  </span>
-                </div>
-                <Link to={`/product/${item.id}`}>
-                  <div className="imgWrapper">
-                    <img
-                      src={item.image}
-                      alt="img"
-                      onClick={() =>
-                        this.props.history.push(`/product/${item.id}`)
-                      }
-                    />
+                    <span>
+                      <FontAwesomeIcon
+                        className="inactiveIcon"
+                        icon={faStar}
+                        onClick={(e) => this.toggleWishIcon(e, item)}
+                      />
+                    </span>
                   </div>
-                </Link>
-              </div>
-            ))}
+                  <Link to={`/product/${item.id}`}>
+                    <div className="imgWrapper">
+                      <img
+                        src={item.image}
+                        alt="img"
+                        onClick={() =>
+                          this.props.history.push(`/product/${item.id}`)
+                        }
+                      />
+                    </div>
+                  </Link>
+                </div>
+              ))}
           </div>
         </div>
         <Footer />
