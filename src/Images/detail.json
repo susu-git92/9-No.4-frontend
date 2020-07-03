@@ -1,0 +1,49 @@
+{
+  "detail_bag_info": {
+    "bag_image_all": [
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-black-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b0287594305-8824092360734.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-black-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-alternative-as1162b0287594305-8829229727774.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-black-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-other-as1162b0287594305-8829229662238.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-black-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-extra-as1162b0287594305-8829229858846.jpg"
+    ],
+    "bag_texture": [
+      "램스킨",
+      "골드 메탈",
+      "실버 메탈",
+      "루테늄 메탈"
+    ],
+    "bag_size_main": "25 × 36 × 11 cm",
+    "bag_size_sub": "9.8 × 14.2 × 4.3 in",
+    "bag_color": [
+      "블랙"
+    ],
+    "bag_code": "AS1162 B02875 94305",
+    "bag_price": "7690000.0000",
+    "bag_name": "CHANEL 19 맥시 플랩 백",
+    "opton_num": 7,
+    "leather_bag_images": [
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-black-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b0287594305-8824092360734.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-dark-blue-goatskin-gold-tone-silver-tone-ruthenium-finish-metal-goatskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b02511n5947-8825009930270.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-light-beige-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b01901n5326-8822634446878.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-green-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-lambskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b02875n6512-8824088166430.jpg,"
+    ],
+    "leather_bag_codes": [
+      "AS1162B0287594305",
+      "AS1162B02511N5947",
+      "AS1162B01901N5326",
+      "AS1162B02875N6512"
+    ],
+    "tweed_bag_images": [
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-black-blue-pink-white-printed-silk-gold-tone-silver-tone-ruthenium-finish-metal-printed-silk-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b03183n7302-8824952881182.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-navy-blue-cotton-canvas-calfskin-gold-tone-silver-tone-ruthenium-finish-metal-cotton-canvas-calfskin-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b01908be418-8822634479646.jpg,",
+      "https://www.chanel.com/images/t_fashionselector/q_auto,f_auto,fl_lossy,dpr_auto/w_972/chanel-19-maxi-flap-bag-pink-jersey-gold-tone-silver-tone-ruthenium-finish-metal-jersey-gold-tone-silver-tone-ruthenium-finish-metal-packshot-default-as1162b01904n5458-8822635397150.jpg,"
+    ],
+    "tweed_bag_codes": [
+      "AS1162B03183N7302",
+      "AS1162B01908BE418",
+      "AS1162B01904N5458"
+    ],
+    "other_bag_images": [],
+    "other_bag_codes": []
+  }
+}
