@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
-import { srcs } from '../../config.js';
+// import { srcs } from '../../config.js';
 import './Collection.scss';
 
 class Collection extends React.Component {
@@ -29,7 +29,7 @@ class Collection extends React.Component {
   }
 
   getAllLookItems = () => {
-    fetch('http://10.58.0.55:8000/product/cruise-2019-20')
+    fetch('http://10.58.0.55:8000/products/cruise-2019-20')
       .then((res) => res.json())
       .then((res) => this.setState({ collectionItems: res.look }));
   };
@@ -37,7 +37,7 @@ class Collection extends React.Component {
   getWishList = () => {
     const userToken = localStorage.getItem('AccessToken');
 
-    fetch('http://10.58.0.55:8000/account/wishlist/', {
+    fetch('http://10.58.0.55:8000/account/wishlist', {
       method: 'GET',
       headers: {
         Authorization: userToken,
@@ -65,7 +65,7 @@ class Collection extends React.Component {
   addAndDeleteWishList = (item) => {
     const userToken = localStorage.getItem('AccessToken');
 
-    fetch(`http://10.58.0.55:8000/product/wishlist/look/${item.id}/`, {
+    fetch(`http://10.58.0.55:8000/products/wishlist/look/${item.id}`, {
       method: 'POST',
       headers: {
         Authorization: userToken,

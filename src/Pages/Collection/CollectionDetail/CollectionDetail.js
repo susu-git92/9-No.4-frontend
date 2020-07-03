@@ -67,6 +67,7 @@ class CollectionDetail extends React.Component {
 
   render() {
     const { productImages, productsId } = this.state;
+    console.log(productImages);
     return (
       <article className="CollectionDetail">
         <Nav />

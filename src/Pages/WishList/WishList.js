@@ -15,7 +15,7 @@ export class WishList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.55:8000/account/wishlist/', {
+    fetch('http://10.58.0.55:8000/account/wishlist', {
       method: 'GET',
       headers: { Authorization: localStorage.getItem('AccessToken') },
     })
