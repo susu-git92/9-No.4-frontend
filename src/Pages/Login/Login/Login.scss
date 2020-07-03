@@ -1,62 +1,79 @@
 .screen {
-  margin: 0 auto;
-  overflow: hidden;
-  box-sizing: content-box;
-  align-items: center;
-  justify-content: center;
-  background-color: #fafafa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  height: 230vh;
+  top: -89vh;
+  z-index: 10;
+  background-color: #fff;
+
   .signin {
     border-bottom: 3px solid transparent;
     font-size: 14px;
     border-color: #1d1d1d;
     cursor: pointer;
     width: 50%;
+    padding-bottom: 10px;
+    font-weight: 550;
   }
   .signup-selected {
     border-bottom: 0.0625rem solid #d8d8d8;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 550;
     width: 50%;
+    padding-bottom: 10px;
   }
   .container {
+    display: block;
+    width: 420px;
     font-family: Helvetica, Open-Sans, 'sans-serif-light', sans-serif;
     font-size: 0.775rem;
     font-weight: 300;
     color: #1d1d1d;
-    width: 648px;
-    height: 1600px;
+    //width: 648px;
+    //height: 1600px;
+    //top: 211vh;
     position: relative;
     justify-content: center;
     text-align: center;
-    .Login {
-      position: relative;
-      width: 100%;
-      margin: 0 auto;
-      .welcomeText1 {
-        margin-top: 55px;
-        font-size: 18px;
-      }
-      .welcomeText2 {
-        padding-top: 35px;
-        font-size: 14px;
-        text-align: left;
-      }
-    }
+    top: 123vh;
+    z-index: 150;
+    margin: 0 auto;
     .accountBox {
-      display: inline-flex;
+      //display: flex;
       padding-top: 0;
-      margin-top: 14.4vw;
+      //margin-top: 14.4vw;
       width: 100%;
       flex-basis: auto;
-      margin-bottom: 1.3vw;
+      //margin-bottom: 1.3vw;
       text-align: center;
       position: relative;
       justify-content: center;
+      // padding-bottom: 100px;
+      .accountText {
+        //display: flex;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        h1 {
+          font-size: 40px;
+        }
+      }
     }
+    /*.Login {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;*/
+    .welcomeText1 {
+      margin-top: 55px;
+      font-size: 18px;
+    }
+    .welcomeText2 {
+      padding-top: 35px;
+      font-size: 14px;
+      text-align: left;
+    }
+
     .innerContainer {
       width: 404px;
       margin: 25px auto;
@@ -66,41 +83,41 @@
         justify-content: center;
         text-align: center;
       }
-    }
-    .form-control small {
-      color: red;
-      bottom: 0;
-      visibility: hidden;
-    }
-    .form-control {
-      margin-top: 10px;
-      width: 350px;
-      .form-control.error small {
-        visibility: visible;
+      .form-control small {
+        color: red;
+        bottom: 0;
+        visibility: hidden;
       }
-      .form-control input:hover {
-        width: 385px;
-        border-bottom: 1.5px solid #000;
-        transition: all 0.2s ease;
-      }
-      .formBox input {
+      .form-control {
         margin-top: 10px;
-        background: none;
-        border: 0;
-        display: block;
-        font-size: 13px;
-        width: 385px;
-        text-rendering: auto;
-        color: -internal-light-dark-color(black, white);
-        word-spacing: normal;
-        text-indent: 0px;
-        display: block;
-        position: relative;
-        border-bottom: 0.0625rem solid #d8d8d8;
-        padding-bottom: 0.3125rem;
-        padding-top: 50px;
-        text-align: left;
-        outline: none;
+        width: 350px;
+        .form-control.error small {
+          visibility: visible;
+        }
+        .form-control input:hover {
+          width: 400px;
+          border-bottom: 1.5px solid #000;
+          transition: all 0.2s ease;
+        }
+        .formBox input {
+          margin-top: 10px;
+          background: none;
+          border: 0;
+          display: block;
+          font-size: 13px;
+          width: 400px;
+          text-rendering: auto;
+          color: -internal-light-dark-color(black, white);
+          word-spacing: normal;
+          text-indent: 0px;
+          display: block;
+          position: relative;
+          border-bottom: 0.0625rem solid #d8d8d8;
+          padding-bottom: 0.3125rem;
+          padding-top: 50px;
+          text-align: left;
+          outline: none;
+        }
       }
     }
     .buttonBox {
@@ -141,7 +158,5 @@
       }
     }
   }
-  .accountText h1 {
-    font-size: 40px;
-  }
 }
+//}

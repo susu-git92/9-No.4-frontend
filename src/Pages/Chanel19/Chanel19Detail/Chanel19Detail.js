@@ -95,7 +95,7 @@ class Chanel19Detail extends Component {
       });
     }
     if (
-      window.scrollY >= 2200 &&
+      window.scrollY >= 2000 &&
       this.state.activeDot !== 3 &&
       this.state.handleLock
     ) {
@@ -138,7 +138,7 @@ class Chanel19Detail extends Component {
       window.scrollTo({ top: 1150 });
     }
     if (this.state.activeDot === 3) {
-      window.scrollTo({ top: 2200 });
+      window.scrollTo({ top: 2000 });
     }
   };
 
@@ -154,7 +154,7 @@ class Chanel19Detail extends Component {
                 this.state.activeDot === 3
                   ? {
                       position: 'absolute',
-                      top: '2400px',
+                      top: '2200px',
                     }
                   : {
                       position: 'fixed',
@@ -255,7 +255,7 @@ class Chanel19Detail extends Component {
                 this.state.activeDot === 3
                   ? {
                       position: 'absolute',
-                      top: '2200px',
+                      top: '2100px',
 
                       left: '120.5%',
                     }
