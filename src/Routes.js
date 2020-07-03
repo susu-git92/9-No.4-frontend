@@ -8,6 +8,9 @@ import News from './Pages/News/News';
 import Loginscreen from './Pages/Login/Loginscreen';
 import Chanel19 from './Pages/Chanel19/Chanel19';
 import Chanel19Detail from './Pages/Chanel19/Chanel19Detail/Chanel19Detail';
+import WishList from './Pages/WishList/WishList';
+
+
 
 class Routes extends React.Component {
   render() {
@@ -23,6 +26,11 @@ class Routes extends React.Component {
           <Route exact path="/chanel19" component={Chanel19} />
           <Route exact path="/chanel19detail" component={Chanel19Detail} />
           <Route exact path="/loginscreen" component={Loginscreen} />
+          <Route exact path="/wishlist" component={WishList} />
+   
+
+        
+
         </Switch>
       </Router>
     );

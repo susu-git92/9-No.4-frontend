@@ -1,4 +1,5 @@
 .container {
+  display: block;
   font-family: Helvetica, Open-Sans, 'sans-serif-light', sans-serif;
   font-size: 0.775rem;
   font-weight: 300;
@@ -9,15 +10,23 @@
   //padding-top: 75px;
   justify-content: center;
   text-align: center;
+  //background-color: #fff;
+  .accountBox {
+    height: 48px;
+    .accountText h1 {
+      font-size: 40px;
+    }
+  }
   .customer-nav {
     flex-wrap: wrap;
     justify-content: stretch;
     display: flex;
     width: 100%;
     height: 50px;
-    grid-auto-columns: 2 fr;
+    grid-auto-columns: 2fr;
     align-items: center;
     text-align: center;
+
     .signup {
       justify-content: stretch;
       border-bottom: 3px solid transparent;
@@ -25,6 +34,8 @@
       border-color: #1d1d1d;
       cursor: pointer;
       width: 50%;
+      padding-bottom: 10px;
+      font-weight: 550;
     }
     .signin-selected {
       justify-content: stretch;
@@ -32,9 +43,8 @@
       cursor: pointer;
       font-size: 14px;
       width: 50%;
-    }
-    .accountText h1 {
-      font-size: 40px;
+      padding-bottom: 10px;
+      font-weight: 550;
     }
   }
   .contentBox {
@@ -42,6 +52,8 @@
     width: 100%;
     margin: 0 auto;
     height: 1500px;
+
+    //margin-top: 14.4vw;
   }
   .welcomeText1-r {
     margin-top: 55px;
@@ -70,7 +82,7 @@
     border: 0;
     display: block;
     font-size: 13px;
-    width: 385px;
+    width: 400px;
     text-rendering: auto;
     color: -internal-light-dark-color(black, white);
     word-spacing: normal;
@@ -84,7 +96,7 @@
     outline: none;
   }
   .form-control input:hover {
-    width: 385px;
+    width: 400px;
     border-bottom: 1.5px solid #000;
     transition: all 0.2s ease;
   }
@@ -139,112 +151,3 @@
     }
   }
 }
-
-/*
-.signup {
-  justify-content: stretch;
-  border-bottom: 3px solid transparent;
-  font-size: 14px;
-  border-color: #1d1d1d;
-  cursor: pointer;
-  width: 50%;
-}
-.signin-selected {
-  justify-content: stretch;
-  border-bottom: 0.0625rem solid #d8d8d8;
-  cursor: pointer;
-  font-size: 14px;
-  width: 50%;
-}
-*/
-
-/*
-.selected {
-  border-bottom: 0.0625rem solid #d8d8d8;
-  cursor: pointer;
-  font-size: 14px;
-}
-.selected {
-  border-bottom: 3px solid transparent;
-  font-size: 14px;
-  border-color: #1d1d1d;
-  cursor: pointer;
-}
-*/
-/*
-.DescriptionBox {
-  height: 633px;
-  width: 633px;
-  margin: 2 auto;
-}*/
-/*
-.form-control.error small {
-  visibility: visible;
-}
-*/
-/*
-.form-control input:hover {
-  width: 385px;
-  border-bottom: 1.5px solid #000;
-  transition: all 0.2s ease;
-}
-*/
-/*
-.buttonBox {
-  margin-top: -125px;
-}
-*/
-/*
-.checkBox- #submit {
-  background-color: #000000;
-  margin-top: 100px;
-  width: 100%;
-  height: 50px;
-  border: 1px solid #000000;
-}*/
-/*
-.agreeArea {
-  margin-top: 30px;
-}
-*/
-/*
-#register-terms {
-  width: 15px;
-}*/
-
-/*
-.agreeArea input,
-p {
-  display: inline;
-}
-*/
-/*
-.btnWrapper {
-  color: #fff;
-  font-size: 11px;
-  position: relative;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  margin-bottom: 50px;
-}*/
-/*
-#signinbox {
-  margin-top: 2%;
-  height: 35%;
-  border-bottom: 1.8px solid #000;
-  transition: all 1s ease;
-}
-#signinbox:hover {
-  margin-top: 2%;
-  height: 35%;
-  cursor: pointer;
-  border-bottom: 1.8px solid #fff;
-  transition: all 1.1s ease;
-}
-*/
