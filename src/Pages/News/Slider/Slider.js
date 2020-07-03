@@ -4,8 +4,8 @@ import './Slider.scss';
 import Slider from 'react-slick';
 //import '../../../node_modules/slick-carousel/slick/slick.css';
 //import '../../../node_modules/slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const photos = [
   {
@@ -35,42 +35,45 @@ const photos = [
   },
 ];
 
-class SlideView extends React.Component {
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      arrows: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      className: 'slides',
-    };
 
-    return (
-      <>
-        <Slider
-          className="slider"
-          {...settings}
-          class="fs-icon icon-hv4-arrow-right"
-          aria-hidden="true"
-        >
-          {photos.map((photo) => {
-            return (
-              <div className="each-slide">
-                <div className="slideImg">
-                  <img width="100%" src={photo.url} alt="slider img" />
-                  <i
-                    class="fs-icon icon-hv4-arrow-right"
-                    aria-hidden="true"
-                  ></i>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
-      </>
-    );
+
+
+class SlideView extends React.Component{
+  render () {
+    const settings = {
+    dots : true,
+    infinite: true,
+    arrows: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    className: 'slides',
+  
   }
+
+return(
+  <>
+    <Slider className="slider" {...settings} class="fs-icon icon-hv4-arrow-right" aria-hidden="true">
+      {photos.map((photo) => {
+        return (
+            
+
+            <div className = "each-slide">                
+              <div className = "slideImg">
+                <img width= "100%" height= "100%"  src={photo.url} />
+                
+               
+
+              </div>
+            </div>
+          
+        )
+      })}
+    </Slider>
+
+  </>
+);
+}
 }
 export default SlideView;
+  

@@ -1,18 +1,66 @@
 import React from 'react';
 import './Signup.scss';
+import { withRouter } from 'react-router-dom'
 
 class Signup extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {isRegisterOpen: true, isLoginOpen:false};
+  constructor() {
+    super()
+    this.state = { 
+      inputEmail:"",
+      inputFirstName:"",
+      inputLastName: "",
+      inputRegisterPassword: "",
+      changeEmail: "",
+      changePassword:""
+    }
   }
 
-submitRegister = (e) => {
-  e.preventDefault();
+
+   
+  changeHandleInput = (e) => {
+    e.preventDefault();
+    this.setState ({
+      [e.target.name]: e.target.value,
+   })
+    this.setState({changeEmail: e.target.value.includes('@')? true : false})
+    this.setState({changePassword: e.target.value.length > 0 ? true : false})
+  }
+
+ // goToSignup () {
+ // //  this.props.history.push('/main')
+  //}
+
+  submitRegister = (e) => {
+    e.preventDefault();
+ 
+    alert('회원가입 성공!')
+ 
+  fetch(
+    'http://10.58.0.55:8000/account/sign-up/',
+    {
+   
+      method: 'POST', 
+
+      body: JSON.stringify({
+       
+        email: this.state.inputEmail,
+        first_name: this.state.inputFirstName,
+        last_name: this.state.inputLastName,
+        password: this.state.inputRegisterPassword,
+      })
+    },
+  )
+    .then((res) => res.json()) //여기에 만약 콘솔만찍으면 콘솔찍어주고 하는일이없다.
+      
 }
 
+
   render() {  
+    console.log (this.props.history)
+    console.log('this.state.inputEmail>>>', this.state.inputEmail);
+    console.log('this.state.inputFirstName>>>', this.state.inputFirstName);
+    console.log('this.state.inputLastName>>>', this.state.inputLastName);
+    console.log('this.state.inputRegisterPassword>>>', this.state.inputRegisterPassword);
     return (
       <>
         <div className="contentBox">
@@ -30,7 +78,7 @@ submitRegister = (e) => {
               <input type="text" id="email" 
                 placeholder="Email"
                 name="inputEmail"
-                onChange={this.changeHandleEmail} />
+                onChange={this.changeHandleInput} />
                <small>Please note: use a valid email such as name@mail.com</small>    
             </div>
 
@@ -38,7 +86,7 @@ submitRegister = (e) => {
               <input type="text" id="firstName" 
               placeholder="First name" 
               name="inputFirstName"
-                onChange={this.changeHandleFirstName} />
+                onChange={this.changeHandleInput} />
               <small>Please note: use a valid email such as name@mail.com</small>           
             </div>
                       
@@ -46,7 +94,7 @@ submitRegister = (e) => {
               <input type="text" id="lastName" 
               placeholder="Last name"
               name="inputLastName"
-                onChange={this.changeHandleLastName} />
+                onChange={this.changeHandleInput} />
                
               <small>Please note: use a valid email such as name@mail.com</small>        
             </div>
@@ -55,7 +103,7 @@ submitRegister = (e) => {
               <input type="password" id="password" 
               placeholder="Password" 
               name="inputRegisterPassword"
-                onChange={this.changeHandleRegisterPassword}/>  
+                onChange={this.changeHandleInput}/>  
               <small>Please note: use a valid email such as name@mail.com</small>          
             </div>
                   
@@ -82,4 +130,4 @@ submitRegister = (e) => {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);
