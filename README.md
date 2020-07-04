@@ -16,6 +16,7 @@
 
 ## 적용 기술
 ### Front-End
+- JavaScript(ES6)
 - React.js
 - Sass
 - React-router-dom
