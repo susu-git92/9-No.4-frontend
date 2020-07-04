@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Nav from '../../Components/Nav/Nav';
 import Footer from '../../Components/Footer/Footer';
-import { srcs } from '../../config.js';
+// import { srcs } from '../../config.js';
 import './Collection.scss';
 
 class Collection extends React.Component {
@@ -29,16 +29,15 @@ class Collection extends React.Component {
   }
 
   getAllLookItems = () => {
-    fetch('http://10.58.0.55:8000/product/cruise-2019-20')
+    fetch('http://10.58.0.55:8000/products/cruise-2019-20')
       .then((res) => res.json())
       .then((res) => this.setState({ collectionItems: res.look }));
   };
 
   getWishList = () => {
-    const userToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
+    const userToken = localStorage.getItem('AccessToken');
 
-    fetch('http://10.58.0.55:8000/account/wishlist/', {
+    fetch('http://10.58.0.55:8000/account/wishlist', {
       method: 'GET',
       headers: {
         Authorization: userToken,
@@ -64,9 +63,9 @@ class Collection extends React.Component {
   };
 
   addAndDeleteWishList = (item) => {
-    const userToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImludHplcm9Ad2Vjb2RlLmNvbSJ9.kkMVMG0hgqywiz81AihEs6syYkB7kDC1MHf1YfwcB0I';
-    fetch(`http://10.58.0.55:8000/product/wishlist/look/${item.id}/`, {
+    const userToken = localStorage.getItem('AccessToken');
+
+    fetch(`http://10.58.0.55:8000/products/wishlist/look/${item.id}`, {
       method: 'POST',
       headers: {
         Authorization: userToken,
@@ -84,7 +83,6 @@ class Collection extends React.Component {
 
   render() {
     const { collectionItems } = this.state;
-
     return (
       <article className="Collection">
         <Nav />

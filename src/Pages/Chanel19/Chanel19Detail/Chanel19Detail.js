@@ -43,7 +43,7 @@ class Chanel19Detail extends Component {
 
   componentDidMount() {
     fetch(
-      `http://10.58.4.250:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
+      `http://10.58.0.55:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
     )
       .then((res) => res.json())
       .then((res) =>
@@ -113,7 +113,7 @@ class Chanel19Detail extends Component {
     if (isOption) {
       this.setState({ rKey: this.props.match.params.rkey });
       fetch(
-        `http://10.58.4.250:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
+        `http://10.58.0.55:8000/products/chanel-19/detail/${this.props.match.params.rkey}`,
       )
         .then((res) => res.json())
         .then((res) =>

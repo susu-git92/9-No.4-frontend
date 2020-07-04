@@ -1,216 +1,224 @@
 .Nav {
-  background-color: white;
-  width: 100%;
-  height: 140px;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  transition: 0.2 ease-in-out;
+	background-color: white;
+	width: 100%;
+	height: 140px;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	transition: 0.2 ease-in-out;
 
-  @media screen and (min-width: 820px) {
-    .MobileMenu {
-      display: none;
-    }
-  }
+	@media screen and (min-width: 820px) {
+		.MobileMenu {
+			display: none;
+		}
+	}
 
-  .NavWrapper {
-    .boldLine {
-      height: 8px;
-      background-color: black;
-    }
+	.NavWrapper {
+		.boldLine {
+			height: 8px;
+			background-color: black;
+		}
 
-    img {
-      margin-top: 25px;
-      width: 180px;
-      transition: 0.2s ease-in-out;
-    }
+		img {
+			margin-top: 25px;
+			width: 180px;
+			transition: 0.2s ease-in-out;
+		}
 
-    .hamburgerBtn {
-      display: none;
-    }
+		.hamburgerBtn {
+			display: none;
+		}
 
-    .iconWrapper {
-      font-size: 18px;
-      position: absolute;
-      right: 3vw;
-      top: 45px;
-      opacity: 0.8;
+		.iconWrapper {
+			font-size: 18px;
+			position: absolute;
+			right: 3vw;
+			top: 45px;
+			opacity: 0.8;
 
-      .starIcon,
-      .userIcon {
-        margin-left: 20px;
-        cursor: pointer;
-      }
+			.starIcon,
+			.userIcon {
+				margin-left: 20px;
+				cursor: pointer;
+			}
 
-      .searchIcon {
-        cursor: pointer;
-      }
-    }
+			.searchIcon {
+				cursor: pointer;
+			}
+		}
 
-    .MobileMenuWrapper {
-      display: none;
-    }
+		.MobileMenuWrapper {
+			display: none;
+		}
 
-    .desktopMenuList {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 32px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+		.desktopMenuList {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 32px;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-      li {
-        font-size: 12.5px;
-        margin-right: 30px;
-        padding-bottom: 26px;
-        color: rgba(0, 0, 0, 0.7);
-        font-weight: 500;
-        border-bottom: 5px solid #fff;
-        cursor: pointer;
-        transition: border-bottom 0.2s ease-in-out;
+			li {
+				font-size: 12.5px;
+				margin-right: 30px;
+				padding-bottom: 26px;
+				color: black;
+				font-weight: 500;
+				border-bottom: 5px solid #fff;
+				cursor: pointer;
+				transition: border-bottom 0.2s ease-in-out;
 
-        &:last-child {
-          margin-right: 0;
-        }
+				&:last-child {
+					margin-right: 0;
+				}
 
-        &:hover {
-          color: rgba(0, 0, 0, 0.4);
-        }
-      }
-      .active {
-        border-bottom: 5px solid black;
-        transition: border-bottom 0.2s ease-in-out;
-      }
-    }
-  }
+				&:hover {
+					color: rgba(0, 0, 0, 0.6);
+				}
+			}
+			.active {
+				border-bottom: 5px solid black;
+				transition: border-bottom 0.2s ease-in-out;
+			}
+		}
+		.link {
+			text-decoration: none;
+			color: black;
+
+			&:hover {
+				color: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 820px) {
-  .Nav {
-    background-color: white;
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-    transition: 0.2s ease-in-out;
+	.Nav {
+		background-color: white;
+		width: 100%;
+		height: 60px;
+		text-align: center;
+		position: fixed;
+		top: 0;
+		z-index: 100;
+		border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+		transition: 0.2s ease-in-out;
 
-    .NavWrapper {
-      .boldLine {
-        height: 8px;
-        background-color: black;
-      }
-      img {
-        margin-top: 15px;
-        width: 110px;
-        transition: 0.2s ease-in-out;
-      }
+		.NavWrapper {
+			.boldLine {
+				height: 8px;
+				background-color: black;
+			}
+			img {
+				margin-top: 15px;
+				width: 110px;
+				transition: 0.2s ease-in-out;
+			}
 
-      .hamburgerBtn {
-        font-size: 20px;
-        display: block;
-        position: absolute;
-        left: 25px;
-        top: 22px;
-        cursor: pointer;
-      }
+			.hamburgerBtn {
+				font-size: 20px;
+				display: block;
+				position: absolute;
+				left: 25px;
+				top: 22px;
+				cursor: pointer;
+			}
 
-      .iconWrapper {
-        position: relative;
-        font-size: 18px;
-        width: 100%;
+			.iconWrapper {
+				position: relative;
+				font-size: 18px;
+				width: 100%;
 
-        .starIcon {
-          position: absolute;
-          opacity: 0.8;
-          right: 0;
-          top: -65px;
-        }
+				.starIcon {
+					position: absolute;
+					opacity: 1;
+					right: 0;
+					top: -65px;
+				}
 
-        .searchIcon {
-          position: absolute;
-          left: 85px;
-          top: -65px;
-        }
+				.searchIcon {
+					position: absolute;
+					left: 85px;
+					top: -65px;
+				}
 
-        .userIcon {
-          position: absolute;
-          left: 105px;
-          top: -65px;
-        }
-      }
+				.userIcon {
+					position: absolute;
+					left: 105px;
+					top: -65px;
+				}
+			}
 
-      .desktopMenuList {
-        display: none;
-      }
+			.desktopMenuList {
+				display: none;
+			}
 
-      .MobileMenuWrapper {
-        display: block;
-      }
+			.MobileMenuWrapper {
+				display: block;
+			}
 
-      .MobileMenu {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 8px;
-        background-color: rgba(0, 0, 0, 0.3);
+			.MobileMenu {
+				width: 100vw;
+				height: 100vh;
+				position: fixed;
+				top: 8px;
+				background-color: rgba(0, 0, 0, 0.3);
 
-        .menuWrapper {
-          position: relative;
-          width: 80vw;
-          height: 100vh;
-          background-color: #fff;
-          left: -100vw;
-          animation: slide 0.5s forwards;
+				.menuWrapper {
+					position: relative;
+					width: 80vw;
+					height: 100vh;
+					background-color: #fff;
+					left: -100vw;
+					animation: slide 0.5s forwards;
 
-          @keyframes slide {
-            100% {
-              left: 0;
-            }
-          }
+					@keyframes slide {
+						100% {
+							left: 0;
+						}
+					}
 
-          p {
-            padding: 17.5px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            color: rgba(0, 0, 0, 0.8);
-            font-size: 17px;
-          }
+					p {
+						padding: 17.5px 0;
+						border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+						color: rgba(0, 0, 0, 0.8);
+						font-size: 17px;
+					}
 
-          .closeBtn {
-            color: rgba(0, 0, 0, 0.7);
-            font-size: 20px;
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            cursor: pointer;
-          }
+					.closeBtn {
+						color: rgba(0, 0, 0, 0.7);
+						font-size: 20px;
+						position: absolute;
+						top: 15px;
+						right: 20px;
+						cursor: pointer;
+					}
 
-          .mobileMenuList {
-            text-align: left;
-            padding: 50px 20px;
+					.mobileMenuList {
+						text-align: left;
+						padding: 50px 20px;
 
-            li {
-              font-size: 14px;
-              padding-bottom: 25px;
-              margin-bottom: 30px;
-              color: rgba(0, 0, 0, 0.7);
-              font-weight: 600;
-              border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-              cursor: pointer;
+						li {
+							font-size: 14px;
+							padding-bottom: 25px;
+							margin-bottom: 30px;
+							color: rgba(0, 0, 0, 0.7);
+							font-weight: 600;
+							border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+							cursor: pointer;
 
-              &:hover {
-                color: rgba(0, 0, 0, 0.4);
-              }
-            }
-            .active {
-              border-bottom: 5px solid black;
-              transition: border-bottom 0.2s ease-in-out;
-            }
-          }
-        }
-      }
-    }
-  }
+							&:hover {
+								color: rgba(0, 0, 0, 0.4);
+							}
+						}
+						.active {
+							border-bottom: 5px solid black;
+							transition: border-bottom 0.2s ease-in-out;
+						}
+					}
+				}
+			}
+		}
+	}
 }
