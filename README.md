@@ -29,7 +29,9 @@
 - Beautifulsoup
 - Selenium
 - Bcrypt
-- MySQL
+- JWT
+- Mysql
+- CORS headers
 
 ### 커뮤니케이션 및 버전관리
 - Postman
@@ -43,6 +45,7 @@
 - 상품 상세페이지 이동 시 해당 상품 API를 통한 상품 정보 렌더링(GET)
 - 특정 상품의 별 아이콘 클릭 시 위시리스트 추가(POST)
 - 위시리스트에 추가된 상품의 별 아이콘 다시 클릭 시 위시리스트 제거(POST)
+- 반응형 UI
 
 ## 미구현 기능
 - 스크롤이벤트
